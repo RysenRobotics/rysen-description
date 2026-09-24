@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<!-- URDF Sensor Definitions -->
+<!-- Generated from SolidWorks surface selections -->
+
+<!-- URDF Sensor Entries -->
+<!-- Format: <sensor name="sensor_X" type="force_torque">
+            <origin xyz="X Y Z" rpy="Roll Pitch Yaw"/>
+          </sensor> -->
+
+<sensor name="sensor_0" type="force_torque">
+    <origin xyz="0.029461 0.001962 -0.002648" rpy="-2.721496 0.258416 0.000000"/>
+</sensor>
+
+<sensor name="sensor_1" type="force_torque">
+    <origin xyz="0.029522 0.002507 0.000143" rpy="-2.649903 -0.045503 0.000000"/>
+</sensor>
+
+<sensor name="sensor_2" type="force_torque">
+    <origin xyz="0.029330 0.001646 0.002844" rpy="-2.759687 -0.351608 0.000000"/>
+</sensor>
+
+<sensor name="sensor_3" type="force_torque">
+    <origin xyz="0.027173 0.003234 -0.005494" rpy="-2.452876 0.589136 0.000000"/>
+</sensor>
+
+<sensor name="sensor_4" type="force_torque">
+    <origin xyz="0.027664 0.004489 -0.002787" rpy="-2.367338 0.260901 0.000000"/>
+</sensor>
+
+<sensor name="sensor_5" type="force_torque">
+    <origin xyz="0.027624 0.004962 0.000237" rpy="-2.324108 -0.056004 0.000000"/>
+</sensor>
+
+<sensor name="sensor_6" type="force_torque">
+    <origin xyz="0.027501 0.004178 0.003189" rpy="-2.377699 -0.375189 0.000000"/>
+</sensor>
+
+<sensor name="sensor_7" type="force_torque">
+    <origin xyz="0.026874 0.002622 0.005688" rpy="-2.497491 -0.706766 0.000000"/>
+</sensor>
+
+<sensor name="sensor_8" type="force_torque">
+    <origin xyz="0.024078 0.003112 -0.007818" rpy="-2.221776 0.936760 0.000000"/>
+</sensor>
+
+<sensor name="sensor_9" type="force_torque">
+    <origin xyz="0.024790 0.005193 -0.005635" rpy="-2.148313 0.594433 0.000000"/>
+</sensor>
+
+<sensor name="sensor_10" type="force_torque">
+    <origin xyz="0.025039 0.006520 -0.002815" rpy="-2.118013 0.253719 0.000000"/>
+</sensor>
+
+<sensor name="sensor_11" type="force_torque">
+    <origin xyz="0.024916 0.006936 0.000294" rpy="-2.099678 -0.063543 0.000000"/>
+</sensor>
+
+<sensor name="sensor_12" type="force_torque">
+    <origin xyz="0.024897 0.006153 0.003339" rpy="-2.118887 -0.381793 0.000000"/>
+</sensor>
+
+<sensor name="sensor_13" type="force_torque">
+    <origin xyz="0.024483 0.004516 0.005947" rpy="-2.156990 -0.727423 0.000000"/>
+</sensor>
+
+<sensor name="sensor_14" type="force_torque">
+    <origin xyz="0.023674 0.002235 0.007821" rpy="-2.265797 -1.049165 0.000000"/>
+</sensor>
+
+<sensor name="sensor_15" type="force_torque">
+    <origin xyz="0.021476 0.004487 -0.007840" rpy="-1.923373 0.941002 0.000000"/>
+</sensor>
+
+<sensor name="sensor_16" type="force_torque">
+    <origin xyz="0.021945 0.006642 -0.005662" rpy="-1.945359 0.612705 0.000000"/>
+</sensor>
+
+<sensor name="sensor_17" type="force_torque">
+    <origin xyz="0.022058 0.008013 -0.002847" rpy="-1.958072 0.265566 0.000000"/>
+</sensor>
+
+<sensor name="sensor_18" type="force_torque">
+    <origin xyz="0.021914 0.008406 0.000316" rpy="-1.956730 -0.068747 0.000000"/>
+</sensor>
+
+<sensor name="sensor_19" type="force_torque">
+    <origin xyz="0.021946 0.007606 0.003384" rpy="-1.947406 -0.401828 0.000000"/>
+</sensor>
+
+<sensor name="sensor_20" type="force_torque">
+    <origin xyz="0.021676 0.005909 0.005980" rpy="-1.926533 -0.752349 0.000000"/>
+</sensor>
+
+<sensor name="sensor_21" type="force_torque">
+    <origin xyz="0.021069 0.003551 0.007889" rpy="-1.922187 -1.045004 0.000000"/>
+</sensor>
+
+<sensor name="sensor_22" type="force_torque">
+    <origin xyz="0.018128 0.002843 -0.009327" rpy="-1.904454 1.163413 0.000000"/>
+</sensor>
+
+<sensor name="sensor_23" type="force_torque">
+    <origin xyz="0.018642 0.005472 -0.007801" rpy="-1.870596 0.942247 0.000000"/>
+</sensor>
+
+<sensor name="sensor_24" type="force_torque">
+    <origin xyz="0.019025 0.007649 -0.005631" rpy="-1.860537 0.620251 0.000000"/>
+</sensor>
+
+<sensor name="sensor_25" type="force_torque">
+    <origin xyz="0.019135 0.009020 -0.002818" rpy="-1.842687 0.273360 0.000000"/>
+</sensor>
+
+<sensor name="sensor_26" type="force_torque">
+    <origin xyz="0.019020 0.009380 0.000290" rpy="-1.830758 -0.069004 0.000000"/>
+</sensor>
+
+<sensor name="sensor_27" type="force_torque">
+    <origin xyz="0.018971 0.008624 0.003337" rpy="-1.844720 -0.409948 0.000000"/>
+</sensor>
+
+<sensor name="sensor_28" type="force_torque">
+    <origin xyz="0.018732 0.006919 0.005935" rpy="-1.862374 -0.751275 0.000000"/>
+</sensor>
+
+<sensor name="sensor_29" type="force_torque">
+    <origin xyz="0.018254 0.004531 0.007854" rpy="-1.861111 -1.020055 0.000000"/>
+</sensor>
+
+<sensor name="sensor_30" type="force_torque">
+    <origin xyz="0.017708 0.001822 0.009142" rpy="-1.953701 -1.246336 0.000000"/>
+</sensor>
+
+<sensor name="sensor_31" type="force_torque">
+    <origin xyz="0.015483 0.003542 -0.009395" rpy="-1.895248 1.153949 0.000000"/>
+</sensor>
+
+<sensor name="sensor_32" type="force_torque">
+    <origin xyz="0.015811 0.006225 -0.007889" rpy="-1.863908 0.952268 0.000000"/>
+</sensor>
+
+<sensor name="sensor_33" type="force_torque">
+    <origin xyz="0.015970 0.008417 -0.005695" rpy="-1.792590 0.598235 0.000000"/>
+</sensor>
+
+<sensor name="sensor_34" type="force_torque">
+    <origin xyz="0.015943 0.009731 -0.002861" rpy="-1.743856 0.258818 0.000000"/>
+</sensor>
+
+<sensor name="sensor_35" type="force_torque">
+    <origin xyz="0.015688 0.010083 0.000254" rpy="-1.724166 -0.059890 0.000000"/>
+</sensor>
+
+<sensor name="sensor_36" type="force_torque">
+    <origin xyz="0.015829 0.009374 0.003308" rpy="-1.754407 -0.379206 0.000000"/>
+</sensor>
+
+<sensor name="sensor_37" type="force_torque">
+    <origin xyz="0.015710 0.007736 0.005966" rpy="-1.812066 -0.724210 0.000000"/>
+</sensor>
+
+<sensor name="sensor_38" type="force_torque">
+    <origin xyz="0.015437 0.005332 0.007894" rpy="-1.877380 -1.022465 0.000000"/>
+</sensor>
+
+<sensor name="sensor_39" type="force_torque">
+    <origin xyz="0.014965 0.002579 0.009218" rpy="-1.911372 -1.224111 0.000000"/>
+</sensor>
+
+<sensor name="sensor_40" type="force_torque">
+    <origin xyz="0.012661 0.004072 -0.009582" rpy="-1.911205 1.165013 0.000000"/>
+</sensor>
+
+<sensor name="sensor_41" type="force_torque">
+    <origin xyz="0.012842 0.006758 -0.008097" rpy="-1.823995 0.937749 0.000000"/>
+</sensor>
+
+<sensor name="sensor_42" type="force_torque">
+    <origin xyz="0.012871 0.008886 -0.005842" rpy="-1.686627 0.558530 0.000000"/>
+</sensor>
+
+<sensor name="sensor_43" type="force_torque">
+    <origin xyz="0.012726 0.010072 -0.002944" rpy="-1.567345 0.230017 0.000000"/>
+</sensor>
+
+<sensor name="sensor_44" type="force_torque">
+    <origin xyz="0.012447 0.010344 0.000194" rpy="-1.507883 -0.044791 0.000000"/>
+</sensor>
+
+<sensor name="sensor_45" type="force_torque">
+    <origin xyz="0.012627 0.009779 0.003300" rpy="-1.582744 -0.325717 0.000000"/>
+</sensor>
+
+<sensor name="sensor_46" type="force_torque">
+    <origin xyz="0.012638 0.008299 0.006052" rpy="-1.711931 -0.672357 0.000000"/>
+</sensor>
+
+<sensor name="sensor_47" type="force_torque">
+    <origin xyz="0.012492 0.005951 0.008059" rpy="-1.853001 -1.010151 0.000000"/>
+</sensor>
+
+<sensor name="sensor_48" type="force_torque">
+    <origin xyz="0.012202 0.003184 0.009360" rpy="-1.939737 -1.228074 0.000000"/>
+</sensor>
+
+<sensor name="sensor_49" type="force_torque">
+    <origin xyz="0.009805 0.004337 -0.009813" rpy="-1.746968 1.170838 0.000000"/>
+</sensor>
+
+<sensor name="sensor_50" type="force_torque">
+    <origin xyz="0.009839 0.006911 -0.008263" rpy="-1.535838 0.863124 0.000000"/>
+</sensor>
+
+<sensor name="sensor_51" type="force_torque">
+    <origin xyz="0.009753 0.008692 -0.005840" rpy="-1.328463 0.416521 0.000000"/>
+</sensor>
+
+<sensor name="sensor_52" type="force_torque">
+    <origin xyz="0.009612 0.009476 -0.002909" rpy="-1.194993 0.148362 0.000000"/>
+</sensor>
+
+<sensor name="sensor_53" type="force_torque">
+    <origin xyz="0.009365 0.009564 0.000092" rpy="-1.139952 -0.022349 0.000000"/>
+</sensor>
+
+<sensor name="sensor_54" type="force_torque">
+    <origin xyz="0.009513 0.009276 0.003101" rpy="-1.206894 -0.200138 0.000000"/>
+</sensor>
+
+<sensor name="sensor_55" type="force_torque">
+    <origin xyz="0.009542 0.008261 0.005934" rpy="-1.350217 -0.504377 0.000000"/>
+</sensor>
+
+<sensor name="sensor_56" type="force_torque">
+    <origin xyz="0.009517 0.006259 0.008151" rpy="-1.562718 -0.939095 0.000000"/>
+</sensor>
+
+<sensor name="sensor_57" type="force_torque">
+    <origin xyz="0.009335 0.003609 0.009519" rpy="-1.761793 -1.222752 0.000000"/>
+</sensor>
+
