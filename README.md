@@ -2,7 +2,7 @@
 
 URDF description package for the Apex dexterous hand: models, meshes, tactile point data, and a visualization viewer.
 
-![Coordinate frames](images/frames_and_tactiles.png)
+![Coordinate frames](apex_hand/images/frames_and_tactiles.png)
 
 ## Repository Structure
 
@@ -18,8 +18,8 @@ apex_hand/
 
 | Doc | Contents |
 |---|---|
-| [tactile/README.md](tactile/README.md) | Tactile point distribution, sensors data format, remap.json, processing script usage |
-| [rviz/README.md](rviz/README.md) | Requirements, installation, and usage of the RViz URDF viewer |
+| [apex_hand/tactile/README.md](apex_hand/tactile/README.md) | Tactile point distribution, sensors data format, remap.json, processing script usage |
+| [apex_hand/rviz/README.md](apex_hand/rviz/README.md) | Requirements, installation, and usage of the RViz URDF viewer |
 
 ## Joint Parameters
 
@@ -53,16 +53,16 @@ The SDK also provides anatomical alias enums (same values as the table above): `
 
 ## Tactiles
 
-Each hand has **619 tactile points** distributed across 16 tactile pad links. For data sources, array mapping, and processing scripts, see [tactile/README.md](tactile/README.md).
+Each hand has **619 tactile points** distributed across 16 tactile pad links. For data sources, array mapping, and processing scripts, see [apex_hand/tactile/README.md](apex_hand/tactile/README.md).
 
 ## RViz Viewer
 
 Single-file, one-command launch, no colcon build required:
 
 ```bash
-python3 rviz/rviz_viewer.py                          # Left hand, static zero pose
-python3 rviz/rviz_viewer.py --side right --tactile   # Right hand with tactile points
-python3 rviz/rviz_viewer.py --slider                 # Add joint slider window
+python3 apex_hand/rviz/rviz_viewer.py                          # Left hand, static zero pose
+python3 apex_hand/rviz/rviz_viewer.py --side right --tactile   # Right hand with tactile points
+python3 apex_hand/rviz/rviz_viewer.py --slider                 # Add joint slider window
 ```
 
-For requirements and installation, see [rviz/README.md](rviz/README.md).
+For requirements and installation, see [apex_hand/rviz/README.md](apex_hand/rviz/README.md).
