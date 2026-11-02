@@ -1,0 +1,29 @@
+<mujoco>
+  <!-- MuJoCo default-style ground: checker floor, gradient skybox, headlight.
+
+       Intentionally declares no <compiler> or <option> element: both are
+       singletons, and this file is meant to be <include>d into a scene that
+       already carries the physics settings of the model under test. -->
+
+  <visual>
+    <headlight ambient="0.3 0.3 0.3" diffuse="0.6 0.6 0.6" specular="0 0 0"/>
+    <map znear="0.01" zfar="50"/>
+  </visual>
+
+  <asset>
+    <texture name="ground_skybox" type="skybox" builtin="gradient"
+             rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture name="ground_checker" type="2d" builtin="checker"
+             rgb1="0.2 0.3 0.4" rgb2="0.1 0.15 0.2"
+             width="512" height="512" mark="cross" markrgb="0.8 0.8 0.8"/>
+    <material name="ground_mat" texture="ground_checker" texrepeat="1 1"
+              texuniform="true" reflectance="0.2"/>
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 3" dir="0 0 -1" directional="true"
+           diffuse="1 1 1" specular="0.1 0.1 0.1"/>
+    <geom name="ground" type="plane" size="0 0 0.05"
+          material="ground_mat" condim="3" friction="1 0.005 0.0001"/>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,1313 @@
+<mujoco model="apex_hand_left_convex">
+  <compiler angle="radian" meshdir="."/>
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic"/>
+  <default>
+    <default class="apex_hand_left_visual">
+      <geom contype="0" conaffinity="0"/>
+    </default>
+    <default class="apex_hand_left_hard_link">
+      <geom condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2"/>
+    </default>
+    <default class="apex_hand_left_soft_tactile">
+      <geom condim="3" contype="1" conaffinity="1" friction="1.6 0.01 0.001" solref="0.04 1" solimp="0.7 0.9 0.005 0.5 2"/>
+    </default>
+  </default>
+  <asset>
+    <mesh name="left_palm_link_visual" file="meshes/left_palm_link.STL"/>
+    <mesh name="left_palm_link_collision_0" file="meshes/convex/left_palm_link/hull_00.stl"/>
+    <mesh name="left_palm_link_collision_1" file="meshes/convex/left_palm_link/hull_01.stl"/>
+    <mesh name="left_palm_link_collision_2" file="meshes/convex/left_palm_link/hull_02.stl"/>
+    <mesh name="left_palm_link_collision_3" file="meshes/convex/left_palm_link/hull_03.stl"/>
+    <mesh name="left_palm_link_collision_4" file="meshes/convex/left_palm_link/hull_04.stl"/>
+    <mesh name="left_palm_link_collision_5" file="meshes/convex/left_palm_link/hull_05.stl"/>
+    <mesh name="left_palm_link_collision_6" file="meshes/convex/left_palm_link/hull_06.stl"/>
+    <mesh name="left_palm_link_collision_7" file="meshes/convex/left_palm_link/hull_07.stl"/>
+    <mesh name="left_palm_link_collision_8" file="meshes/convex/left_palm_link/hull_08.stl"/>
+    <mesh name="left_palm_link_collision_9" file="meshes/convex/left_palm_link/hull_09.stl"/>
+    <mesh name="left_palm_link_collision_10" file="meshes/convex/left_palm_link/hull_10.stl"/>
+    <mesh name="left_palm_link_collision_11" file="meshes/convex/left_palm_link/hull_100.stl"/>
+    <mesh name="left_palm_link_collision_12" file="meshes/convex/left_palm_link/hull_101.stl"/>
+    <mesh name="left_palm_link_collision_13" file="meshes/convex/left_palm_link/hull_102.stl"/>
+    <mesh name="left_palm_link_collision_14" file="meshes/convex/left_palm_link/hull_103.stl"/>
+    <mesh name="left_palm_link_collision_15" file="meshes/convex/left_palm_link/hull_104.stl"/>
+    <mesh name="left_palm_link_collision_16" file="meshes/convex/left_palm_link/hull_105.stl"/>
+    <mesh name="left_palm_link_collision_17" file="meshes/convex/left_palm_link/hull_106.stl"/>
+    <mesh name="left_palm_link_collision_18" file="meshes/convex/left_palm_link/hull_107.stl"/>
+    <mesh name="left_palm_link_collision_19" file="meshes/convex/left_palm_link/hull_108.stl"/>
+    <mesh name="left_palm_link_collision_20" file="meshes/convex/left_palm_link/hull_109.stl"/>
+    <mesh name="left_palm_link_collision_21" file="meshes/convex/left_palm_link/hull_11.stl"/>
+    <mesh name="left_palm_link_collision_22" file="meshes/convex/left_palm_link/hull_110.stl"/>
+    <mesh name="left_palm_link_collision_23" file="meshes/convex/left_palm_link/hull_111.stl"/>
+    <mesh name="left_palm_link_collision_24" file="meshes/convex/left_palm_link/hull_112.stl"/>
+    <mesh name="left_palm_link_collision_25" file="meshes/convex/left_palm_link/hull_113.stl"/>
+    <mesh name="left_palm_link_collision_26" file="meshes/convex/left_palm_link/hull_114.stl"/>
+    <mesh name="left_palm_link_collision_27" file="meshes/convex/left_palm_link/hull_115.stl"/>
+    <mesh name="left_palm_link_collision_28" file="meshes/convex/left_palm_link/hull_116.stl"/>
+    <mesh name="left_palm_link_collision_29" file="meshes/convex/left_palm_link/hull_117.stl"/>
+    <mesh name="left_palm_link_collision_30" file="meshes/convex/left_palm_link/hull_118.stl"/>
+    <mesh name="left_palm_link_collision_31" file="meshes/convex/left_palm_link/hull_119.stl"/>
+    <mesh name="left_palm_link_collision_32" file="meshes/convex/left_palm_link/hull_12.stl"/>
+    <mesh name="left_palm_link_collision_33" file="meshes/convex/left_palm_link/hull_120.stl"/>
+    <mesh name="left_palm_link_collision_34" file="meshes/convex/left_palm_link/hull_121.stl"/>
+    <mesh name="left_palm_link_collision_35" file="meshes/convex/left_palm_link/hull_122.stl"/>
+    <mesh name="left_palm_link_collision_36" file="meshes/convex/left_palm_link/hull_123.stl"/>
+    <mesh name="left_palm_link_collision_37" file="meshes/convex/left_palm_link/hull_124.stl"/>
+    <mesh name="left_palm_link_collision_38" file="meshes/convex/left_palm_link/hull_125.stl"/>
+    <mesh name="left_palm_link_collision_39" file="meshes/convex/left_palm_link/hull_126.stl"/>
+    <mesh name="left_palm_link_collision_40" file="meshes/convex/left_palm_link/hull_127.stl"/>
+    <mesh name="left_palm_link_collision_41" file="meshes/convex/left_palm_link/hull_13.stl"/>
+    <mesh name="left_palm_link_collision_42" file="meshes/convex/left_palm_link/hull_14.stl"/>
+    <mesh name="left_palm_link_collision_43" file="meshes/convex/left_palm_link/hull_15.stl"/>
+    <mesh name="left_palm_link_collision_44" file="meshes/convex/left_palm_link/hull_16.stl"/>
+    <mesh name="left_palm_link_collision_45" file="meshes/convex/left_palm_link/hull_17.stl"/>
+    <mesh name="left_palm_link_collision_46" file="meshes/convex/left_palm_link/hull_18.stl"/>
+    <mesh name="left_palm_link_collision_47" file="meshes/convex/left_palm_link/hull_19.stl"/>
+    <mesh name="left_palm_link_collision_48" file="meshes/convex/left_palm_link/hull_20.stl"/>
+    <mesh name="left_palm_link_collision_49" file="meshes/convex/left_palm_link/hull_21.stl"/>
+    <mesh name="left_palm_link_collision_50" file="meshes/convex/left_palm_link/hull_22.stl"/>
+    <mesh name="left_palm_link_collision_51" file="meshes/convex/left_palm_link/hull_23.stl"/>
+    <mesh name="left_palm_link_collision_52" file="meshes/convex/left_palm_link/hull_24.stl"/>
+    <mesh name="left_palm_link_collision_53" file="meshes/convex/left_palm_link/hull_25.stl"/>
+    <mesh name="left_palm_link_collision_54" file="meshes/convex/left_palm_link/hull_26.stl"/>
+    <mesh name="left_palm_link_collision_55" file="meshes/convex/left_palm_link/hull_27.stl"/>
+    <mesh name="left_palm_link_collision_56" file="meshes/convex/left_palm_link/hull_28.stl"/>
+    <mesh name="left_palm_link_collision_57" file="meshes/convex/left_palm_link/hull_29.stl"/>
+    <mesh name="left_palm_link_collision_58" file="meshes/convex/left_palm_link/hull_30.stl"/>
+    <mesh name="left_palm_link_collision_59" file="meshes/convex/left_palm_link/hull_31.stl"/>
+    <mesh name="left_palm_link_collision_60" file="meshes/convex/left_palm_link/hull_32.stl"/>
+    <mesh name="left_palm_link_collision_61" file="meshes/convex/left_palm_link/hull_33.stl"/>
+    <mesh name="left_palm_link_collision_62" file="meshes/convex/left_palm_link/hull_34.stl"/>
+    <mesh name="left_palm_link_collision_63" file="meshes/convex/left_palm_link/hull_35.stl"/>
+    <mesh name="left_palm_link_collision_64" file="meshes/convex/left_palm_link/hull_36.stl"/>
+    <mesh name="left_palm_link_collision_65" file="meshes/convex/left_palm_link/hull_37.stl"/>
+    <mesh name="left_palm_link_collision_66" file="meshes/convex/left_palm_link/hull_38.stl"/>
+    <mesh name="left_palm_link_collision_67" file="meshes/convex/left_palm_link/hull_39.stl"/>
+    <mesh name="left_palm_link_collision_68" file="meshes/convex/left_palm_link/hull_40.stl"/>
+    <mesh name="left_palm_link_collision_69" file="meshes/convex/left_palm_link/hull_41.stl"/>
+    <mesh name="left_palm_link_collision_70" file="meshes/convex/left_palm_link/hull_42.stl"/>
+    <mesh name="left_palm_link_collision_71" file="meshes/convex/left_palm_link/hull_43.stl"/>
+    <mesh name="left_palm_link_collision_72" file="meshes/convex/left_palm_link/hull_44.stl"/>
+    <mesh name="left_palm_link_collision_73" file="meshes/convex/left_palm_link/hull_45.stl"/>
+    <mesh name="left_palm_link_collision_74" file="meshes/convex/left_palm_link/hull_46.stl"/>
+    <mesh name="left_palm_link_collision_75" file="meshes/convex/left_palm_link/hull_47.stl"/>
+    <mesh name="left_palm_link_collision_76" file="meshes/convex/left_palm_link/hull_48.stl"/>
+    <mesh name="left_palm_link_collision_77" file="meshes/convex/left_palm_link/hull_49.stl"/>
+    <mesh name="left_palm_link_collision_78" file="meshes/convex/left_palm_link/hull_50.stl"/>
+    <mesh name="left_palm_link_collision_79" file="meshes/convex/left_palm_link/hull_51.stl"/>
+    <mesh name="left_palm_link_collision_80" file="meshes/convex/left_palm_link/hull_52.stl"/>
+    <mesh name="left_palm_link_collision_81" file="meshes/convex/left_palm_link/hull_53.stl"/>
+    <mesh name="left_palm_link_collision_82" file="meshes/convex/left_palm_link/hull_54.stl"/>
+    <mesh name="left_palm_link_collision_83" file="meshes/convex/left_palm_link/hull_55.stl"/>
+    <mesh name="left_palm_link_collision_84" file="meshes/convex/left_palm_link/hull_56.stl"/>
+    <mesh name="left_palm_link_collision_85" file="meshes/convex/left_palm_link/hull_57.stl"/>
+    <mesh name="left_palm_link_collision_86" file="meshes/convex/left_palm_link/hull_58.stl"/>
+    <mesh name="left_palm_link_collision_87" file="meshes/convex/left_palm_link/hull_59.stl"/>
+    <mesh name="left_palm_link_collision_88" file="meshes/convex/left_palm_link/hull_60.stl"/>
+    <mesh name="left_palm_link_collision_89" file="meshes/convex/left_palm_link/hull_61.stl"/>
+    <mesh name="left_palm_link_collision_90" file="meshes/convex/left_palm_link/hull_62.stl"/>
+    <mesh name="left_palm_link_collision_91" file="meshes/convex/left_palm_link/hull_63.stl"/>
+    <mesh name="left_palm_link_collision_92" file="meshes/convex/left_palm_link/hull_64.stl"/>
+    <mesh name="left_palm_link_collision_93" file="meshes/convex/left_palm_link/hull_65.stl"/>
+    <mesh name="left_palm_link_collision_94" file="meshes/convex/left_palm_link/hull_66.stl"/>
+    <mesh name="left_palm_link_collision_95" file="meshes/convex/left_palm_link/hull_67.stl"/>
+    <mesh name="left_palm_link_collision_96" file="meshes/convex/left_palm_link/hull_68.stl"/>
+    <mesh name="left_palm_link_collision_97" file="meshes/convex/left_palm_link/hull_69.stl"/>
+    <mesh name="left_palm_link_collision_98" file="meshes/convex/left_palm_link/hull_70.stl"/>
+    <mesh name="left_palm_link_collision_99" file="meshes/convex/left_palm_link/hull_71.stl"/>
+    <mesh name="left_palm_link_collision_100" file="meshes/convex/left_palm_link/hull_72.stl"/>
+    <mesh name="left_palm_link_collision_101" file="meshes/convex/left_palm_link/hull_73.stl"/>
+    <mesh name="left_palm_link_collision_102" file="meshes/convex/left_palm_link/hull_74.stl"/>
+    <mesh name="left_palm_link_collision_103" file="meshes/convex/left_palm_link/hull_75.stl"/>
+    <mesh name="left_palm_link_collision_104" file="meshes/convex/left_palm_link/hull_76.stl"/>
+    <mesh name="left_palm_link_collision_105" file="meshes/convex/left_palm_link/hull_77.stl"/>
+    <mesh name="left_palm_link_collision_106" file="meshes/convex/left_palm_link/hull_78.stl"/>
+    <mesh name="left_palm_link_collision_107" file="meshes/convex/left_palm_link/hull_79.stl"/>
+    <mesh name="left_palm_link_collision_108" file="meshes/convex/left_palm_link/hull_80.stl"/>
+    <mesh name="left_palm_link_collision_109" file="meshes/convex/left_palm_link/hull_81.stl"/>
+    <mesh name="left_palm_link_collision_110" file="meshes/convex/left_palm_link/hull_82.stl"/>
+    <mesh name="left_palm_link_collision_111" file="meshes/convex/left_palm_link/hull_83.stl"/>
+    <mesh name="left_palm_link_collision_112" file="meshes/convex/left_palm_link/hull_84.stl"/>
+    <mesh name="left_palm_link_collision_113" file="meshes/convex/left_palm_link/hull_85.stl"/>
+    <mesh name="left_palm_link_collision_114" file="meshes/convex/left_palm_link/hull_86.stl"/>
+    <mesh name="left_palm_link_collision_115" file="meshes/convex/left_palm_link/hull_87.stl"/>
+    <mesh name="left_palm_link_collision_116" file="meshes/convex/left_palm_link/hull_88.stl"/>
+    <mesh name="left_palm_link_collision_117" file="meshes/convex/left_palm_link/hull_89.stl"/>
+    <mesh name="left_palm_link_collision_118" file="meshes/convex/left_palm_link/hull_90.stl"/>
+    <mesh name="left_palm_link_collision_119" file="meshes/convex/left_palm_link/hull_91.stl"/>
+    <mesh name="left_palm_link_collision_120" file="meshes/convex/left_palm_link/hull_92.stl"/>
+    <mesh name="left_palm_link_collision_121" file="meshes/convex/left_palm_link/hull_93.stl"/>
+    <mesh name="left_palm_link_collision_122" file="meshes/convex/left_palm_link/hull_94.stl"/>
+    <mesh name="left_palm_link_collision_123" file="meshes/convex/left_palm_link/hull_95.stl"/>
+    <mesh name="left_palm_link_collision_124" file="meshes/convex/left_palm_link/hull_96.stl"/>
+    <mesh name="left_palm_link_collision_125" file="meshes/convex/left_palm_link/hull_97.stl"/>
+    <mesh name="left_palm_link_collision_126" file="meshes/convex/left_palm_link/hull_98.stl"/>
+    <mesh name="left_palm_link_collision_127" file="meshes/convex/left_palm_link/hull_99.stl"/>
+    <mesh name="left_thumb_link0_visual" file="meshes/left_thumb_link0.STL"/>
+    <mesh name="left_thumb_link0_collision_0" file="meshes/convex/left_thumb_link0/hull_00.stl"/>
+    <mesh name="left_thumb_link0_collision_1" file="meshes/convex/left_thumb_link0/hull_01.stl"/>
+    <mesh name="left_thumb_link0_collision_2" file="meshes/convex/left_thumb_link0/hull_02.stl"/>
+    <mesh name="left_thumb_link0_collision_3" file="meshes/convex/left_thumb_link0/hull_03.stl"/>
+    <mesh name="left_thumb_link0_collision_4" file="meshes/convex/left_thumb_link0/hull_04.stl"/>
+    <mesh name="left_thumb_link0_collision_5" file="meshes/convex/left_thumb_link0/hull_05.stl"/>
+    <mesh name="left_thumb_link0_collision_6" file="meshes/convex/left_thumb_link0/hull_06.stl"/>
+    <mesh name="left_thumb_link0_collision_7" file="meshes/convex/left_thumb_link0/hull_07.stl"/>
+    <mesh name="left_thumb_link0_collision_8" file="meshes/convex/left_thumb_link0/hull_08.stl"/>
+    <mesh name="left_thumb_link0_collision_9" file="meshes/convex/left_thumb_link0/hull_09.stl"/>
+    <mesh name="left_thumb_link0_collision_10" file="meshes/convex/left_thumb_link0/hull_10.stl"/>
+    <mesh name="left_thumb_link0_collision_11" file="meshes/convex/left_thumb_link0/hull_11.stl"/>
+    <mesh name="left_thumb_link1_visual" file="meshes/left_thumb_link1.STL"/>
+    <mesh name="left_thumb_link1_collision_0" file="meshes/convex/left_thumb_link1/hull_00.stl"/>
+    <mesh name="left_thumb_link1_collision_1" file="meshes/convex/left_thumb_link1/hull_01.stl"/>
+    <mesh name="left_thumb_link1_collision_2" file="meshes/convex/left_thumb_link1/hull_02.stl"/>
+    <mesh name="left_thumb_link1_collision_3" file="meshes/convex/left_thumb_link1/hull_03.stl"/>
+    <mesh name="left_thumb_link1_collision_4" file="meshes/convex/left_thumb_link1/hull_04.stl"/>
+    <mesh name="left_thumb_link1_collision_5" file="meshes/convex/left_thumb_link1/hull_05.stl"/>
+    <mesh name="left_thumb_link1_collision_6" file="meshes/convex/left_thumb_link1/hull_06.stl"/>
+    <mesh name="left_thumb_link1_collision_7" file="meshes/convex/left_thumb_link1/hull_07.stl"/>
+    <mesh name="left_thumb_link1_collision_8" file="meshes/convex/left_thumb_link1/hull_08.stl"/>
+    <mesh name="left_thumb_link1_collision_9" file="meshes/convex/left_thumb_link1/hull_09.stl"/>
+    <mesh name="left_thumb_link1_collision_10" file="meshes/convex/left_thumb_link1/hull_10.stl"/>
+    <mesh name="left_thumb_link1_collision_11" file="meshes/convex/left_thumb_link1/hull_11.stl"/>
+    <mesh name="left_thumb_link2_visual" file="meshes/left_thumb_link2.STL"/>
+    <mesh name="left_thumb_link2_collision_0" file="meshes/convex/left_thumb_link2/hull_00.stl"/>
+    <mesh name="left_thumb_link2_collision_1" file="meshes/convex/left_thumb_link2/hull_01.stl"/>
+    <mesh name="left_thumb_link2_collision_2" file="meshes/convex/left_thumb_link2/hull_02.stl"/>
+    <mesh name="left_thumb_link2_collision_3" file="meshes/convex/left_thumb_link2/hull_03.stl"/>
+    <mesh name="left_thumb_link2_collision_4" file="meshes/convex/left_thumb_link2/hull_04.stl"/>
+    <mesh name="left_thumb_link2_collision_5" file="meshes/convex/left_thumb_link2/hull_05.stl"/>
+    <mesh name="left_thumb_link2_collision_6" file="meshes/convex/left_thumb_link2/hull_06.stl"/>
+    <mesh name="left_thumb_link2_collision_7" file="meshes/convex/left_thumb_link2/hull_07.stl"/>
+    <mesh name="left_thumb_link2_collision_8" file="meshes/convex/left_thumb_link2/hull_08.stl"/>
+    <mesh name="left_thumb_link2_collision_9" file="meshes/convex/left_thumb_link2/hull_09.stl"/>
+    <mesh name="left_thumb_link2_collision_10" file="meshes/convex/left_thumb_link2/hull_10.stl"/>
+    <mesh name="left_thumb_link2_collision_11" file="meshes/convex/left_thumb_link2/hull_11.stl"/>
+    <mesh name="left_thumb_link2_collision_12" file="meshes/convex/left_thumb_link2/hull_12.stl"/>
+    <mesh name="left_thumb_link2_collision_13" file="meshes/convex/left_thumb_link2/hull_13.stl"/>
+    <mesh name="left_thumb_link2_collision_14" file="meshes/convex/left_thumb_link2/hull_14.stl"/>
+    <mesh name="left_thumb_link2_collision_15" file="meshes/convex/left_thumb_link2/hull_15.stl"/>
+    <mesh name="left_thumb_link2_collision_16" file="meshes/convex/left_thumb_link2/hull_16.stl"/>
+    <mesh name="left_thumb_link2_collision_17" file="meshes/convex/left_thumb_link2/hull_17.stl"/>
+    <mesh name="left_thumb_link2_collision_18" file="meshes/convex/left_thumb_link2/hull_18.stl"/>
+    <mesh name="left_thumb_link2_collision_19" file="meshes/convex/left_thumb_link2/hull_19.stl"/>
+    <mesh name="left_thumb_link2_collision_20" file="meshes/convex/left_thumb_link2/hull_20.stl"/>
+    <mesh name="left_thumb_link3_visual" file="meshes/left_thumb_link3.STL"/>
+    <mesh name="left_thumb_link3_collision_0" file="meshes/convex/left_thumb_link3/hull_00.stl"/>
+    <mesh name="left_thumb_link3_collision_1" file="meshes/convex/left_thumb_link3/hull_01.stl"/>
+    <mesh name="left_thumb_link3_collision_2" file="meshes/convex/left_thumb_link3/hull_02.stl"/>
+    <mesh name="left_thumb_link3_collision_3" file="meshes/convex/left_thumb_link3/hull_03.stl"/>
+    <mesh name="left_thumb_link3_collision_4" file="meshes/convex/left_thumb_link3/hull_04.stl"/>
+    <mesh name="left_thumb_link3_collision_5" file="meshes/convex/left_thumb_link3/hull_05.stl"/>
+    <mesh name="left_thumb_link3_collision_6" file="meshes/convex/left_thumb_link3/hull_06.stl"/>
+    <mesh name="left_thumb_link3_collision_7" file="meshes/convex/left_thumb_link3/hull_07.stl"/>
+    <mesh name="left_thumb_link3_collision_8" file="meshes/convex/left_thumb_link3/hull_08.stl"/>
+    <mesh name="left_thumb_link3_collision_9" file="meshes/convex/left_thumb_link3/hull_09.stl"/>
+    <mesh name="left_thumb_link3_collision_10" file="meshes/convex/left_thumb_link3/hull_10.stl"/>
+    <mesh name="left_thumb_link3_collision_11" file="meshes/convex/left_thumb_link3/hull_11.stl"/>
+    <mesh name="left_thumb_link3_collision_12" file="meshes/convex/left_thumb_link3/hull_12.stl"/>
+    <mesh name="left_thumb_link3_collision_13" file="meshes/convex/left_thumb_link3/hull_13.stl"/>
+    <mesh name="left_thumb_link3_collision_14" file="meshes/convex/left_thumb_link3/hull_14.stl"/>
+    <mesh name="left_thumb_link3_collision_15" file="meshes/convex/left_thumb_link3/hull_15.stl"/>
+    <mesh name="left_thumb_link3_collision_16" file="meshes/convex/left_thumb_link3/hull_16.stl"/>
+    <mesh name="left_thumb_link3_collision_17" file="meshes/convex/left_thumb_link3/hull_17.stl"/>
+    <mesh name="left_thumb_link3_collision_18" file="meshes/convex/left_thumb_link3/hull_18.stl"/>
+    <mesh name="left_thumb_link4_visual" file="meshes/left_thumb_link4.STL"/>
+    <mesh name="left_thumb_link4_collision_0" file="meshes/convex/left_thumb_link4/hull_00.stl"/>
+    <mesh name="left_thumb_link4_collision_1" file="meshes/convex/left_thumb_link4/hull_01.stl"/>
+    <mesh name="left_thumb_link4_collision_2" file="meshes/convex/left_thumb_link4/hull_02.stl"/>
+    <mesh name="left_thumb_link4_collision_3" file="meshes/convex/left_thumb_link4/hull_03.stl"/>
+    <mesh name="left_thumb_link4_collision_4" file="meshes/convex/left_thumb_link4/hull_04.stl"/>
+    <mesh name="left_thumb_link4_collision_5" file="meshes/convex/left_thumb_link4/hull_05.stl"/>
+    <mesh name="left_thumb_link4_collision_6" file="meshes/convex/left_thumb_link4/hull_06.stl"/>
+    <mesh name="left_thumb_link4_collision_7" file="meshes/convex/left_thumb_link4/hull_07.stl"/>
+    <mesh name="left_thumb_link4_collision_8" file="meshes/convex/left_thumb_link4/hull_08.stl"/>
+    <mesh name="left_thumb_link4_collision_9" file="meshes/convex/left_thumb_link4/hull_09.stl"/>
+    <mesh name="left_thumb_link4_collision_10" file="meshes/convex/left_thumb_link4/hull_10.stl"/>
+    <mesh name="left_thumb_link4_collision_11" file="meshes/convex/left_thumb_link4/hull_11.stl"/>
+    <mesh name="left_thumb_link4_collision_12" file="meshes/convex/left_thumb_link4/hull_12.stl"/>
+    <mesh name="left_thumb_link4_collision_13" file="meshes/convex/left_thumb_link4/hull_13.stl"/>
+    <mesh name="left_thumb_link4_collision_14" file="meshes/convex/left_thumb_link4/hull_14.stl"/>
+    <mesh name="left_thumb_link4_collision_15" file="meshes/convex/left_thumb_link4/hull_15.stl"/>
+    <mesh name="left_thumb_link4_collision_16" file="meshes/convex/left_thumb_link4/hull_16.stl"/>
+    <mesh name="left_thumb_link4_collision_17" file="meshes/convex/left_thumb_link4/hull_17.stl"/>
+    <mesh name="left_thumb_link4_collision_18" file="meshes/convex/left_thumb_link4/hull_18.stl"/>
+    <mesh name="left_thumb_link4_collision_19" file="meshes/convex/left_thumb_link4/hull_19.stl"/>
+    <mesh name="left_thumb_link4_collision_20" file="meshes/convex/left_thumb_link4/hull_20.stl"/>
+    <mesh name="left_thumb_link4_collision_21" file="meshes/convex/left_thumb_link4/hull_21.stl"/>
+    <mesh name="left_thumb_link4_collision_22" file="meshes/convex/left_thumb_link4/hull_22.stl"/>
+    <mesh name="left_thumb_link4_collision_23" file="meshes/convex/left_thumb_link4/hull_23.stl"/>
+    <mesh name="left_thumb_link4_collision_24" file="meshes/convex/left_thumb_link4/hull_24.stl"/>
+    <mesh name="left_thumb_link4_collision_25" file="meshes/convex/left_thumb_link4/hull_25.stl"/>
+    <mesh name="left_thumb_link4_collision_26" file="meshes/convex/left_thumb_link4/hull_26.stl"/>
+    <mesh name="left_thumb_link4_collision_27" file="meshes/convex/left_thumb_link4/hull_27.stl"/>
+    <mesh name="left_thumb_link4_collision_28" file="meshes/convex/left_thumb_link4/hull_28.stl"/>
+    <mesh name="left_thumb_link4_collision_29" file="meshes/convex/left_thumb_link4/hull_29.stl"/>
+    <mesh name="left_thumb_link4_collision_30" file="meshes/convex/left_thumb_link4/hull_30.stl"/>
+    <mesh name="left_thumb_link4_collision_31" file="meshes/convex/left_thumb_link4/hull_31.stl"/>
+    <mesh name="left_thumb_link4_collision_32" file="meshes/convex/left_thumb_link4/hull_32.stl"/>
+    <mesh name="left_thumb_link4_collision_33" file="meshes/convex/left_thumb_link4/hull_33.stl"/>
+    <mesh name="left_thumb_link4_collision_34" file="meshes/convex/left_thumb_link4/hull_34.stl"/>
+    <mesh name="left_thumb_link4_collision_35" file="meshes/convex/left_thumb_link4/hull_35.stl"/>
+    <mesh name="left_thumb_link4_collision_36" file="meshes/convex/left_thumb_link4/hull_36.stl"/>
+    <mesh name="left_thumb_link4_collision_37" file="meshes/convex/left_thumb_link4/hull_37.stl"/>
+    <mesh name="left_thumb_link4_collision_38" file="meshes/convex/left_thumb_link4/hull_38.stl"/>
+    <mesh name="left_thumb_tactile2_visual" file="meshes/left_thumb_tactile2.STL"/>
+    <mesh name="left_thumb_tactile2_collision" file="meshes/left_thumb_tactile2.STL"/>
+    <mesh name="left_thumb_tactile1_visual" file="meshes/left_thumb_tactile1.STL"/>
+    <mesh name="left_thumb_tactile1_collision" file="meshes/left_thumb_tactile1.STL"/>
+    <mesh name="left_thumb_tactile0_visual" file="meshes/left_thumb_tactile0.STL"/>
+    <mesh name="left_thumb_tactile0_collision" file="meshes/left_thumb_tactile0.STL"/>
+    <mesh name="left_index_link0_visual" file="meshes/left_index_link0.STL"/>
+    <mesh name="left_index_link0_collision_0" file="meshes/convex/left_index_link0/hull_00.stl"/>
+    <mesh name="left_index_link0_collision_1" file="meshes/convex/left_index_link0/hull_01.stl"/>
+    <mesh name="left_index_link0_collision_2" file="meshes/convex/left_index_link0/hull_02.stl"/>
+    <mesh name="left_index_link0_collision_3" file="meshes/convex/left_index_link0/hull_03.stl"/>
+    <mesh name="left_index_link0_collision_4" file="meshes/convex/left_index_link0/hull_04.stl"/>
+    <mesh name="left_index_link0_collision_5" file="meshes/convex/left_index_link0/hull_05.stl"/>
+    <mesh name="left_index_link0_collision_6" file="meshes/convex/left_index_link0/hull_06.stl"/>
+    <mesh name="left_index_link0_collision_7" file="meshes/convex/left_index_link0/hull_07.stl"/>
+    <mesh name="left_index_link0_collision_8" file="meshes/convex/left_index_link0/hull_08.stl"/>
+    <mesh name="left_index_link0_collision_9" file="meshes/convex/left_index_link0/hull_09.stl"/>
+    <mesh name="left_index_link0_collision_10" file="meshes/convex/left_index_link0/hull_10.stl"/>
+    <mesh name="left_index_link0_collision_11" file="meshes/convex/left_index_link0/hull_11.stl"/>
+    <mesh name="left_index_link1_visual" file="meshes/left_index_link1.STL"/>
+    <mesh name="left_index_link1_collision_0" file="meshes/convex/left_index_link1/hull_00.stl"/>
+    <mesh name="left_index_link1_collision_1" file="meshes/convex/left_index_link1/hull_01.stl"/>
+    <mesh name="left_index_link1_collision_2" file="meshes/convex/left_index_link1/hull_02.stl"/>
+    <mesh name="left_index_link1_collision_3" file="meshes/convex/left_index_link1/hull_03.stl"/>
+    <mesh name="left_index_link1_collision_4" file="meshes/convex/left_index_link1/hull_04.stl"/>
+    <mesh name="left_index_link1_collision_5" file="meshes/convex/left_index_link1/hull_05.stl"/>
+    <mesh name="left_index_link1_collision_6" file="meshes/convex/left_index_link1/hull_06.stl"/>
+    <mesh name="left_index_link1_collision_7" file="meshes/convex/left_index_link1/hull_07.stl"/>
+    <mesh name="left_index_link1_collision_8" file="meshes/convex/left_index_link1/hull_08.stl"/>
+    <mesh name="left_index_link1_collision_9" file="meshes/convex/left_index_link1/hull_09.stl"/>
+    <mesh name="left_index_link1_collision_10" file="meshes/convex/left_index_link1/hull_10.stl"/>
+    <mesh name="left_index_link1_collision_11" file="meshes/convex/left_index_link1/hull_11.stl"/>
+    <mesh name="left_index_link1_collision_12" file="meshes/convex/left_index_link1/hull_12.stl"/>
+    <mesh name="left_index_link1_collision_13" file="meshes/convex/left_index_link1/hull_13.stl"/>
+    <mesh name="left_index_link1_collision_14" file="meshes/convex/left_index_link1/hull_14.stl"/>
+    <mesh name="left_index_link1_collision_15" file="meshes/convex/left_index_link1/hull_15.stl"/>
+    <mesh name="left_index_link1_collision_16" file="meshes/convex/left_index_link1/hull_16.stl"/>
+    <mesh name="left_index_link1_collision_17" file="meshes/convex/left_index_link1/hull_17.stl"/>
+    <mesh name="left_index_link1_collision_18" file="meshes/convex/left_index_link1/hull_18.stl"/>
+    <mesh name="left_index_link1_collision_19" file="meshes/convex/left_index_link1/hull_19.stl"/>
+    <mesh name="left_index_link1_collision_20" file="meshes/convex/left_index_link1/hull_20.stl"/>
+    <mesh name="left_index_link1_collision_21" file="meshes/convex/left_index_link1/hull_21.stl"/>
+    <mesh name="left_index_link1_collision_22" file="meshes/convex/left_index_link1/hull_22.stl"/>
+    <mesh name="left_index_link1_collision_23" file="meshes/convex/left_index_link1/hull_23.stl"/>
+    <mesh name="left_index_link1_collision_24" file="meshes/convex/left_index_link1/hull_24.stl"/>
+    <mesh name="left_index_link2_visual" file="meshes/left_index_link2.STL"/>
+    <mesh name="left_index_link2_collision_0" file="meshes/convex/left_index_link2/hull_00.stl"/>
+    <mesh name="left_index_link2_collision_1" file="meshes/convex/left_index_link2/hull_01.stl"/>
+    <mesh name="left_index_link2_collision_2" file="meshes/convex/left_index_link2/hull_02.stl"/>
+    <mesh name="left_index_link2_collision_3" file="meshes/convex/left_index_link2/hull_03.stl"/>
+    <mesh name="left_index_link2_collision_4" file="meshes/convex/left_index_link2/hull_04.stl"/>
+    <mesh name="left_index_link2_collision_5" file="meshes/convex/left_index_link2/hull_05.stl"/>
+    <mesh name="left_index_link2_collision_6" file="meshes/convex/left_index_link2/hull_06.stl"/>
+    <mesh name="left_index_link2_collision_7" file="meshes/convex/left_index_link2/hull_07.stl"/>
+    <mesh name="left_index_link2_collision_8" file="meshes/convex/left_index_link2/hull_08.stl"/>
+    <mesh name="left_index_link2_collision_9" file="meshes/convex/left_index_link2/hull_09.stl"/>
+    <mesh name="left_index_link2_collision_10" file="meshes/convex/left_index_link2/hull_10.stl"/>
+    <mesh name="left_index_link2_collision_11" file="meshes/convex/left_index_link2/hull_11.stl"/>
+    <mesh name="left_index_link2_collision_12" file="meshes/convex/left_index_link2/hull_12.stl"/>
+    <mesh name="left_index_link2_collision_13" file="meshes/convex/left_index_link2/hull_13.stl"/>
+    <mesh name="left_index_link2_collision_14" file="meshes/convex/left_index_link2/hull_14.stl"/>
+    <mesh name="left_index_link2_collision_15" file="meshes/convex/left_index_link2/hull_15.stl"/>
+    <mesh name="left_index_link2_collision_16" file="meshes/convex/left_index_link2/hull_16.stl"/>
+    <mesh name="left_index_link2_collision_17" file="meshes/convex/left_index_link2/hull_17.stl"/>
+    <mesh name="left_index_link2_collision_18" file="meshes/convex/left_index_link2/hull_18.stl"/>
+    <mesh name="left_index_link3_visual" file="meshes/left_index_link3.STL"/>
+    <mesh name="left_index_link3_collision_0" file="meshes/convex/left_index_link3/hull_00.stl"/>
+    <mesh name="left_index_link3_collision_1" file="meshes/convex/left_index_link3/hull_01.stl"/>
+    <mesh name="left_index_link3_collision_2" file="meshes/convex/left_index_link3/hull_02.stl"/>
+    <mesh name="left_index_link3_collision_3" file="meshes/convex/left_index_link3/hull_03.stl"/>
+    <mesh name="left_index_link3_collision_4" file="meshes/convex/left_index_link3/hull_04.stl"/>
+    <mesh name="left_index_link3_collision_5" file="meshes/convex/left_index_link3/hull_05.stl"/>
+    <mesh name="left_index_link3_collision_6" file="meshes/convex/left_index_link3/hull_06.stl"/>
+    <mesh name="left_index_link3_collision_7" file="meshes/convex/left_index_link3/hull_07.stl"/>
+    <mesh name="left_index_link3_collision_8" file="meshes/convex/left_index_link3/hull_08.stl"/>
+    <mesh name="left_index_link3_collision_9" file="meshes/convex/left_index_link3/hull_09.stl"/>
+    <mesh name="left_index_link3_collision_10" file="meshes/convex/left_index_link3/hull_10.stl"/>
+    <mesh name="left_index_link3_collision_11" file="meshes/convex/left_index_link3/hull_11.stl"/>
+    <mesh name="left_index_tactile2_visual" file="meshes/left_index_tactile2.STL"/>
+    <mesh name="left_index_tactile2_collision" file="meshes/left_index_tactile2.STL"/>
+    <mesh name="left_index_tactile1_visual" file="meshes/left_index_tactile1.STL"/>
+    <mesh name="left_index_tactile1_collision" file="meshes/left_index_tactile1.STL"/>
+    <mesh name="left_index_tactile0_visual" file="meshes/left_index_tactile0.STL"/>
+    <mesh name="left_index_tactile0_collision" file="meshes/left_index_tactile0.STL"/>
+    <mesh name="left_middle_link0_visual" file="meshes/left_middle_link0.STL"/>
+    <mesh name="left_middle_link0_collision_0" file="meshes/convex/left_middle_link0/hull_00.stl"/>
+    <mesh name="left_middle_link0_collision_1" file="meshes/convex/left_middle_link0/hull_01.stl"/>
+    <mesh name="left_middle_link0_collision_2" file="meshes/convex/left_middle_link0/hull_02.stl"/>
+    <mesh name="left_middle_link0_collision_3" file="meshes/convex/left_middle_link0/hull_03.stl"/>
+    <mesh name="left_middle_link0_collision_4" file="meshes/convex/left_middle_link0/hull_04.stl"/>
+    <mesh name="left_middle_link0_collision_5" file="meshes/convex/left_middle_link0/hull_05.stl"/>
+    <mesh name="left_middle_link0_collision_6" file="meshes/convex/left_middle_link0/hull_06.stl"/>
+    <mesh name="left_middle_link0_collision_7" file="meshes/convex/left_middle_link0/hull_07.stl"/>
+    <mesh name="left_middle_link0_collision_8" file="meshes/convex/left_middle_link0/hull_08.stl"/>
+    <mesh name="left_middle_link0_collision_9" file="meshes/convex/left_middle_link0/hull_09.stl"/>
+    <mesh name="left_middle_link0_collision_10" file="meshes/convex/left_middle_link0/hull_10.stl"/>
+    <mesh name="left_middle_link0_collision_11" file="meshes/convex/left_middle_link0/hull_11.stl"/>
+    <mesh name="left_middle_link1_visual" file="meshes/left_middle_link1.STL"/>
+    <mesh name="left_middle_link1_collision_0" file="meshes/convex/left_middle_link1/hull_00.stl"/>
+    <mesh name="left_middle_link1_collision_1" file="meshes/convex/left_middle_link1/hull_01.stl"/>
+    <mesh name="left_middle_link1_collision_2" file="meshes/convex/left_middle_link1/hull_02.stl"/>
+    <mesh name="left_middle_link1_collision_3" file="meshes/convex/left_middle_link1/hull_03.stl"/>
+    <mesh name="left_middle_link1_collision_4" file="meshes/convex/left_middle_link1/hull_04.stl"/>
+    <mesh name="left_middle_link1_collision_5" file="meshes/convex/left_middle_link1/hull_05.stl"/>
+    <mesh name="left_middle_link1_collision_6" file="meshes/convex/left_middle_link1/hull_06.stl"/>
+    <mesh name="left_middle_link1_collision_7" file="meshes/convex/left_middle_link1/hull_07.stl"/>
+    <mesh name="left_middle_link1_collision_8" file="meshes/convex/left_middle_link1/hull_08.stl"/>
+    <mesh name="left_middle_link1_collision_9" file="meshes/convex/left_middle_link1/hull_09.stl"/>
+    <mesh name="left_middle_link1_collision_10" file="meshes/convex/left_middle_link1/hull_10.stl"/>
+    <mesh name="left_middle_link1_collision_11" file="meshes/convex/left_middle_link1/hull_11.stl"/>
+    <mesh name="left_middle_link1_collision_12" file="meshes/convex/left_middle_link1/hull_12.stl"/>
+    <mesh name="left_middle_link1_collision_13" file="meshes/convex/left_middle_link1/hull_13.stl"/>
+    <mesh name="left_middle_link1_collision_14" file="meshes/convex/left_middle_link1/hull_14.stl"/>
+    <mesh name="left_middle_link1_collision_15" file="meshes/convex/left_middle_link1/hull_15.stl"/>
+    <mesh name="left_middle_link1_collision_16" file="meshes/convex/left_middle_link1/hull_16.stl"/>
+    <mesh name="left_middle_link1_collision_17" file="meshes/convex/left_middle_link1/hull_17.stl"/>
+    <mesh name="left_middle_link1_collision_18" file="meshes/convex/left_middle_link1/hull_18.stl"/>
+    <mesh name="left_middle_link1_collision_19" file="meshes/convex/left_middle_link1/hull_19.stl"/>
+    <mesh name="left_middle_link1_collision_20" file="meshes/convex/left_middle_link1/hull_20.stl"/>
+    <mesh name="left_middle_link1_collision_21" file="meshes/convex/left_middle_link1/hull_21.stl"/>
+    <mesh name="left_middle_link1_collision_22" file="meshes/convex/left_middle_link1/hull_22.stl"/>
+    <mesh name="left_middle_link1_collision_23" file="meshes/convex/left_middle_link1/hull_23.stl"/>
+    <mesh name="left_middle_link1_collision_24" file="meshes/convex/left_middle_link1/hull_24.stl"/>
+    <mesh name="left_middle_link2_visual" file="meshes/left_middle_link2.STL"/>
+    <mesh name="left_middle_link2_collision_0" file="meshes/convex/left_middle_link2/hull_00.stl"/>
+    <mesh name="left_middle_link2_collision_1" file="meshes/convex/left_middle_link2/hull_01.stl"/>
+    <mesh name="left_middle_link2_collision_2" file="meshes/convex/left_middle_link2/hull_02.stl"/>
+    <mesh name="left_middle_link2_collision_3" file="meshes/convex/left_middle_link2/hull_03.stl"/>
+    <mesh name="left_middle_link2_collision_4" file="meshes/convex/left_middle_link2/hull_04.stl"/>
+    <mesh name="left_middle_link2_collision_5" file="meshes/convex/left_middle_link2/hull_05.stl"/>
+    <mesh name="left_middle_link2_collision_6" file="meshes/convex/left_middle_link2/hull_06.stl"/>
+    <mesh name="left_middle_link2_collision_7" file="meshes/convex/left_middle_link2/hull_07.stl"/>
+    <mesh name="left_middle_link2_collision_8" file="meshes/convex/left_middle_link2/hull_08.stl"/>
+    <mesh name="left_middle_link2_collision_9" file="meshes/convex/left_middle_link2/hull_09.stl"/>
+    <mesh name="left_middle_link2_collision_10" file="meshes/convex/left_middle_link2/hull_10.stl"/>
+    <mesh name="left_middle_link2_collision_11" file="meshes/convex/left_middle_link2/hull_11.stl"/>
+    <mesh name="left_middle_link2_collision_12" file="meshes/convex/left_middle_link2/hull_12.stl"/>
+    <mesh name="left_middle_link2_collision_13" file="meshes/convex/left_middle_link2/hull_13.stl"/>
+    <mesh name="left_middle_link2_collision_14" file="meshes/convex/left_middle_link2/hull_14.stl"/>
+    <mesh name="left_middle_link2_collision_15" file="meshes/convex/left_middle_link2/hull_15.stl"/>
+    <mesh name="left_middle_link2_collision_16" file="meshes/convex/left_middle_link2/hull_16.stl"/>
+    <mesh name="left_middle_link2_collision_17" file="meshes/convex/left_middle_link2/hull_17.stl"/>
+    <mesh name="left_middle_link2_collision_18" file="meshes/convex/left_middle_link2/hull_18.stl"/>
+    <mesh name="left_middle_link3_visual" file="meshes/left_middle_link3.STL"/>
+    <mesh name="left_middle_link3_collision_0" file="meshes/convex/left_middle_link3/hull_00.stl"/>
+    <mesh name="left_middle_link3_collision_1" file="meshes/convex/left_middle_link3/hull_01.stl"/>
+    <mesh name="left_middle_link3_collision_2" file="meshes/convex/left_middle_link3/hull_02.stl"/>
+    <mesh name="left_middle_link3_collision_3" file="meshes/convex/left_middle_link3/hull_03.stl"/>
+    <mesh name="left_middle_link3_collision_4" file="meshes/convex/left_middle_link3/hull_04.stl"/>
+    <mesh name="left_middle_link3_collision_5" file="meshes/convex/left_middle_link3/hull_05.stl"/>
+    <mesh name="left_middle_link3_collision_6" file="meshes/convex/left_middle_link3/hull_06.stl"/>
+    <mesh name="left_middle_link3_collision_7" file="meshes/convex/left_middle_link3/hull_07.stl"/>
+    <mesh name="left_middle_link3_collision_8" file="meshes/convex/left_middle_link3/hull_08.stl"/>
+    <mesh name="left_middle_link3_collision_9" file="meshes/convex/left_middle_link3/hull_09.stl"/>
+    <mesh name="left_middle_link3_collision_10" file="meshes/convex/left_middle_link3/hull_10.stl"/>
+    <mesh name="left_middle_link3_collision_11" file="meshes/convex/left_middle_link3/hull_11.stl"/>
+    <mesh name="left_middle_tactile2_visual" file="meshes/left_middle_tactile2.STL"/>
+    <mesh name="left_middle_tactile2_collision" file="meshes/left_middle_tactile2.STL"/>
+    <mesh name="left_middle_tactile1_visual" file="meshes/left_middle_tactile1.STL"/>
+    <mesh name="left_middle_tactile1_collision" file="meshes/left_middle_tactile1.STL"/>
+    <mesh name="left_middle_tactile0_visual" file="meshes/left_middle_tactile0.STL"/>
+    <mesh name="left_middle_tactile0_collision" file="meshes/left_middle_tactile0.STL"/>
+    <mesh name="left_ring_link0_visual" file="meshes/left_ring_link0.STL"/>
+    <mesh name="left_ring_link0_collision_0" file="meshes/convex/left_ring_link0/hull_00.stl"/>
+    <mesh name="left_ring_link0_collision_1" file="meshes/convex/left_ring_link0/hull_01.stl"/>
+    <mesh name="left_ring_link0_collision_2" file="meshes/convex/left_ring_link0/hull_02.stl"/>
+    <mesh name="left_ring_link0_collision_3" file="meshes/convex/left_ring_link0/hull_03.stl"/>
+    <mesh name="left_ring_link0_collision_4" file="meshes/convex/left_ring_link0/hull_04.stl"/>
+    <mesh name="left_ring_link0_collision_5" file="meshes/convex/left_ring_link0/hull_05.stl"/>
+    <mesh name="left_ring_link0_collision_6" file="meshes/convex/left_ring_link0/hull_06.stl"/>
+    <mesh name="left_ring_link0_collision_7" file="meshes/convex/left_ring_link0/hull_07.stl"/>
+    <mesh name="left_ring_link0_collision_8" file="meshes/convex/left_ring_link0/hull_08.stl"/>
+    <mesh name="left_ring_link0_collision_9" file="meshes/convex/left_ring_link0/hull_09.stl"/>
+    <mesh name="left_ring_link0_collision_10" file="meshes/convex/left_ring_link0/hull_10.stl"/>
+    <mesh name="left_ring_link0_collision_11" file="meshes/convex/left_ring_link0/hull_11.stl"/>
+    <mesh name="left_ring_link1_visual" file="meshes/left_ring_link1.STL"/>
+    <mesh name="left_ring_link1_collision_0" file="meshes/convex/left_ring_link1/hull_00.stl"/>
+    <mesh name="left_ring_link1_collision_1" file="meshes/convex/left_ring_link1/hull_01.stl"/>
+    <mesh name="left_ring_link1_collision_2" file="meshes/convex/left_ring_link1/hull_02.stl"/>
+    <mesh name="left_ring_link1_collision_3" file="meshes/convex/left_ring_link1/hull_03.stl"/>
+    <mesh name="left_ring_link1_collision_4" file="meshes/convex/left_ring_link1/hull_04.stl"/>
+    <mesh name="left_ring_link1_collision_5" file="meshes/convex/left_ring_link1/hull_05.stl"/>
+    <mesh name="left_ring_link1_collision_6" file="meshes/convex/left_ring_link1/hull_06.stl"/>
+    <mesh name="left_ring_link1_collision_7" file="meshes/convex/left_ring_link1/hull_07.stl"/>
+    <mesh name="left_ring_link1_collision_8" file="meshes/convex/left_ring_link1/hull_08.stl"/>
+    <mesh name="left_ring_link1_collision_9" file="meshes/convex/left_ring_link1/hull_09.stl"/>
+    <mesh name="left_ring_link1_collision_10" file="meshes/convex/left_ring_link1/hull_10.stl"/>
+    <mesh name="left_ring_link1_collision_11" file="meshes/convex/left_ring_link1/hull_11.stl"/>
+    <mesh name="left_ring_link1_collision_12" file="meshes/convex/left_ring_link1/hull_12.stl"/>
+    <mesh name="left_ring_link1_collision_13" file="meshes/convex/left_ring_link1/hull_13.stl"/>
+    <mesh name="left_ring_link1_collision_14" file="meshes/convex/left_ring_link1/hull_14.stl"/>
+    <mesh name="left_ring_link1_collision_15" file="meshes/convex/left_ring_link1/hull_15.stl"/>
+    <mesh name="left_ring_link1_collision_16" file="meshes/convex/left_ring_link1/hull_16.stl"/>
+    <mesh name="left_ring_link1_collision_17" file="meshes/convex/left_ring_link1/hull_17.stl"/>
+    <mesh name="left_ring_link1_collision_18" file="meshes/convex/left_ring_link1/hull_18.stl"/>
+    <mesh name="left_ring_link1_collision_19" file="meshes/convex/left_ring_link1/hull_19.stl"/>
+    <mesh name="left_ring_link1_collision_20" file="meshes/convex/left_ring_link1/hull_20.stl"/>
+    <mesh name="left_ring_link1_collision_21" file="meshes/convex/left_ring_link1/hull_21.stl"/>
+    <mesh name="left_ring_link1_collision_22" file="meshes/convex/left_ring_link1/hull_22.stl"/>
+    <mesh name="left_ring_link1_collision_23" file="meshes/convex/left_ring_link1/hull_23.stl"/>
+    <mesh name="left_ring_link1_collision_24" file="meshes/convex/left_ring_link1/hull_24.stl"/>
+    <mesh name="left_ring_link2_visual" file="meshes/left_ring_link2.STL"/>
+    <mesh name="left_ring_link2_collision_0" file="meshes/convex/left_ring_link2/hull_00.stl"/>
+    <mesh name="left_ring_link2_collision_1" file="meshes/convex/left_ring_link2/hull_01.stl"/>
+    <mesh name="left_ring_link2_collision_2" file="meshes/convex/left_ring_link2/hull_02.stl"/>
+    <mesh name="left_ring_link2_collision_3" file="meshes/convex/left_ring_link2/hull_03.stl"/>
+    <mesh name="left_ring_link2_collision_4" file="meshes/convex/left_ring_link2/hull_04.stl"/>
+    <mesh name="left_ring_link2_collision_5" file="meshes/convex/left_ring_link2/hull_05.stl"/>
+    <mesh name="left_ring_link2_collision_6" file="meshes/convex/left_ring_link2/hull_06.stl"/>
+    <mesh name="left_ring_link2_collision_7" file="meshes/convex/left_ring_link2/hull_07.stl"/>
+    <mesh name="left_ring_link2_collision_8" file="meshes/convex/left_ring_link2/hull_08.stl"/>
+    <mesh name="left_ring_link2_collision_9" file="meshes/convex/left_ring_link2/hull_09.stl"/>
+    <mesh name="left_ring_link2_collision_10" file="meshes/convex/left_ring_link2/hull_10.stl"/>
+    <mesh name="left_ring_link2_collision_11" file="meshes/convex/left_ring_link2/hull_11.stl"/>
+    <mesh name="left_ring_link2_collision_12" file="meshes/convex/left_ring_link2/hull_12.stl"/>
+    <mesh name="left_ring_link2_collision_13" file="meshes/convex/left_ring_link2/hull_13.stl"/>
+    <mesh name="left_ring_link2_collision_14" file="meshes/convex/left_ring_link2/hull_14.stl"/>
+    <mesh name="left_ring_link2_collision_15" file="meshes/convex/left_ring_link2/hull_15.stl"/>
+    <mesh name="left_ring_link2_collision_16" file="meshes/convex/left_ring_link2/hull_16.stl"/>
+    <mesh name="left_ring_link2_collision_17" file="meshes/convex/left_ring_link2/hull_17.stl"/>
+    <mesh name="left_ring_link2_collision_18" file="meshes/convex/left_ring_link2/hull_18.stl"/>
+    <mesh name="left_ring_link3_visual" file="meshes/left_ring_link3.STL"/>
+    <mesh name="left_ring_link3_collision_0" file="meshes/convex/left_ring_link3/hull_00.stl"/>
+    <mesh name="left_ring_link3_collision_1" file="meshes/convex/left_ring_link3/hull_01.stl"/>
+    <mesh name="left_ring_link3_collision_2" file="meshes/convex/left_ring_link3/hull_02.stl"/>
+    <mesh name="left_ring_link3_collision_3" file="meshes/convex/left_ring_link3/hull_03.stl"/>
+    <mesh name="left_ring_link3_collision_4" file="meshes/convex/left_ring_link3/hull_04.stl"/>
+    <mesh name="left_ring_link3_collision_5" file="meshes/convex/left_ring_link3/hull_05.stl"/>
+    <mesh name="left_ring_link3_collision_6" file="meshes/convex/left_ring_link3/hull_06.stl"/>
+    <mesh name="left_ring_link3_collision_7" file="meshes/convex/left_ring_link3/hull_07.stl"/>
+    <mesh name="left_ring_link3_collision_8" file="meshes/convex/left_ring_link3/hull_08.stl"/>
+    <mesh name="left_ring_link3_collision_9" file="meshes/convex/left_ring_link3/hull_09.stl"/>
+    <mesh name="left_ring_link3_collision_10" file="meshes/convex/left_ring_link3/hull_10.stl"/>
+    <mesh name="left_ring_link3_collision_11" file="meshes/convex/left_ring_link3/hull_11.stl"/>
+    <mesh name="left_ring_tactile2_visual" file="meshes/left_ring_tactile2.STL"/>
+    <mesh name="left_ring_tactile2_collision" file="meshes/left_ring_tactile2.STL"/>
+    <mesh name="left_ring_tactile1_visual" file="meshes/left_ring_tactile1.STL"/>
+    <mesh name="left_ring_tactile1_collision" file="meshes/left_ring_tactile1.STL"/>
+    <mesh name="left_ring_tactile0_visual" file="meshes/left_ring_tactile0.STL"/>
+    <mesh name="left_ring_tactile0_collision" file="meshes/left_ring_tactile0.STL"/>
+    <mesh name="left_pinky_link0_visual" file="meshes/left_pinky_link0.STL"/>
+    <mesh name="left_pinky_link0_collision_0" file="meshes/convex/left_pinky_link0/hull_00.stl"/>
+    <mesh name="left_pinky_link0_collision_1" file="meshes/convex/left_pinky_link0/hull_01.stl"/>
+    <mesh name="left_pinky_link0_collision_2" file="meshes/convex/left_pinky_link0/hull_02.stl"/>
+    <mesh name="left_pinky_link0_collision_3" file="meshes/convex/left_pinky_link0/hull_03.stl"/>
+    <mesh name="left_pinky_link0_collision_4" file="meshes/convex/left_pinky_link0/hull_04.stl"/>
+    <mesh name="left_pinky_link0_collision_5" file="meshes/convex/left_pinky_link0/hull_05.stl"/>
+    <mesh name="left_pinky_link0_collision_6" file="meshes/convex/left_pinky_link0/hull_06.stl"/>
+    <mesh name="left_pinky_link0_collision_7" file="meshes/convex/left_pinky_link0/hull_07.stl"/>
+    <mesh name="left_pinky_link0_collision_8" file="meshes/convex/left_pinky_link0/hull_08.stl"/>
+    <mesh name="left_pinky_link0_collision_9" file="meshes/convex/left_pinky_link0/hull_09.stl"/>
+    <mesh name="left_pinky_link0_collision_10" file="meshes/convex/left_pinky_link0/hull_10.stl"/>
+    <mesh name="left_pinky_link0_collision_11" file="meshes/convex/left_pinky_link0/hull_11.stl"/>
+    <mesh name="left_pinky_link1_visual" file="meshes/left_pinky_link1.STL"/>
+    <mesh name="left_pinky_link1_collision_0" file="meshes/convex/left_pinky_link1/hull_00.stl"/>
+    <mesh name="left_pinky_link1_collision_1" file="meshes/convex/left_pinky_link1/hull_01.stl"/>
+    <mesh name="left_pinky_link1_collision_2" file="meshes/convex/left_pinky_link1/hull_02.stl"/>
+    <mesh name="left_pinky_link1_collision_3" file="meshes/convex/left_pinky_link1/hull_03.stl"/>
+    <mesh name="left_pinky_link1_collision_4" file="meshes/convex/left_pinky_link1/hull_04.stl"/>
+    <mesh name="left_pinky_link1_collision_5" file="meshes/convex/left_pinky_link1/hull_05.stl"/>
+    <mesh name="left_pinky_link1_collision_6" file="meshes/convex/left_pinky_link1/hull_06.stl"/>
+    <mesh name="left_pinky_link1_collision_7" file="meshes/convex/left_pinky_link1/hull_07.stl"/>
+    <mesh name="left_pinky_link1_collision_8" file="meshes/convex/left_pinky_link1/hull_08.stl"/>
+    <mesh name="left_pinky_link1_collision_9" file="meshes/convex/left_pinky_link1/hull_09.stl"/>
+    <mesh name="left_pinky_link1_collision_10" file="meshes/convex/left_pinky_link1/hull_10.stl"/>
+    <mesh name="left_pinky_link1_collision_11" file="meshes/convex/left_pinky_link1/hull_11.stl"/>
+    <mesh name="left_pinky_link1_collision_12" file="meshes/convex/left_pinky_link1/hull_12.stl"/>
+    <mesh name="left_pinky_link1_collision_13" file="meshes/convex/left_pinky_link1/hull_13.stl"/>
+    <mesh name="left_pinky_link1_collision_14" file="meshes/convex/left_pinky_link1/hull_14.stl"/>
+    <mesh name="left_pinky_link1_collision_15" file="meshes/convex/left_pinky_link1/hull_15.stl"/>
+    <mesh name="left_pinky_link1_collision_16" file="meshes/convex/left_pinky_link1/hull_16.stl"/>
+    <mesh name="left_pinky_link1_collision_17" file="meshes/convex/left_pinky_link1/hull_17.stl"/>
+    <mesh name="left_pinky_link1_collision_18" file="meshes/convex/left_pinky_link1/hull_18.stl"/>
+    <mesh name="left_pinky_link1_collision_19" file="meshes/convex/left_pinky_link1/hull_19.stl"/>
+    <mesh name="left_pinky_link1_collision_20" file="meshes/convex/left_pinky_link1/hull_20.stl"/>
+    <mesh name="left_pinky_link1_collision_21" file="meshes/convex/left_pinky_link1/hull_21.stl"/>
+    <mesh name="left_pinky_link1_collision_22" file="meshes/convex/left_pinky_link1/hull_22.stl"/>
+    <mesh name="left_pinky_link1_collision_23" file="meshes/convex/left_pinky_link1/hull_23.stl"/>
+    <mesh name="left_pinky_link1_collision_24" file="meshes/convex/left_pinky_link1/hull_24.stl"/>
+    <mesh name="left_pinky_link2_visual" file="meshes/left_pinky_link2.STL"/>
+    <mesh name="left_pinky_link2_collision_0" file="meshes/convex/left_pinky_link2/hull_00.stl"/>
+    <mesh name="left_pinky_link2_collision_1" file="meshes/convex/left_pinky_link2/hull_01.stl"/>
+    <mesh name="left_pinky_link2_collision_2" file="meshes/convex/left_pinky_link2/hull_02.stl"/>
+    <mesh name="left_pinky_link2_collision_3" file="meshes/convex/left_pinky_link2/hull_03.stl"/>
+    <mesh name="left_pinky_link2_collision_4" file="meshes/convex/left_pinky_link2/hull_04.stl"/>
+    <mesh name="left_pinky_link2_collision_5" file="meshes/convex/left_pinky_link2/hull_05.stl"/>
+    <mesh name="left_pinky_link2_collision_6" file="meshes/convex/left_pinky_link2/hull_06.stl"/>
+    <mesh name="left_pinky_link2_collision_7" file="meshes/convex/left_pinky_link2/hull_07.stl"/>
+    <mesh name="left_pinky_link2_collision_8" file="meshes/convex/left_pinky_link2/hull_08.stl"/>
+    <mesh name="left_pinky_link2_collision_9" file="meshes/convex/left_pinky_link2/hull_09.stl"/>
+    <mesh name="left_pinky_link2_collision_10" file="meshes/convex/left_pinky_link2/hull_10.stl"/>
+    <mesh name="left_pinky_link2_collision_11" file="meshes/convex/left_pinky_link2/hull_11.stl"/>
+    <mesh name="left_pinky_link2_collision_12" file="meshes/convex/left_pinky_link2/hull_12.stl"/>
+    <mesh name="left_pinky_link2_collision_13" file="meshes/convex/left_pinky_link2/hull_13.stl"/>
+    <mesh name="left_pinky_link2_collision_14" file="meshes/convex/left_pinky_link2/hull_14.stl"/>
+    <mesh name="left_pinky_link2_collision_15" file="meshes/convex/left_pinky_link2/hull_15.stl"/>
+    <mesh name="left_pinky_link2_collision_16" file="meshes/convex/left_pinky_link2/hull_16.stl"/>
+    <mesh name="left_pinky_link2_collision_17" file="meshes/convex/left_pinky_link2/hull_17.stl"/>
+    <mesh name="left_pinky_link2_collision_18" file="meshes/convex/left_pinky_link2/hull_18.stl"/>
+    <mesh name="left_pinky_link3_visual" file="meshes/left_pinky_link3.STL"/>
+    <mesh name="left_pinky_link3_collision_0" file="meshes/convex/left_pinky_link3/hull_00.stl"/>
+    <mesh name="left_pinky_link3_collision_1" file="meshes/convex/left_pinky_link3/hull_01.stl"/>
+    <mesh name="left_pinky_link3_collision_2" file="meshes/convex/left_pinky_link3/hull_02.stl"/>
+    <mesh name="left_pinky_link3_collision_3" file="meshes/convex/left_pinky_link3/hull_03.stl"/>
+    <mesh name="left_pinky_link3_collision_4" file="meshes/convex/left_pinky_link3/hull_04.stl"/>
+    <mesh name="left_pinky_link3_collision_5" file="meshes/convex/left_pinky_link3/hull_05.stl"/>
+    <mesh name="left_pinky_link3_collision_6" file="meshes/convex/left_pinky_link3/hull_06.stl"/>
+    <mesh name="left_pinky_link3_collision_7" file="meshes/convex/left_pinky_link3/hull_07.stl"/>
+    <mesh name="left_pinky_link3_collision_8" file="meshes/convex/left_pinky_link3/hull_08.stl"/>
+    <mesh name="left_pinky_link3_collision_9" file="meshes/convex/left_pinky_link3/hull_09.stl"/>
+    <mesh name="left_pinky_link3_collision_10" file="meshes/convex/left_pinky_link3/hull_10.stl"/>
+    <mesh name="left_pinky_link3_collision_11" file="meshes/convex/left_pinky_link3/hull_11.stl"/>
+    <mesh name="left_pinky_tactile2_visual" file="meshes/left_pinky_tactile2.STL"/>
+    <mesh name="left_pinky_tactile2_collision" file="meshes/left_pinky_tactile2.STL"/>
+    <mesh name="left_pinky_tactile1_visual" file="meshes/left_pinky_tactile1.STL"/>
+    <mesh name="left_pinky_tactile1_collision" file="meshes/left_pinky_tactile1.STL"/>
+    <mesh name="left_pinky_tactile0_visual" file="meshes/left_pinky_tactile0.STL"/>
+    <mesh name="left_pinky_tactile0_collision" file="meshes/left_pinky_tactile0.STL"/>
+    <mesh name="left_palm_tactile_visual" file="meshes/left_palm_tactile.STL"/>
+    <mesh name="left_palm_tactile_collision" file="meshes/left_palm_tactile.STL"/>
+  </asset>
+  <worldbody>
+    <body name="left_palm_link">
+      <inertial pos="-0.002655 0.00218 0.068076" mass="0.67285" fullinertia="0.001033 0.000726 0.00057 2.3e-05 1.5e-05 2.7e-05"/>
+      <geom name="left_palm_link_visual" type="mesh" mesh="left_palm_link_visual" group="1" class="apex_hand_left_visual"/>
+      <geom name="left_palm_link_collision_0" type="mesh" mesh="left_palm_link_collision_0" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_1" type="mesh" mesh="left_palm_link_collision_1" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_2" type="mesh" mesh="left_palm_link_collision_2" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_3" type="mesh" mesh="left_palm_link_collision_3" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_4" type="mesh" mesh="left_palm_link_collision_4" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_5" type="mesh" mesh="left_palm_link_collision_5" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_6" type="mesh" mesh="left_palm_link_collision_6" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_7" type="mesh" mesh="left_palm_link_collision_7" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_8" type="mesh" mesh="left_palm_link_collision_8" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_9" type="mesh" mesh="left_palm_link_collision_9" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_10" type="mesh" mesh="left_palm_link_collision_10" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_11" type="mesh" mesh="left_palm_link_collision_11" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_12" type="mesh" mesh="left_palm_link_collision_12" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_13" type="mesh" mesh="left_palm_link_collision_13" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_14" type="mesh" mesh="left_palm_link_collision_14" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_15" type="mesh" mesh="left_palm_link_collision_15" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_16" type="mesh" mesh="left_palm_link_collision_16" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_17" type="mesh" mesh="left_palm_link_collision_17" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_18" type="mesh" mesh="left_palm_link_collision_18" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_19" type="mesh" mesh="left_palm_link_collision_19" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_20" type="mesh" mesh="left_palm_link_collision_20" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_21" type="mesh" mesh="left_palm_link_collision_21" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_22" type="mesh" mesh="left_palm_link_collision_22" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_23" type="mesh" mesh="left_palm_link_collision_23" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_24" type="mesh" mesh="left_palm_link_collision_24" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_25" type="mesh" mesh="left_palm_link_collision_25" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_26" type="mesh" mesh="left_palm_link_collision_26" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_27" type="mesh" mesh="left_palm_link_collision_27" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_28" type="mesh" mesh="left_palm_link_collision_28" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_29" type="mesh" mesh="left_palm_link_collision_29" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_30" type="mesh" mesh="left_palm_link_collision_30" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_31" type="mesh" mesh="left_palm_link_collision_31" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_32" type="mesh" mesh="left_palm_link_collision_32" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_33" type="mesh" mesh="left_palm_link_collision_33" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_34" type="mesh" mesh="left_palm_link_collision_34" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_35" type="mesh" mesh="left_palm_link_collision_35" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_36" type="mesh" mesh="left_palm_link_collision_36" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_37" type="mesh" mesh="left_palm_link_collision_37" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_38" type="mesh" mesh="left_palm_link_collision_38" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_39" type="mesh" mesh="left_palm_link_collision_39" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_40" type="mesh" mesh="left_palm_link_collision_40" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_41" type="mesh" mesh="left_palm_link_collision_41" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_42" type="mesh" mesh="left_palm_link_collision_42" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_43" type="mesh" mesh="left_palm_link_collision_43" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_44" type="mesh" mesh="left_palm_link_collision_44" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_45" type="mesh" mesh="left_palm_link_collision_45" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_46" type="mesh" mesh="left_palm_link_collision_46" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_47" type="mesh" mesh="left_palm_link_collision_47" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_48" type="mesh" mesh="left_palm_link_collision_48" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_49" type="mesh" mesh="left_palm_link_collision_49" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_50" type="mesh" mesh="left_palm_link_collision_50" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_51" type="mesh" mesh="left_palm_link_collision_51" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_52" type="mesh" mesh="left_palm_link_collision_52" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_53" type="mesh" mesh="left_palm_link_collision_53" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_54" type="mesh" mesh="left_palm_link_collision_54" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_55" type="mesh" mesh="left_palm_link_collision_55" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_56" type="mesh" mesh="left_palm_link_collision_56" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_57" type="mesh" mesh="left_palm_link_collision_57" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_58" type="mesh" mesh="left_palm_link_collision_58" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_59" type="mesh" mesh="left_palm_link_collision_59" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_60" type="mesh" mesh="left_palm_link_collision_60" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_61" type="mesh" mesh="left_palm_link_collision_61" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_62" type="mesh" mesh="left_palm_link_collision_62" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_63" type="mesh" mesh="left_palm_link_collision_63" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_64" type="mesh" mesh="left_palm_link_collision_64" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_65" type="mesh" mesh="left_palm_link_collision_65" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_66" type="mesh" mesh="left_palm_link_collision_66" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_67" type="mesh" mesh="left_palm_link_collision_67" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_68" type="mesh" mesh="left_palm_link_collision_68" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_69" type="mesh" mesh="left_palm_link_collision_69" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_70" type="mesh" mesh="left_palm_link_collision_70" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_71" type="mesh" mesh="left_palm_link_collision_71" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_72" type="mesh" mesh="left_palm_link_collision_72" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_73" type="mesh" mesh="left_palm_link_collision_73" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_74" type="mesh" mesh="left_palm_link_collision_74" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_75" type="mesh" mesh="left_palm_link_collision_75" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_76" type="mesh" mesh="left_palm_link_collision_76" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_77" type="mesh" mesh="left_palm_link_collision_77" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_78" type="mesh" mesh="left_palm_link_collision_78" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_79" type="mesh" mesh="left_palm_link_collision_79" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_80" type="mesh" mesh="left_palm_link_collision_80" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_81" type="mesh" mesh="left_palm_link_collision_81" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_82" type="mesh" mesh="left_palm_link_collision_82" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_83" type="mesh" mesh="left_palm_link_collision_83" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_84" type="mesh" mesh="left_palm_link_collision_84" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_85" type="mesh" mesh="left_palm_link_collision_85" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_86" type="mesh" mesh="left_palm_link_collision_86" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_87" type="mesh" mesh="left_palm_link_collision_87" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_88" type="mesh" mesh="left_palm_link_collision_88" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_89" type="mesh" mesh="left_palm_link_collision_89" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_90" type="mesh" mesh="left_palm_link_collision_90" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_91" type="mesh" mesh="left_palm_link_collision_91" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_92" type="mesh" mesh="left_palm_link_collision_92" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_93" type="mesh" mesh="left_palm_link_collision_93" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_94" type="mesh" mesh="left_palm_link_collision_94" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_95" type="mesh" mesh="left_palm_link_collision_95" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_96" type="mesh" mesh="left_palm_link_collision_96" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_97" type="mesh" mesh="left_palm_link_collision_97" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_98" type="mesh" mesh="left_palm_link_collision_98" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_99" type="mesh" mesh="left_palm_link_collision_99" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_100" type="mesh" mesh="left_palm_link_collision_100" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_101" type="mesh" mesh="left_palm_link_collision_101" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_102" type="mesh" mesh="left_palm_link_collision_102" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_103" type="mesh" mesh="left_palm_link_collision_103" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_104" type="mesh" mesh="left_palm_link_collision_104" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_105" type="mesh" mesh="left_palm_link_collision_105" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_106" type="mesh" mesh="left_palm_link_collision_106" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_107" type="mesh" mesh="left_palm_link_collision_107" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_108" type="mesh" mesh="left_palm_link_collision_108" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_109" type="mesh" mesh="left_palm_link_collision_109" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_110" type="mesh" mesh="left_palm_link_collision_110" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_111" type="mesh" mesh="left_palm_link_collision_111" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_112" type="mesh" mesh="left_palm_link_collision_112" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_113" type="mesh" mesh="left_palm_link_collision_113" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_114" type="mesh" mesh="left_palm_link_collision_114" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_115" type="mesh" mesh="left_palm_link_collision_115" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_116" type="mesh" mesh="left_palm_link_collision_116" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_117" type="mesh" mesh="left_palm_link_collision_117" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_118" type="mesh" mesh="left_palm_link_collision_118" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_119" type="mesh" mesh="left_palm_link_collision_119" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_120" type="mesh" mesh="left_palm_link_collision_120" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_121" type="mesh" mesh="left_palm_link_collision_121" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_122" type="mesh" mesh="left_palm_link_collision_122" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_123" type="mesh" mesh="left_palm_link_collision_123" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_124" type="mesh" mesh="left_palm_link_collision_124" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_125" type="mesh" mesh="left_palm_link_collision_125" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_126" type="mesh" mesh="left_palm_link_collision_126" group="3" class="apex_hand_left_hard_link"/>
+      <geom name="left_palm_link_collision_127" type="mesh" mesh="left_palm_link_collision_127" group="3" class="apex_hand_left_hard_link"/>
+      <body name="left_thumb_link0" pos="0.013 -0.023 0.0493" quat="0.7071054825 0 0 -0.7071080799">
+        <joint name="left_thumb_j0" type="hinge" axis="0 0 1" range="0 1.5707" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+        <inertial pos="0.00741 0.000618 -0.001117" mass="0.009082" fullinertia="7.8e-07 6.6e-07 4.8e-07 0 2e-08 5e-08"/>
+        <geom name="left_thumb_link0_visual" type="mesh" mesh="left_thumb_link0_visual" group="1" class="apex_hand_left_visual"/>
+        <geom name="left_thumb_link0_collision_0" type="mesh" mesh="left_thumb_link0_collision_0" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_thumb_link0_collision_1" type="mesh" mesh="left_thumb_link0_collision_1" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_thumb_link0_collision_2" type="mesh" mesh="left_thumb_link0_collision_2" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_thumb_link0_collision_3" type="mesh" mesh="left_thumb_link0_collision_3" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_thumb_link0_collision_4" type="mesh" mesh="left_thumb_link0_collision_4" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_thumb_link0_collision_5" type="mesh" mesh="left_thumb_link0_collision_5" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_thumb_link0_collision_6" type="mesh" mesh="left_thumb_link0_collision_6" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_thumb_link0_collision_7" type="mesh" mesh="left_thumb_link0_collision_7" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_thumb_link0_collision_8" type="mesh" mesh="left_thumb_link0_collision_8" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_thumb_link0_collision_9" type="mesh" mesh="left_thumb_link0_collision_9" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_thumb_link0_collision_10" type="mesh" mesh="left_thumb_link0_collision_10" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_thumb_link0_collision_11" type="mesh" mesh="left_thumb_link0_collision_11" group="3" class="apex_hand_left_hard_link"/>
+        <body name="left_thumb_link1" pos="0.0145 0 0" quat="0.4999981634 0.5 -0.5000018366 -0.5">
+          <joint name="left_thumb_j1" type="hinge" axis="0 0 1" range="-0.1745 1.0471" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+          <inertial pos="-0.0010382 -0.002896 -0.004329" mass="0.012935" fullinertia="1.35e-06 8.5e-07 1.01e-06 1.4e-07 0 5e-08"/>
+          <geom name="left_thumb_link1_visual" type="mesh" mesh="left_thumb_link1_visual" group="1" class="apex_hand_left_visual"/>
+          <geom name="left_thumb_link1_collision_0" type="mesh" mesh="left_thumb_link1_collision_0" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_thumb_link1_collision_1" type="mesh" mesh="left_thumb_link1_collision_1" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_thumb_link1_collision_2" type="mesh" mesh="left_thumb_link1_collision_2" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_thumb_link1_collision_3" type="mesh" mesh="left_thumb_link1_collision_3" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_thumb_link1_collision_4" type="mesh" mesh="left_thumb_link1_collision_4" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_thumb_link1_collision_5" type="mesh" mesh="left_thumb_link1_collision_5" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_thumb_link1_collision_6" type="mesh" mesh="left_thumb_link1_collision_6" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_thumb_link1_collision_7" type="mesh" mesh="left_thumb_link1_collision_7" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_thumb_link1_collision_8" type="mesh" mesh="left_thumb_link1_collision_8" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_thumb_link1_collision_9" type="mesh" mesh="left_thumb_link1_collision_9" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_thumb_link1_collision_10" type="mesh" mesh="left_thumb_link1_collision_10" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_thumb_link1_collision_11" type="mesh" mesh="left_thumb_link1_collision_11" group="3" class="apex_hand_left_hard_link"/>
+          <body name="left_thumb_link2" pos="0 0 -0.014" quat="0.4999981634 0.5 0.5000018366 0.5">
+            <joint name="left_thumb_j2" type="hinge" axis="0 0 1" range="0 1.396" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+            <inertial pos="-0.007241 -0.023214 -0.000542" mass="0.139547" fullinertia="5.047e-05 2.081e-05 5.619e-05 6.3e-07 8.6e-07 3.37e-06"/>
+            <geom name="left_thumb_link2_visual" type="mesh" mesh="left_thumb_link2_visual" group="1" class="apex_hand_left_visual"/>
+            <geom name="left_thumb_link2_collision_0" type="mesh" mesh="left_thumb_link2_collision_0" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_1" type="mesh" mesh="left_thumb_link2_collision_1" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_2" type="mesh" mesh="left_thumb_link2_collision_2" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_3" type="mesh" mesh="left_thumb_link2_collision_3" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_4" type="mesh" mesh="left_thumb_link2_collision_4" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_5" type="mesh" mesh="left_thumb_link2_collision_5" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_6" type="mesh" mesh="left_thumb_link2_collision_6" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_7" type="mesh" mesh="left_thumb_link2_collision_7" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_8" type="mesh" mesh="left_thumb_link2_collision_8" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_9" type="mesh" mesh="left_thumb_link2_collision_9" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_10" type="mesh" mesh="left_thumb_link2_collision_10" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_11" type="mesh" mesh="left_thumb_link2_collision_11" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_12" type="mesh" mesh="left_thumb_link2_collision_12" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_13" type="mesh" mesh="left_thumb_link2_collision_13" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_14" type="mesh" mesh="left_thumb_link2_collision_14" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_15" type="mesh" mesh="left_thumb_link2_collision_15" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_16" type="mesh" mesh="left_thumb_link2_collision_16" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_17" type="mesh" mesh="left_thumb_link2_collision_17" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_18" type="mesh" mesh="left_thumb_link2_collision_18" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_19" type="mesh" mesh="left_thumb_link2_collision_19" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_thumb_link2_collision_20" type="mesh" mesh="left_thumb_link2_collision_20" group="3" class="apex_hand_left_hard_link"/>
+            <body name="left_thumb_link3" pos="0 -0.055 0" quat="0.7071054825 0 0 -0.7071080799">
+              <joint name="left_thumb_j3" type="hinge" axis="0 0 1" range="-0.349 1.396" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+              <inertial pos="0.01148 -0.001936 0.000147" mass="0.029794" fullinertia="2.17e-06 3.86e-06 3.76e-06 2.2e-07 5e-08 3e-08"/>
+              <geom name="left_thumb_link3_visual" type="mesh" mesh="left_thumb_link3_visual" group="1" class="apex_hand_left_visual"/>
+              <geom name="left_thumb_link3_collision_0" type="mesh" mesh="left_thumb_link3_collision_0" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_1" type="mesh" mesh="left_thumb_link3_collision_1" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_2" type="mesh" mesh="left_thumb_link3_collision_2" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_3" type="mesh" mesh="left_thumb_link3_collision_3" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_4" type="mesh" mesh="left_thumb_link3_collision_4" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_5" type="mesh" mesh="left_thumb_link3_collision_5" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_6" type="mesh" mesh="left_thumb_link3_collision_6" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_7" type="mesh" mesh="left_thumb_link3_collision_7" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_8" type="mesh" mesh="left_thumb_link3_collision_8" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_9" type="mesh" mesh="left_thumb_link3_collision_9" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_10" type="mesh" mesh="left_thumb_link3_collision_10" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_11" type="mesh" mesh="left_thumb_link3_collision_11" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_12" type="mesh" mesh="left_thumb_link3_collision_12" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_13" type="mesh" mesh="left_thumb_link3_collision_13" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_14" type="mesh" mesh="left_thumb_link3_collision_14" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_15" type="mesh" mesh="left_thumb_link3_collision_15" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_16" type="mesh" mesh="left_thumb_link3_collision_16" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_17" type="mesh" mesh="left_thumb_link3_collision_17" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_thumb_link3_collision_18" type="mesh" mesh="left_thumb_link3_collision_18" group="3" class="apex_hand_left_hard_link"/>
+              <body name="left_thumb_link4" pos="0.03 0 0" quat="1 0 0 0">
+                <joint name="left_thumb_j4" type="hinge" axis="0 0 1" range="-0.349 1.396" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+                <inertial pos="0.012344 -5.9e-05 0.00012" mass="0.026805" fullinertia="1.3e-06 2.9e-06 2.6e-06 2e-08 7e-08 2e-08"/>
+                <geom name="left_thumb_link4_visual" type="mesh" mesh="left_thumb_link4_visual" group="1" class="apex_hand_left_visual"/>
+                <geom name="left_thumb_link4_collision_0" type="mesh" mesh="left_thumb_link4_collision_0" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_1" type="mesh" mesh="left_thumb_link4_collision_1" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_2" type="mesh" mesh="left_thumb_link4_collision_2" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_3" type="mesh" mesh="left_thumb_link4_collision_3" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_4" type="mesh" mesh="left_thumb_link4_collision_4" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_5" type="mesh" mesh="left_thumb_link4_collision_5" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_6" type="mesh" mesh="left_thumb_link4_collision_6" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_7" type="mesh" mesh="left_thumb_link4_collision_7" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_8" type="mesh" mesh="left_thumb_link4_collision_8" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_9" type="mesh" mesh="left_thumb_link4_collision_9" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_10" type="mesh" mesh="left_thumb_link4_collision_10" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_11" type="mesh" mesh="left_thumb_link4_collision_11" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_12" type="mesh" mesh="left_thumb_link4_collision_12" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_13" type="mesh" mesh="left_thumb_link4_collision_13" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_14" type="mesh" mesh="left_thumb_link4_collision_14" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_15" type="mesh" mesh="left_thumb_link4_collision_15" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_16" type="mesh" mesh="left_thumb_link4_collision_16" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_17" type="mesh" mesh="left_thumb_link4_collision_17" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_18" type="mesh" mesh="left_thumb_link4_collision_18" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_19" type="mesh" mesh="left_thumb_link4_collision_19" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_20" type="mesh" mesh="left_thumb_link4_collision_20" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_21" type="mesh" mesh="left_thumb_link4_collision_21" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_22" type="mesh" mesh="left_thumb_link4_collision_22" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_23" type="mesh" mesh="left_thumb_link4_collision_23" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_24" type="mesh" mesh="left_thumb_link4_collision_24" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_25" type="mesh" mesh="left_thumb_link4_collision_25" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_26" type="mesh" mesh="left_thumb_link4_collision_26" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_27" type="mesh" mesh="left_thumb_link4_collision_27" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_28" type="mesh" mesh="left_thumb_link4_collision_28" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_29" type="mesh" mesh="left_thumb_link4_collision_29" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_30" type="mesh" mesh="left_thumb_link4_collision_30" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_31" type="mesh" mesh="left_thumb_link4_collision_31" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_32" type="mesh" mesh="left_thumb_link4_collision_32" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_33" type="mesh" mesh="left_thumb_link4_collision_33" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_34" type="mesh" mesh="left_thumb_link4_collision_34" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_35" type="mesh" mesh="left_thumb_link4_collision_35" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_36" type="mesh" mesh="left_thumb_link4_collision_36" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_37" type="mesh" mesh="left_thumb_link4_collision_37" group="3" class="apex_hand_left_hard_link"/>
+                <geom name="left_thumb_link4_collision_38" type="mesh" mesh="left_thumb_link4_collision_38" group="3" class="apex_hand_left_hard_link"/>
+                <body name="left_thumb_tactile2" pos="0 0 0" quat="1 0 0 0">
+                  <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+                  <geom name="left_thumb_tactile2_visual" type="mesh" mesh="left_thumb_tactile2_visual" group="2" class="apex_hand_left_visual"/>
+                  <geom name="left_thumb_tactile2_collision" type="mesh" mesh="left_thumb_tactile2_collision" group="4" class="apex_hand_left_soft_tactile"/>
+                  <site name="left_thumb_pad" pos="0.018471 0.0088124 0" quat="1 0 0 0" size="0.003" group="5"/>
+                  <site name="left_thumb_tip" pos="0.029863 -0.00039744 0" quat="1 0 0 0" size="0.003" group="5"/>
+                </body>
+              </body>
+              <body name="left_thumb_tactile1" pos="0 0 0" quat="1 0 0 0">
+                <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+                <geom name="left_thumb_tactile1_visual" type="mesh" mesh="left_thumb_tactile1_visual" group="2" class="apex_hand_left_visual"/>
+                <geom name="left_thumb_tactile1_collision" type="mesh" mesh="left_thumb_tactile1_collision" group="4" class="apex_hand_left_soft_tactile"/>
+              </body>
+            </body>
+            <body name="left_thumb_tactile0" pos="0 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+              <geom name="left_thumb_tactile0_visual" type="mesh" mesh="left_thumb_tactile0_visual" group="2" class="apex_hand_left_visual"/>
+              <geom name="left_thumb_tactile0_collision" type="mesh" mesh="left_thumb_tactile0_collision" group="4" class="apex_hand_left_soft_tactile"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="left_index_link0" pos="0.0071 -0.034496 0.1188" quat="-2.597343467e-06 0.7071080799 2.597353008e-06 0.7071054825">
+        <joint name="left_index_j0" type="hinge" axis="0 0 1" range="-0.4363 0.4363" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+        <inertial pos="0.00402 0.000105 -0.000623" mass="0.013698" fullinertia="1.13e-06 1.71e-06 8.5e-07 3e-08 1e-08 0"/>
+        <geom name="left_index_link0_visual" type="mesh" mesh="left_index_link0_visual" group="1" class="apex_hand_left_visual"/>
+        <geom name="left_index_link0_collision_0" type="mesh" mesh="left_index_link0_collision_0" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_index_link0_collision_1" type="mesh" mesh="left_index_link0_collision_1" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_index_link0_collision_2" type="mesh" mesh="left_index_link0_collision_2" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_index_link0_collision_3" type="mesh" mesh="left_index_link0_collision_3" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_index_link0_collision_4" type="mesh" mesh="left_index_link0_collision_4" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_index_link0_collision_5" type="mesh" mesh="left_index_link0_collision_5" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_index_link0_collision_6" type="mesh" mesh="left_index_link0_collision_6" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_index_link0_collision_7" type="mesh" mesh="left_index_link0_collision_7" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_index_link0_collision_8" type="mesh" mesh="left_index_link0_collision_8" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_index_link0_collision_9" type="mesh" mesh="left_index_link0_collision_9" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_index_link0_collision_10" type="mesh" mesh="left_index_link0_collision_10" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_index_link0_collision_11" type="mesh" mesh="left_index_link0_collision_11" group="3" class="apex_hand_left_hard_link"/>
+        <body name="left_index_link1" pos="0.016 0 0" quat="0.7071054825 0.7071080799 0 0">
+          <joint name="left_index_j1" type="hinge" axis="0 0 1" range="-0.349 1.5707" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+          <inertial pos="0.016598 -0.002765 -0.000113" mass="0.043491" fullinertia="2.67e-06 1.122e-05 1.132e-05 9.3e-07 1.8e-07 1e-08"/>
+          <geom name="left_index_link1_visual" type="mesh" mesh="left_index_link1_visual" group="1" class="apex_hand_left_visual"/>
+          <geom name="left_index_link1_collision_0" type="mesh" mesh="left_index_link1_collision_0" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_1" type="mesh" mesh="left_index_link1_collision_1" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_2" type="mesh" mesh="left_index_link1_collision_2" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_3" type="mesh" mesh="left_index_link1_collision_3" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_4" type="mesh" mesh="left_index_link1_collision_4" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_5" type="mesh" mesh="left_index_link1_collision_5" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_6" type="mesh" mesh="left_index_link1_collision_6" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_7" type="mesh" mesh="left_index_link1_collision_7" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_8" type="mesh" mesh="left_index_link1_collision_8" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_9" type="mesh" mesh="left_index_link1_collision_9" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_10" type="mesh" mesh="left_index_link1_collision_10" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_11" type="mesh" mesh="left_index_link1_collision_11" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_12" type="mesh" mesh="left_index_link1_collision_12" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_13" type="mesh" mesh="left_index_link1_collision_13" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_14" type="mesh" mesh="left_index_link1_collision_14" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_15" type="mesh" mesh="left_index_link1_collision_15" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_16" type="mesh" mesh="left_index_link1_collision_16" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_17" type="mesh" mesh="left_index_link1_collision_17" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_18" type="mesh" mesh="left_index_link1_collision_18" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_19" type="mesh" mesh="left_index_link1_collision_19" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_20" type="mesh" mesh="left_index_link1_collision_20" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_21" type="mesh" mesh="left_index_link1_collision_21" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_22" type="mesh" mesh="left_index_link1_collision_22" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_23" type="mesh" mesh="left_index_link1_collision_23" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_index_link1_collision_24" type="mesh" mesh="left_index_link1_collision_24" group="3" class="apex_hand_left_hard_link"/>
+          <body name="left_index_link2" pos="0.045 0 0" quat="1 0 0 0">
+            <joint name="left_index_j2" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+            <inertial pos="0.009137 -0.000662 0.000327" mass="0.023044" fullinertia="1.31e-06 2.25e-06 2.45e-06 2.5e-07 3e-08 1e-08"/>
+            <geom name="left_index_link2_visual" type="mesh" mesh="left_index_link2_visual" group="1" class="apex_hand_left_visual"/>
+            <geom name="left_index_link2_collision_0" type="mesh" mesh="left_index_link2_collision_0" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_1" type="mesh" mesh="left_index_link2_collision_1" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_2" type="mesh" mesh="left_index_link2_collision_2" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_3" type="mesh" mesh="left_index_link2_collision_3" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_4" type="mesh" mesh="left_index_link2_collision_4" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_5" type="mesh" mesh="left_index_link2_collision_5" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_6" type="mesh" mesh="left_index_link2_collision_6" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_7" type="mesh" mesh="left_index_link2_collision_7" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_8" type="mesh" mesh="left_index_link2_collision_8" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_9" type="mesh" mesh="left_index_link2_collision_9" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_10" type="mesh" mesh="left_index_link2_collision_10" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_11" type="mesh" mesh="left_index_link2_collision_11" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_12" type="mesh" mesh="left_index_link2_collision_12" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_13" type="mesh" mesh="left_index_link2_collision_13" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_14" type="mesh" mesh="left_index_link2_collision_14" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_15" type="mesh" mesh="left_index_link2_collision_15" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_16" type="mesh" mesh="left_index_link2_collision_16" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_17" type="mesh" mesh="left_index_link2_collision_17" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_index_link2_collision_18" type="mesh" mesh="left_index_link2_collision_18" group="3" class="apex_hand_left_hard_link"/>
+            <body name="left_index_link3" pos="0.025 0 0" quat="1 0 0 0">
+              <joint name="left_index_j3" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+              <inertial pos="0.011123 -0.000544 0" mass="0.018645" fullinertia="6e-07 1.59e-06 1.39e-06 4e-08 0 0"/>
+              <geom name="left_index_link3_visual" type="mesh" mesh="left_index_link3_visual" group="1" class="apex_hand_left_visual"/>
+              <geom name="left_index_link3_collision_0" type="mesh" mesh="left_index_link3_collision_0" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_index_link3_collision_1" type="mesh" mesh="left_index_link3_collision_1" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_index_link3_collision_2" type="mesh" mesh="left_index_link3_collision_2" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_index_link3_collision_3" type="mesh" mesh="left_index_link3_collision_3" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_index_link3_collision_4" type="mesh" mesh="left_index_link3_collision_4" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_index_link3_collision_5" type="mesh" mesh="left_index_link3_collision_5" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_index_link3_collision_6" type="mesh" mesh="left_index_link3_collision_6" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_index_link3_collision_7" type="mesh" mesh="left_index_link3_collision_7" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_index_link3_collision_8" type="mesh" mesh="left_index_link3_collision_8" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_index_link3_collision_9" type="mesh" mesh="left_index_link3_collision_9" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_index_link3_collision_10" type="mesh" mesh="left_index_link3_collision_10" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_index_link3_collision_11" type="mesh" mesh="left_index_link3_collision_11" group="3" class="apex_hand_left_hard_link"/>
+              <body name="left_index_tactile2" pos="0 0 0" quat="1 0 0 0">
+                <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+                <geom name="left_index_tactile2_visual" type="mesh" mesh="left_index_tactile2_visual" group="2" class="apex_hand_left_visual"/>
+                <geom name="left_index_tactile2_collision" type="mesh" mesh="left_index_tactile2_collision" group="4" class="apex_hand_left_soft_tactile"/>
+                <site name="left_index_pad" pos="0.01709614476 0.00719554486 0" quat="1 0 0 0" size="0.003" group="5"/>
+                <site name="left_index_tip" pos="0.02767216672 0.0005502779242 0" quat="1 0 0 0" size="0.003" group="5"/>
+              </body>
+            </body>
+            <body name="left_index_tactile1" pos="0 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+              <geom name="left_index_tactile1_visual" type="mesh" mesh="left_index_tactile1_visual" group="2" class="apex_hand_left_visual"/>
+              <geom name="left_index_tactile1_collision" type="mesh" mesh="left_index_tactile1_collision" group="4" class="apex_hand_left_soft_tactile"/>
+            </body>
+          </body>
+          <body name="left_index_tactile0" pos="0 0 0" quat="1 0 0 0">
+            <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+            <geom name="left_index_tactile0_visual" type="mesh" mesh="left_index_tactile0_visual" group="2" class="apex_hand_left_visual"/>
+            <geom name="left_index_tactile0_collision" type="mesh" mesh="left_index_tactile0_collision" group="4" class="apex_hand_left_soft_tactile"/>
+          </body>
+        </body>
+      </body>
+      <body name="left_middle_link0" pos="0.0071 -0.011496 0.1218" quat="-2.597343467e-06 0.7071080799 2.597353008e-06 0.7071054825">
+        <joint name="left_middle_j0" type="hinge" axis="0 0 1" range="-0.4363 0.4363" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+        <inertial pos="0.00402 0.000105 -0.000623" mass="0.013698" fullinertia="1.13e-06 1.71e-06 8.5e-07 3e-08 1e-08 0"/>
+        <geom name="left_middle_link0_visual" type="mesh" mesh="left_middle_link0_visual" group="1" class="apex_hand_left_visual"/>
+        <geom name="left_middle_link0_collision_0" type="mesh" mesh="left_middle_link0_collision_0" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_middle_link0_collision_1" type="mesh" mesh="left_middle_link0_collision_1" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_middle_link0_collision_2" type="mesh" mesh="left_middle_link0_collision_2" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_middle_link0_collision_3" type="mesh" mesh="left_middle_link0_collision_3" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_middle_link0_collision_4" type="mesh" mesh="left_middle_link0_collision_4" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_middle_link0_collision_5" type="mesh" mesh="left_middle_link0_collision_5" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_middle_link0_collision_6" type="mesh" mesh="left_middle_link0_collision_6" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_middle_link0_collision_7" type="mesh" mesh="left_middle_link0_collision_7" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_middle_link0_collision_8" type="mesh" mesh="left_middle_link0_collision_8" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_middle_link0_collision_9" type="mesh" mesh="left_middle_link0_collision_9" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_middle_link0_collision_10" type="mesh" mesh="left_middle_link0_collision_10" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_middle_link0_collision_11" type="mesh" mesh="left_middle_link0_collision_11" group="3" class="apex_hand_left_hard_link"/>
+        <body name="left_middle_link1" pos="0.016 0 0" quat="0.7071054825 0.7071080799 0 0">
+          <joint name="left_middle_j1" type="hinge" axis="0 0 1" range="-0.349 1.5707" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+          <inertial pos="0.016598 -0.002765 -0.000113" mass="0.043491" fullinertia="2.67e-06 1.122e-05 1.132e-05 9.3e-07 1.8e-07 1e-08"/>
+          <geom name="left_middle_link1_visual" type="mesh" mesh="left_middle_link1_visual" group="1" class="apex_hand_left_visual"/>
+          <geom name="left_middle_link1_collision_0" type="mesh" mesh="left_middle_link1_collision_0" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_1" type="mesh" mesh="left_middle_link1_collision_1" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_2" type="mesh" mesh="left_middle_link1_collision_2" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_3" type="mesh" mesh="left_middle_link1_collision_3" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_4" type="mesh" mesh="left_middle_link1_collision_4" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_5" type="mesh" mesh="left_middle_link1_collision_5" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_6" type="mesh" mesh="left_middle_link1_collision_6" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_7" type="mesh" mesh="left_middle_link1_collision_7" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_8" type="mesh" mesh="left_middle_link1_collision_8" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_9" type="mesh" mesh="left_middle_link1_collision_9" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_10" type="mesh" mesh="left_middle_link1_collision_10" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_11" type="mesh" mesh="left_middle_link1_collision_11" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_12" type="mesh" mesh="left_middle_link1_collision_12" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_13" type="mesh" mesh="left_middle_link1_collision_13" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_14" type="mesh" mesh="left_middle_link1_collision_14" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_15" type="mesh" mesh="left_middle_link1_collision_15" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_16" type="mesh" mesh="left_middle_link1_collision_16" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_17" type="mesh" mesh="left_middle_link1_collision_17" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_18" type="mesh" mesh="left_middle_link1_collision_18" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_19" type="mesh" mesh="left_middle_link1_collision_19" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_20" type="mesh" mesh="left_middle_link1_collision_20" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_21" type="mesh" mesh="left_middle_link1_collision_21" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_22" type="mesh" mesh="left_middle_link1_collision_22" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_23" type="mesh" mesh="left_middle_link1_collision_23" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_middle_link1_collision_24" type="mesh" mesh="left_middle_link1_collision_24" group="3" class="apex_hand_left_hard_link"/>
+          <body name="left_middle_link2" pos="0.045 0 0" quat="1 0 0 0">
+            <joint name="left_middle_j2" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+            <inertial pos="0.009137 -0.000662 0.000327" mass="0.023044" fullinertia="1.31e-06 2.25e-06 2.45e-06 2.5e-07 3e-08 1e-08"/>
+            <geom name="left_middle_link2_visual" type="mesh" mesh="left_middle_link2_visual" group="1" class="apex_hand_left_visual"/>
+            <geom name="left_middle_link2_collision_0" type="mesh" mesh="left_middle_link2_collision_0" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_1" type="mesh" mesh="left_middle_link2_collision_1" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_2" type="mesh" mesh="left_middle_link2_collision_2" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_3" type="mesh" mesh="left_middle_link2_collision_3" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_4" type="mesh" mesh="left_middle_link2_collision_4" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_5" type="mesh" mesh="left_middle_link2_collision_5" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_6" type="mesh" mesh="left_middle_link2_collision_6" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_7" type="mesh" mesh="left_middle_link2_collision_7" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_8" type="mesh" mesh="left_middle_link2_collision_8" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_9" type="mesh" mesh="left_middle_link2_collision_9" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_10" type="mesh" mesh="left_middle_link2_collision_10" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_11" type="mesh" mesh="left_middle_link2_collision_11" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_12" type="mesh" mesh="left_middle_link2_collision_12" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_13" type="mesh" mesh="left_middle_link2_collision_13" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_14" type="mesh" mesh="left_middle_link2_collision_14" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_15" type="mesh" mesh="left_middle_link2_collision_15" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_16" type="mesh" mesh="left_middle_link2_collision_16" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_17" type="mesh" mesh="left_middle_link2_collision_17" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_middle_link2_collision_18" type="mesh" mesh="left_middle_link2_collision_18" group="3" class="apex_hand_left_hard_link"/>
+            <body name="left_middle_link3" pos="0.025 0 0" quat="1 0 0 0">
+              <joint name="left_middle_j3" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+              <inertial pos="0.011123 -0.000544 0" mass="0.018645" fullinertia="6e-07 1.59e-06 1.39e-06 4e-08 0 0"/>
+              <geom name="left_middle_link3_visual" type="mesh" mesh="left_middle_link3_visual" group="1" class="apex_hand_left_visual"/>
+              <geom name="left_middle_link3_collision_0" type="mesh" mesh="left_middle_link3_collision_0" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_middle_link3_collision_1" type="mesh" mesh="left_middle_link3_collision_1" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_middle_link3_collision_2" type="mesh" mesh="left_middle_link3_collision_2" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_middle_link3_collision_3" type="mesh" mesh="left_middle_link3_collision_3" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_middle_link3_collision_4" type="mesh" mesh="left_middle_link3_collision_4" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_middle_link3_collision_5" type="mesh" mesh="left_middle_link3_collision_5" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_middle_link3_collision_6" type="mesh" mesh="left_middle_link3_collision_6" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_middle_link3_collision_7" type="mesh" mesh="left_middle_link3_collision_7" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_middle_link3_collision_8" type="mesh" mesh="left_middle_link3_collision_8" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_middle_link3_collision_9" type="mesh" mesh="left_middle_link3_collision_9" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_middle_link3_collision_10" type="mesh" mesh="left_middle_link3_collision_10" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_middle_link3_collision_11" type="mesh" mesh="left_middle_link3_collision_11" group="3" class="apex_hand_left_hard_link"/>
+              <body name="left_middle_tactile2" pos="0 0 0" quat="1 0 0 0">
+                <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+                <geom name="left_middle_tactile2_visual" type="mesh" mesh="left_middle_tactile2_visual" group="2" class="apex_hand_left_visual"/>
+                <geom name="left_middle_tactile2_collision" type="mesh" mesh="left_middle_tactile2_collision" group="4" class="apex_hand_left_soft_tactile"/>
+                <site name="left_middle_pad" pos="0.01709614476 0.00719554486 0" quat="1 0 0 0" size="0.003" group="5"/>
+                <site name="left_middle_tip" pos="0.02767216672 0.0005502779242 0" quat="1 0 0 0" size="0.003" group="5"/>
+              </body>
+            </body>
+            <body name="left_middle_tactile1" pos="0 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+              <geom name="left_middle_tactile1_visual" type="mesh" mesh="left_middle_tactile1_visual" group="2" class="apex_hand_left_visual"/>
+              <geom name="left_middle_tactile1_collision" type="mesh" mesh="left_middle_tactile1_collision" group="4" class="apex_hand_left_soft_tactile"/>
+            </body>
+          </body>
+          <body name="left_middle_tactile0" pos="0 0 0" quat="1 0 0 0">
+            <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+            <geom name="left_middle_tactile0_visual" type="mesh" mesh="left_middle_tactile0_visual" group="2" class="apex_hand_left_visual"/>
+            <geom name="left_middle_tactile0_collision" type="mesh" mesh="left_middle_tactile0_collision" group="4" class="apex_hand_left_soft_tactile"/>
+          </body>
+        </body>
+      </body>
+      <body name="left_ring_link0" pos="0.0071 0.011503 0.1188" quat="-2.597343467e-06 0.7071080799 2.597353008e-06 0.7071054825">
+        <joint name="left_ring_j0" type="hinge" axis="0 0 1" range="-0.4363 0.4363" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+        <inertial pos="0.00402 0.000105 -0.000623" mass="0.013698" fullinertia="1.13e-06 1.71e-06 8.5e-07 3e-08 1e-08 0"/>
+        <geom name="left_ring_link0_visual" type="mesh" mesh="left_ring_link0_visual" group="1" class="apex_hand_left_visual"/>
+        <geom name="left_ring_link0_collision_0" type="mesh" mesh="left_ring_link0_collision_0" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_ring_link0_collision_1" type="mesh" mesh="left_ring_link0_collision_1" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_ring_link0_collision_2" type="mesh" mesh="left_ring_link0_collision_2" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_ring_link0_collision_3" type="mesh" mesh="left_ring_link0_collision_3" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_ring_link0_collision_4" type="mesh" mesh="left_ring_link0_collision_4" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_ring_link0_collision_5" type="mesh" mesh="left_ring_link0_collision_5" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_ring_link0_collision_6" type="mesh" mesh="left_ring_link0_collision_6" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_ring_link0_collision_7" type="mesh" mesh="left_ring_link0_collision_7" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_ring_link0_collision_8" type="mesh" mesh="left_ring_link0_collision_8" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_ring_link0_collision_9" type="mesh" mesh="left_ring_link0_collision_9" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_ring_link0_collision_10" type="mesh" mesh="left_ring_link0_collision_10" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_ring_link0_collision_11" type="mesh" mesh="left_ring_link0_collision_11" group="3" class="apex_hand_left_hard_link"/>
+        <body name="left_ring_link1" pos="0.016 0 0" quat="0.7071054825 0.7071080799 0 0">
+          <joint name="left_ring_j1" type="hinge" axis="0 0 1" range="-0.349 1.5707" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+          <inertial pos="0.016598 -0.002765 -0.000113" mass="0.043491" fullinertia="2.67e-06 1.122e-05 1.132e-05 9.3e-07 1.8e-07 1e-08"/>
+          <geom name="left_ring_link1_visual" type="mesh" mesh="left_ring_link1_visual" group="1" class="apex_hand_left_visual"/>
+          <geom name="left_ring_link1_collision_0" type="mesh" mesh="left_ring_link1_collision_0" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_1" type="mesh" mesh="left_ring_link1_collision_1" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_2" type="mesh" mesh="left_ring_link1_collision_2" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_3" type="mesh" mesh="left_ring_link1_collision_3" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_4" type="mesh" mesh="left_ring_link1_collision_4" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_5" type="mesh" mesh="left_ring_link1_collision_5" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_6" type="mesh" mesh="left_ring_link1_collision_6" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_7" type="mesh" mesh="left_ring_link1_collision_7" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_8" type="mesh" mesh="left_ring_link1_collision_8" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_9" type="mesh" mesh="left_ring_link1_collision_9" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_10" type="mesh" mesh="left_ring_link1_collision_10" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_11" type="mesh" mesh="left_ring_link1_collision_11" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_12" type="mesh" mesh="left_ring_link1_collision_12" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_13" type="mesh" mesh="left_ring_link1_collision_13" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_14" type="mesh" mesh="left_ring_link1_collision_14" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_15" type="mesh" mesh="left_ring_link1_collision_15" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_16" type="mesh" mesh="left_ring_link1_collision_16" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_17" type="mesh" mesh="left_ring_link1_collision_17" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_18" type="mesh" mesh="left_ring_link1_collision_18" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_19" type="mesh" mesh="left_ring_link1_collision_19" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_20" type="mesh" mesh="left_ring_link1_collision_20" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_21" type="mesh" mesh="left_ring_link1_collision_21" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_22" type="mesh" mesh="left_ring_link1_collision_22" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_23" type="mesh" mesh="left_ring_link1_collision_23" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_ring_link1_collision_24" type="mesh" mesh="left_ring_link1_collision_24" group="3" class="apex_hand_left_hard_link"/>
+          <body name="left_ring_link2" pos="0.045 0 0" quat="1 0 0 0">
+            <joint name="left_ring_j2" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+            <inertial pos="0.009137 -0.000662 0.000327" mass="0.023044" fullinertia="1.31e-06 2.25e-06 2.45e-06 2.5e-07 3e-08 1e-08"/>
+            <geom name="left_ring_link2_visual" type="mesh" mesh="left_ring_link2_visual" group="1" class="apex_hand_left_visual"/>
+            <geom name="left_ring_link2_collision_0" type="mesh" mesh="left_ring_link2_collision_0" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_1" type="mesh" mesh="left_ring_link2_collision_1" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_2" type="mesh" mesh="left_ring_link2_collision_2" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_3" type="mesh" mesh="left_ring_link2_collision_3" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_4" type="mesh" mesh="left_ring_link2_collision_4" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_5" type="mesh" mesh="left_ring_link2_collision_5" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_6" type="mesh" mesh="left_ring_link2_collision_6" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_7" type="mesh" mesh="left_ring_link2_collision_7" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_8" type="mesh" mesh="left_ring_link2_collision_8" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_9" type="mesh" mesh="left_ring_link2_collision_9" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_10" type="mesh" mesh="left_ring_link2_collision_10" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_11" type="mesh" mesh="left_ring_link2_collision_11" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_12" type="mesh" mesh="left_ring_link2_collision_12" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_13" type="mesh" mesh="left_ring_link2_collision_13" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_14" type="mesh" mesh="left_ring_link2_collision_14" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_15" type="mesh" mesh="left_ring_link2_collision_15" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_16" type="mesh" mesh="left_ring_link2_collision_16" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_17" type="mesh" mesh="left_ring_link2_collision_17" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_ring_link2_collision_18" type="mesh" mesh="left_ring_link2_collision_18" group="3" class="apex_hand_left_hard_link"/>
+            <body name="left_ring_link3" pos="0.025 0 0" quat="1 0 0 0">
+              <joint name="left_ring_j3" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+              <inertial pos="0.011123 -0.000544 0" mass="0.018645" fullinertia="6e-07 1.59e-06 1.39e-06 4e-08 0 0"/>
+              <geom name="left_ring_link3_visual" type="mesh" mesh="left_ring_link3_visual" group="1" class="apex_hand_left_visual"/>
+              <geom name="left_ring_link3_collision_0" type="mesh" mesh="left_ring_link3_collision_0" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_ring_link3_collision_1" type="mesh" mesh="left_ring_link3_collision_1" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_ring_link3_collision_2" type="mesh" mesh="left_ring_link3_collision_2" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_ring_link3_collision_3" type="mesh" mesh="left_ring_link3_collision_3" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_ring_link3_collision_4" type="mesh" mesh="left_ring_link3_collision_4" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_ring_link3_collision_5" type="mesh" mesh="left_ring_link3_collision_5" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_ring_link3_collision_6" type="mesh" mesh="left_ring_link3_collision_6" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_ring_link3_collision_7" type="mesh" mesh="left_ring_link3_collision_7" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_ring_link3_collision_8" type="mesh" mesh="left_ring_link3_collision_8" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_ring_link3_collision_9" type="mesh" mesh="left_ring_link3_collision_9" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_ring_link3_collision_10" type="mesh" mesh="left_ring_link3_collision_10" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_ring_link3_collision_11" type="mesh" mesh="left_ring_link3_collision_11" group="3" class="apex_hand_left_hard_link"/>
+              <body name="left_ring_tactile2" pos="0 0 0" quat="1 0 0 0">
+                <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+                <geom name="left_ring_tactile2_visual" type="mesh" mesh="left_ring_tactile2_visual" group="2" class="apex_hand_left_visual"/>
+                <geom name="left_ring_tactile2_collision" type="mesh" mesh="left_ring_tactile2_collision" group="4" class="apex_hand_left_soft_tactile"/>
+                <site name="left_ring_pad" pos="0.01709614476 0.00719554486 0" quat="1 0 0 0" size="0.003" group="5"/>
+                <site name="left_ring_tip" pos="0.02767216672 0.0005502779242 0" quat="1 0 0 0" size="0.003" group="5"/>
+              </body>
+            </body>
+            <body name="left_ring_tactile1" pos="0 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+              <geom name="left_ring_tactile1_visual" type="mesh" mesh="left_ring_tactile1_visual" group="2" class="apex_hand_left_visual"/>
+              <geom name="left_ring_tactile1_collision" type="mesh" mesh="left_ring_tactile1_collision" group="4" class="apex_hand_left_soft_tactile"/>
+            </body>
+          </body>
+          <body name="left_ring_tactile0" pos="0 0 0" quat="1 0 0 0">
+            <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+            <geom name="left_ring_tactile0_visual" type="mesh" mesh="left_ring_tactile0_visual" group="2" class="apex_hand_left_visual"/>
+            <geom name="left_ring_tactile0_collision" type="mesh" mesh="left_ring_tactile0_collision" group="4" class="apex_hand_left_soft_tactile"/>
+          </body>
+        </body>
+      </body>
+      <body name="left_pinky_link0" pos="0.0071 0.034504 0.1158" quat="-2.597343467e-06 0.7071080799 2.597353008e-06 0.7071054825">
+        <joint name="left_pinky_j0" type="hinge" axis="0 0 1" range="-0.4363 0.4363" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+        <inertial pos="0.00402 0.000105 -0.000623" mass="0.013698" fullinertia="1.13e-06 1.71e-06 8.5e-07 3e-08 1e-08 0"/>
+        <geom name="left_pinky_link0_visual" type="mesh" mesh="left_pinky_link0_visual" group="1" class="apex_hand_left_visual"/>
+        <geom name="left_pinky_link0_collision_0" type="mesh" mesh="left_pinky_link0_collision_0" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_pinky_link0_collision_1" type="mesh" mesh="left_pinky_link0_collision_1" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_pinky_link0_collision_2" type="mesh" mesh="left_pinky_link0_collision_2" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_pinky_link0_collision_3" type="mesh" mesh="left_pinky_link0_collision_3" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_pinky_link0_collision_4" type="mesh" mesh="left_pinky_link0_collision_4" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_pinky_link0_collision_5" type="mesh" mesh="left_pinky_link0_collision_5" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_pinky_link0_collision_6" type="mesh" mesh="left_pinky_link0_collision_6" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_pinky_link0_collision_7" type="mesh" mesh="left_pinky_link0_collision_7" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_pinky_link0_collision_8" type="mesh" mesh="left_pinky_link0_collision_8" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_pinky_link0_collision_9" type="mesh" mesh="left_pinky_link0_collision_9" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_pinky_link0_collision_10" type="mesh" mesh="left_pinky_link0_collision_10" group="3" class="apex_hand_left_hard_link"/>
+        <geom name="left_pinky_link0_collision_11" type="mesh" mesh="left_pinky_link0_collision_11" group="3" class="apex_hand_left_hard_link"/>
+        <body name="left_pinky_link1" pos="0.016 0 0" quat="0.7071054825 0.7071080799 0 0">
+          <joint name="left_pinky_j1" type="hinge" axis="0 0 1" range="-0.349 1.5707" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+          <inertial pos="0.016598 -0.002765 -0.000113" mass="0.043491" fullinertia="2.67e-06 1.122e-05 1.132e-05 9.3e-07 1.8e-07 1e-08"/>
+          <geom name="left_pinky_link1_visual" type="mesh" mesh="left_pinky_link1_visual" group="1" class="apex_hand_left_visual"/>
+          <geom name="left_pinky_link1_collision_0" type="mesh" mesh="left_pinky_link1_collision_0" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_1" type="mesh" mesh="left_pinky_link1_collision_1" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_2" type="mesh" mesh="left_pinky_link1_collision_2" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_3" type="mesh" mesh="left_pinky_link1_collision_3" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_4" type="mesh" mesh="left_pinky_link1_collision_4" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_5" type="mesh" mesh="left_pinky_link1_collision_5" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_6" type="mesh" mesh="left_pinky_link1_collision_6" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_7" type="mesh" mesh="left_pinky_link1_collision_7" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_8" type="mesh" mesh="left_pinky_link1_collision_8" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_9" type="mesh" mesh="left_pinky_link1_collision_9" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_10" type="mesh" mesh="left_pinky_link1_collision_10" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_11" type="mesh" mesh="left_pinky_link1_collision_11" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_12" type="mesh" mesh="left_pinky_link1_collision_12" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_13" type="mesh" mesh="left_pinky_link1_collision_13" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_14" type="mesh" mesh="left_pinky_link1_collision_14" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_15" type="mesh" mesh="left_pinky_link1_collision_15" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_16" type="mesh" mesh="left_pinky_link1_collision_16" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_17" type="mesh" mesh="left_pinky_link1_collision_17" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_18" type="mesh" mesh="left_pinky_link1_collision_18" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_19" type="mesh" mesh="left_pinky_link1_collision_19" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_20" type="mesh" mesh="left_pinky_link1_collision_20" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_21" type="mesh" mesh="left_pinky_link1_collision_21" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_22" type="mesh" mesh="left_pinky_link1_collision_22" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_23" type="mesh" mesh="left_pinky_link1_collision_23" group="3" class="apex_hand_left_hard_link"/>
+          <geom name="left_pinky_link1_collision_24" type="mesh" mesh="left_pinky_link1_collision_24" group="3" class="apex_hand_left_hard_link"/>
+          <body name="left_pinky_link2" pos="0.045 0 0" quat="1 0 0 0">
+            <joint name="left_pinky_j2" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+            <inertial pos="0.009137 -0.000662 0.000327" mass="0.023044" fullinertia="1.31e-06 2.25e-06 2.45e-06 2.5e-07 3e-08 1e-08"/>
+            <geom name="left_pinky_link2_visual" type="mesh" mesh="left_pinky_link2_visual" group="1" class="apex_hand_left_visual"/>
+            <geom name="left_pinky_link2_collision_0" type="mesh" mesh="left_pinky_link2_collision_0" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_1" type="mesh" mesh="left_pinky_link2_collision_1" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_2" type="mesh" mesh="left_pinky_link2_collision_2" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_3" type="mesh" mesh="left_pinky_link2_collision_3" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_4" type="mesh" mesh="left_pinky_link2_collision_4" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_5" type="mesh" mesh="left_pinky_link2_collision_5" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_6" type="mesh" mesh="left_pinky_link2_collision_6" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_7" type="mesh" mesh="left_pinky_link2_collision_7" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_8" type="mesh" mesh="left_pinky_link2_collision_8" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_9" type="mesh" mesh="left_pinky_link2_collision_9" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_10" type="mesh" mesh="left_pinky_link2_collision_10" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_11" type="mesh" mesh="left_pinky_link2_collision_11" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_12" type="mesh" mesh="left_pinky_link2_collision_12" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_13" type="mesh" mesh="left_pinky_link2_collision_13" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_14" type="mesh" mesh="left_pinky_link2_collision_14" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_15" type="mesh" mesh="left_pinky_link2_collision_15" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_16" type="mesh" mesh="left_pinky_link2_collision_16" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_17" type="mesh" mesh="left_pinky_link2_collision_17" group="3" class="apex_hand_left_hard_link"/>
+            <geom name="left_pinky_link2_collision_18" type="mesh" mesh="left_pinky_link2_collision_18" group="3" class="apex_hand_left_hard_link"/>
+            <body name="left_pinky_link3" pos="0.025 0 0" quat="1 0 0 0">
+              <joint name="left_pinky_j3" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+              <inertial pos="0.011123 -0.000544 0" mass="0.018645" fullinertia="6e-07 1.59e-06 1.39e-06 4e-08 0 0"/>
+              <geom name="left_pinky_link3_visual" type="mesh" mesh="left_pinky_link3_visual" group="1" class="apex_hand_left_visual"/>
+              <geom name="left_pinky_link3_collision_0" type="mesh" mesh="left_pinky_link3_collision_0" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_pinky_link3_collision_1" type="mesh" mesh="left_pinky_link3_collision_1" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_pinky_link3_collision_2" type="mesh" mesh="left_pinky_link3_collision_2" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_pinky_link3_collision_3" type="mesh" mesh="left_pinky_link3_collision_3" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_pinky_link3_collision_4" type="mesh" mesh="left_pinky_link3_collision_4" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_pinky_link3_collision_5" type="mesh" mesh="left_pinky_link3_collision_5" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_pinky_link3_collision_6" type="mesh" mesh="left_pinky_link3_collision_6" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_pinky_link3_collision_7" type="mesh" mesh="left_pinky_link3_collision_7" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_pinky_link3_collision_8" type="mesh" mesh="left_pinky_link3_collision_8" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_pinky_link3_collision_9" type="mesh" mesh="left_pinky_link3_collision_9" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_pinky_link3_collision_10" type="mesh" mesh="left_pinky_link3_collision_10" group="3" class="apex_hand_left_hard_link"/>
+              <geom name="left_pinky_link3_collision_11" type="mesh" mesh="left_pinky_link3_collision_11" group="3" class="apex_hand_left_hard_link"/>
+              <body name="left_pinky_tactile2" pos="0 0 0" quat="1 0 0 0">
+                <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+                <geom name="left_pinky_tactile2_visual" type="mesh" mesh="left_pinky_tactile2_visual" group="2" class="apex_hand_left_visual"/>
+                <geom name="left_pinky_tactile2_collision" type="mesh" mesh="left_pinky_tactile2_collision" group="4" class="apex_hand_left_soft_tactile"/>
+                <site name="left_pinky_pad" pos="0.017096 0.0071955 0" quat="1 0 0 0" size="0.003" group="5"/>
+                <site name="left_pinky_tip" pos="0.027672 0.00055028 0" quat="1 0 0 0" size="0.003" group="5"/>
+              </body>
+            </body>
+            <body name="left_pinky_tactile1" pos="0 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+              <geom name="left_pinky_tactile1_visual" type="mesh" mesh="left_pinky_tactile1_visual" group="2" class="apex_hand_left_visual"/>
+              <geom name="left_pinky_tactile1_collision" type="mesh" mesh="left_pinky_tactile1_collision" group="4" class="apex_hand_left_soft_tactile"/>
+            </body>
+          </body>
+          <body name="left_pinky_tactile0" pos="0 0 0" quat="1 0 0 0">
+            <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+            <geom name="left_pinky_tactile0_visual" type="mesh" mesh="left_pinky_tactile0_visual" group="2" class="apex_hand_left_visual"/>
+            <geom name="left_pinky_tactile0_collision" type="mesh" mesh="left_pinky_tactile0_collision" group="4" class="apex_hand_left_soft_tactile"/>
+          </body>
+        </body>
+      </body>
+      <body name="left_palm_tactile" pos="0 0 0" quat="1 0 0 0">
+        <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+        <geom name="left_palm_tactile_visual" type="mesh" mesh="left_palm_tactile_visual" group="2" class="apex_hand_left_visual"/>
+        <geom name="left_palm_tactile_collision" type="mesh" mesh="left_palm_tactile_collision" group="4" class="apex_hand_left_soft_tactile"/>
+      </body>
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="left_index_link0" body2="left_palm_link"/>
+    <exclude body1="left_middle_link0" body2="left_palm_link"/>
+    <exclude body1="left_palm_link" body2="left_pinky_link0"/>
+    <exclude body1="left_palm_link" body2="left_ring_link0"/>
+    <exclude body1="left_palm_link" body2="left_thumb_link0"/>
+    <exclude body1="left_palm_link" body2="left_thumb_link2"/>
+    <exclude body1="left_palm_tactile" body2="left_pinky_link0"/>
+    <exclude body1="left_palm_tactile" body2="left_ring_link0"/>
+  </contact>
+  <equality>
+    <joint joint1="left_thumb_j4" joint2="left_thumb_j3" polycoef="0 1 0 0 0" solref="0.002 1" solimp="0.999 0.9999 1e-05"/>
+    <joint joint1="left_index_j3" joint2="left_index_j2" polycoef="0 1 0 0 0" solref="0.002 1" solimp="0.999 0.9999 1e-05"/>
+    <joint joint1="left_middle_j3" joint2="left_middle_j2" polycoef="0 1 0 0 0" solref="0.002 1" solimp="0.999 0.9999 1e-05"/>
+    <joint joint1="left_ring_j3" joint2="left_ring_j2" polycoef="0 1 0 0 0" solref="0.002 1" solimp="0.999 0.9999 1e-05"/>
+    <joint joint1="left_pinky_j3" joint2="left_pinky_j2" polycoef="0 1 0 0 0" solref="0.002 1" solimp="0.999 0.9999 1e-05"/>
+  </equality>
+  <actuator>
+    <position name="act_left_thumb_j0" joint="left_thumb_j0" kp="20" kv="0.17" ctrllimited="true" ctrlrange="0 1.5707" forcelimited="true" forcerange="-1.2 1.2"/>
+    <position name="act_left_thumb_j1" joint="left_thumb_j1" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.1745 1.0471" forcelimited="true" forcerange="-0.6 0.6"/>
+    <position name="act_left_thumb_j2" joint="left_thumb_j2" kp="20" kv="0.17" ctrllimited="true" ctrlrange="0 1.396" forcelimited="true" forcerange="-2.3 2.3"/>
+    <position name="act_left_thumb_j3" joint="left_thumb_j3" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.349 1.396" forcelimited="true" forcerange="-0.025 1"/>
+    <position name="act_left_index_j0" joint="left_index_j0" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.4363 0.4363" forcelimited="true" forcerange="-2 2"/>
+    <position name="act_left_index_j1" joint="left_index_j1" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.349 1.5707" forcelimited="true" forcerange="-3.2 3.2"/>
+    <position name="act_left_index_j2" joint="left_index_j2" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.0872 1.7453" forcelimited="true" forcerange="-0.025 1"/>
+    <position name="act_left_middle_j0" joint="left_middle_j0" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.4363 0.4363" forcelimited="true" forcerange="-2 2"/>
+    <position name="act_left_middle_j1" joint="left_middle_j1" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.349 1.5707" forcelimited="true" forcerange="-3.2 3.2"/>
+    <position name="act_left_middle_j2" joint="left_middle_j2" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.0872 1.7453" forcelimited="true" forcerange="-0.025 1"/>
+    <position name="act_left_ring_j0" joint="left_ring_j0" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.4363 0.4363" forcelimited="true" forcerange="-2 2"/>
+    <position name="act_left_ring_j1" joint="left_ring_j1" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.349 1.5707" forcelimited="true" forcerange="-3.2 3.2"/>
+    <position name="act_left_ring_j2" joint="left_ring_j2" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.0872 1.7453" forcelimited="true" forcerange="-0.025 1"/>
+    <position name="act_left_pinky_j0" joint="left_pinky_j0" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.4363 0.4363" forcelimited="true" forcerange="-2 2"/>
+    <position name="act_left_pinky_j1" joint="left_pinky_j1" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.349 1.5707" forcelimited="true" forcerange="-3.2 3.2"/>
+    <position name="act_left_pinky_j2" joint="left_pinky_j2" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.0872 1.7453" forcelimited="true" forcerange="-0.025 1"/>
+  </actuator>
+</mujoco>

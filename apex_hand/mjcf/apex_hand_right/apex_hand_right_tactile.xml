@@ -1,0 +1,981 @@
+<mujoco model="apex_hand_right_mesh_tactile">
+  <compiler angle="radian" meshdir="."/>
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic"/>
+  <default>
+    <default class="apex_hand_right_visual">
+      <geom contype="0" conaffinity="0"/>
+    </default>
+    <default class="apex_hand_right_hard_link">
+      <geom condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2"/>
+    </default>
+    <default class="apex_hand_right_soft_tactile">
+      <geom condim="3" contype="1" conaffinity="1" friction="1.6 0.01 0.001" solref="0.04 1" solimp="0.7 0.9 0.005 0.5 2"/>
+    </default>
+    <default class="apex_hand_right_soft_visual">
+      <geom contype="0" conaffinity="0" rgba="0.6 0.75 0.85 0.35"/>
+    </default>
+    <default class="apex_hand_right_tactile_point">
+      <geom condim="3" rgba="1 0 0 1" contype="1" conaffinity="1" friction="1.0 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2"/>
+    </default>
+  </default>
+  <asset>
+    <mesh name="right_palm_link_visual" file="meshes/right_palm_link.STL"/>
+    <mesh name="right_palm_link_collision" file="meshes/right_palm_link.STL"/>
+    <mesh name="right_thumb_link0_visual" file="meshes/right_thumb_link0.STL"/>
+    <mesh name="right_thumb_link0_collision" file="meshes/right_thumb_link0.STL"/>
+    <mesh name="right_thumb_link1_visual" file="meshes/right_thumb_link1.STL"/>
+    <mesh name="right_thumb_link1_collision" file="meshes/right_thumb_link1.STL"/>
+    <mesh name="right_thumb_link2_visual" file="meshes/right_thumb_link2.STL"/>
+    <mesh name="right_thumb_link2_collision" file="meshes/right_thumb_link2.STL"/>
+    <mesh name="right_thumb_link3_visual" file="meshes/right_thumb_link3.STL"/>
+    <mesh name="right_thumb_link3_collision" file="meshes/right_thumb_link3.STL"/>
+    <mesh name="right_thumb_link4_visual" file="meshes/right_thumb_link4.STL"/>
+    <mesh name="right_thumb_link4_collision" file="meshes/right_thumb_link4.STL"/>
+    <mesh name="right_thumb_tactile2_visual" file="meshes/right_thumb_tactile2.STL"/>
+    <mesh name="right_thumb_tactile2_collision" file="meshes/right_thumb_tactile2.STL"/>
+    <mesh name="right_thumb_tactile1_visual" file="meshes/right_thumb_tactile1.STL"/>
+    <mesh name="right_thumb_tactile1_collision" file="meshes/right_thumb_tactile1.STL"/>
+    <mesh name="right_thumb_tactile0_visual" file="meshes/right_thumb_tactile0.STL"/>
+    <mesh name="right_thumb_tactile0_collision" file="meshes/right_thumb_tactile0.STL"/>
+    <mesh name="right_index_link0_visual" file="meshes/right_index_link0.STL"/>
+    <mesh name="right_index_link0_collision" file="meshes/right_index_link0.STL"/>
+    <mesh name="right_index_link1_visual" file="meshes/right_index_link1.STL"/>
+    <mesh name="right_index_link1_collision" file="meshes/right_index_link1.STL"/>
+    <mesh name="right_index_link2_visual" file="meshes/right_index_link2.STL"/>
+    <mesh name="right_index_link2_collision" file="meshes/right_index_link2.STL"/>
+    <mesh name="right_index_link3_visual" file="meshes/right_index_link3.STL"/>
+    <mesh name="right_index_link3_collision" file="meshes/right_index_link3.STL"/>
+    <mesh name="right_index_tactile2_visual" file="meshes/right_index_tactile2.STL"/>
+    <mesh name="right_index_tactile2_collision" file="meshes/right_index_tactile2.STL"/>
+    <mesh name="right_index_tactile1_visual" file="meshes/right_index_tactile1.STL"/>
+    <mesh name="right_index_tactile1_collision" file="meshes/right_index_tactile1.STL"/>
+    <mesh name="right_index_tactile0_visual" file="meshes/right_index_tactile0.STL"/>
+    <mesh name="right_index_tactile0_collision" file="meshes/right_index_tactile0.STL"/>
+    <mesh name="right_middle_link0_visual" file="meshes/right_middle_link0.STL"/>
+    <mesh name="right_middle_link0_collision" file="meshes/right_middle_link0.STL"/>
+    <mesh name="right_middle_link1_visual" file="meshes/right_middle_link1.STL"/>
+    <mesh name="right_middle_link1_collision" file="meshes/right_middle_link1.STL"/>
+    <mesh name="right_middle_link2_visual" file="meshes/right_middle_link2.STL"/>
+    <mesh name="right_middle_link2_collision" file="meshes/right_middle_link2.STL"/>
+    <mesh name="right_middle_link3_visual" file="meshes/right_middle_link3.STL"/>
+    <mesh name="right_middle_link3_collision" file="meshes/right_middle_link3.STL"/>
+    <mesh name="right_middle_tactile2_visual" file="meshes/right_middle_tactile2.STL"/>
+    <mesh name="right_middle_tactile2_collision" file="meshes/right_middle_tactile2.STL"/>
+    <mesh name="right_middle_tactile1_visual" file="meshes/right_middle_tactile1.STL"/>
+    <mesh name="right_middle_tactile1_collision" file="meshes/right_middle_tactile1.STL"/>
+    <mesh name="right_middle_tactile0_visual" file="meshes/right_middle_tactile0.STL"/>
+    <mesh name="right_middle_tactile0_collision" file="meshes/right_middle_tactile0.STL"/>
+    <mesh name="right_ring_link0_visual" file="meshes/right_ring_link0.STL"/>
+    <mesh name="right_ring_link0_collision" file="meshes/right_ring_link0.STL"/>
+    <mesh name="right_ring_link1_visual" file="meshes/right_ring_link1.STL"/>
+    <mesh name="right_ring_link1_collision" file="meshes/right_ring_link1.STL"/>
+    <mesh name="right_ring_link2_visual" file="meshes/right_ring_link2.STL"/>
+    <mesh name="right_ring_link2_collision" file="meshes/right_ring_link2.STL"/>
+    <mesh name="right_ring_link3_visual" file="meshes/right_ring_link3.STL"/>
+    <mesh name="right_ring_link3_collision" file="meshes/right_ring_link3.STL"/>
+    <mesh name="right_ring_tactile2_visual" file="meshes/right_ring_tactile2.STL"/>
+    <mesh name="right_ring_tactile2_collision" file="meshes/right_ring_tactile2.STL"/>
+    <mesh name="right_ring_tactile1_visual" file="meshes/right_ring_tactile1.STL"/>
+    <mesh name="right_ring_tactile1_collision" file="meshes/right_ring_tactile1.STL"/>
+    <mesh name="right_ring_tactile0_visual" file="meshes/right_ring_tactile0.STL"/>
+    <mesh name="right_ring_tactile0_collision" file="meshes/right_ring_tactile0.STL"/>
+    <mesh name="right_pinky_link0_visual" file="meshes/right_pinky_link0.STL"/>
+    <mesh name="right_pinky_link0_collision" file="meshes/right_pinky_link0.STL"/>
+    <mesh name="right_pinky_link1_visual" file="meshes/right_pinky_link1.STL"/>
+    <mesh name="right_pinky_link1_collision" file="meshes/right_pinky_link1.STL"/>
+    <mesh name="right_pinky_link2_visual" file="meshes/right_pinky_link2.STL"/>
+    <mesh name="right_pinky_link2_collision" file="meshes/right_pinky_link2.STL"/>
+    <mesh name="right_pinky_link3_visual" file="meshes/right_pinky_link3.STL"/>
+    <mesh name="right_pinky_link3_collision" file="meshes/right_pinky_link3.STL"/>
+    <mesh name="right_pinky_tactile2_visual" file="meshes/right_pinky_tactile2.STL"/>
+    <mesh name="right_pinky_tactile2_collision" file="meshes/right_pinky_tactile2.STL"/>
+    <mesh name="right_pinky_tactile1_visual" file="meshes/right_pinky_tactile1.STL"/>
+    <mesh name="right_pinky_tactile1_collision" file="meshes/right_pinky_tactile1.STL"/>
+    <mesh name="right_pinky_tactile0_visual" file="meshes/right_pinky_tactile0.STL"/>
+    <mesh name="right_pinky_tactile0_collision" file="meshes/right_pinky_tactile0.STL"/>
+    <mesh name="right_palm_tactile_visual" file="meshes/right_palm_tactile.STL"/>
+    <mesh name="right_palm_tactile_collision" file="meshes/right_palm_tactile.STL"/>
+  </asset>
+  <worldbody>
+    <body name="right_palm_link">
+      <inertial pos="-0.002655 -0.00218 0.068076" mass="0.67285" fullinertia="0.001033 0.000726 0.00057 -2.3e-05 1.5e-05 -2.7e-05"/>
+      <geom name="right_palm_link_visual" type="mesh" mesh="right_palm_link_visual" group="1" class="apex_hand_right_visual"/>
+      <geom name="right_palm_link_collision" type="mesh" mesh="right_palm_link_collision" group="3" class="apex_hand_right_hard_link"/>
+      <body name="right_thumb_link0" pos="0.013 0.023 0.0493" quat="-2.597343467e-06 0.7071054825 0.7071080799 -2.597353008e-06">
+        <joint name="right_thumb_j0" type="hinge" axis="0 0 1" range="0 1.5707" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+        <inertial pos="0.00741 0.000618008 0.001117" mass="0.009082" fullinertia="7.8e-07 6.59999e-07 4.80001e-07 0 -2e-08 -5.00013e-08"/>
+        <geom name="right_thumb_link0_visual" type="mesh" mesh="right_thumb_link0_visual" group="1" class="apex_hand_right_visual"/>
+        <geom name="right_thumb_link0_collision" type="mesh" mesh="right_thumb_link0_collision" group="3" class="apex_hand_right_hard_link"/>
+        <body name="right_thumb_link1" pos="0.0145 0 0" quat="0.4999981634 -0.5 0.5000018366 -0.5">
+          <joint name="right_thumb_j1" type="hinge" axis="0 0 1" range="-0.1745 1.0471" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+          <inertial pos="-0.00103822 -0.00289599 0.004329" mass="0.012935" fullinertia="1.35e-06 8.49998e-07 1.01e-06 1.39996e-07 0 -5e-08"/>
+          <geom name="right_thumb_link1_visual" type="mesh" mesh="right_thumb_link1_visual" group="1" class="apex_hand_right_visual"/>
+          <geom name="right_thumb_link1_collision" type="mesh" mesh="right_thumb_link1_collision" group="3" class="apex_hand_right_hard_link"/>
+          <body name="right_thumb_link2" pos="0 0 0.014" quat="0.4999981634 -0.5 -0.5000018366 0.5">
+            <joint name="right_thumb_j2" type="hinge" axis="0 0 1" range="0 1.396" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+            <inertial pos="-0.007241 -0.023214 0.000542053" mass="0.139547" fullinertia="5.047e-05 2.081e-05 5.619e-05 6.29975e-07 -8.59958e-07 -3.37e-06"/>
+            <geom name="right_thumb_link2_visual" type="mesh" mesh="right_thumb_link2_visual" group="1" class="apex_hand_right_visual"/>
+            <geom name="right_thumb_link2_collision" type="mesh" mesh="right_thumb_link2_collision" group="3" class="apex_hand_right_hard_link"/>
+            <body name="right_thumb_link3" pos="0 -0.055 0" quat="0.7071054825 0 0 -0.7071080799">
+              <joint name="right_thumb_j3" type="hinge" axis="0 0 1" range="-0.349 1.396" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+              <inertial pos="0.01148 -0.001936 -0.000146986" mass="0.029794" fullinertia="2.17e-06 3.86e-06 3.76e-06 2.2e-07 -5.00016e-08 -3.00007e-08"/>
+              <geom name="right_thumb_link3_visual" type="mesh" mesh="right_thumb_link3_visual" group="1" class="apex_hand_right_visual"/>
+              <geom name="right_thumb_link3_collision" type="mesh" mesh="right_thumb_link3_collision" group="3" class="apex_hand_right_hard_link"/>
+              <body name="right_thumb_link4" pos="0.03 0 0" quat="1 0 0 0">
+                <joint name="right_thumb_j4" type="hinge" axis="0 0 1" range="-0.349 1.396" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+                <inertial pos="0.012344 -5.90009e-05 -0.00012" mass="0.026805" fullinertia="1.3e-06 2.9e-06 2.6e-06 1.99995e-08 -7.00001e-08 -2.00022e-08"/>
+                <geom name="right_thumb_link4_visual" type="mesh" mesh="right_thumb_link4_visual" group="1" class="apex_hand_right_visual"/>
+                <geom name="right_thumb_link4_collision" type="mesh" mesh="right_thumb_link4_collision" group="3" class="apex_hand_right_hard_link"/>
+                <body name="right_thumb_tactile2" pos="0 0 0" quat="1 0 0 0">
+                  <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+                  <geom name="right_thumb_tactile2_visual" type="mesh" mesh="right_thumb_tactile2_visual" group="2" class="apex_hand_right_soft_visual"/>
+                  <geom name="right_thumb_tactile2_collision" type="mesh" mesh="right_thumb_tactile2_collision" group="4" class="apex_hand_right_soft_tactile"/>
+                  <geom name="right_thumb_tactile2_point_000" type="sphere" size="0.001" pos="0.02814447061 0.001361048573 -0.002199040951" quat="-0.1226713801 0.7856877763 0.1756200913 0.5803482008" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_001" type="sphere" size="0.001" pos="0.02821711832 0.001731422893 2.472480418e-05" quat="0.1793058909 -0.6508275756 -0.1938630216 -0.7118216021" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_002" type="sphere" size="0.001" pos="0.02802591802 0.001046530806 0.002341475874" quat="0.1591848752 -0.5627660372 -0.1344109971 -0.7999301512" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_003" type="sphere" size="0.001" pos="0.02626456127 0.002423576529 -0.004600917699" quat="-0.1271605085 0.8058564127 0.3825541665 0.4336795556" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_004" type="sphere" size="0.001" pos="0.0265997551 0.00348094071 -0.002349153568" quat="0.2274270844 -0.7483152622 -0.2883110323 -0.5524291251" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_005" type="sphere" size="0.001" pos="0.02653247306 0.003908410166 0.0001214043623" quat="0.2906770668 -0.6360871891 -0.2395928464 -0.6734205214" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_006" type="sphere" size="0.001" pos="0.02644405893 0.003196387398 0.002717128294" quat="0.3003587378 -0.5475969615 -0.2113747091 -0.7518263953" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_007" type="sphere" size="0.001" pos="0.02595391557 0.001907001169 0.004722058946" quat="0.2885511617 -0.4015229281 -0.1402876092 -0.8578093914" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_008" type="sphere" size="0.001" pos="0.02354794805 0.002345621027 -0.006631914446" quat="0.1857205298 -0.8840453734 -0.3341249308 -0.2689464504" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_009" type="sphere" size="0.001" pos="0.02412240313 0.004162999187 -0.004750670199" quat="-0.2157016705 0.7799738406 0.4288580956 0.4014901382" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_010" type="sphere" size="0.001" pos="0.02430061266 0.005256531623 -0.002415968452" quat="-0.2953308413 0.6841326097 0.4043472088 0.5303259387" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_011" type="sphere" size="0.001" pos="0.02417354965 0.005614992974 0.000230383367" quat="0.3595513968 -0.594592424 -0.3542423079 -0.6258554383" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_012" type="sphere" size="0.001" pos="0.02413941838 0.004956346921 0.002832058759" quat="0.3987141829 -0.5061031776 -0.2745203455 -0.7138103066" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_013" type="sphere" size="0.001" pos="0.02384756522 0.003543931317 0.00497605215" quat="0.4290639104 -0.3719089663 -0.202420263 -0.7978808926" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_014" type="sphere" size="0.001" pos="0.02314311221 0.001700821763 0.006516938536" quat="0.3993067197 -0.2420741201 -0.0917544225 -0.8795086071" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_015" type="sphere" size="0.001" pos="0.02113792135 0.003668920398 -0.006608571069" quat="-0.1475630865 0.7420343865 0.596135752 0.2687606184" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_016" type="sphere" size="0.001" pos="0.02144400131 0.005536806951 -0.004767149841" quat="0.2846047321 -0.799047208 -0.3978446768 -0.3496331206" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_017" type="sphere" size="0.001" pos="0.02147697114 0.006665228995 -0.002489587382" quat="0.3467030576 -0.6628695169 -0.4229749519 -0.511364042" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_018" type="sphere" size="0.001" pos="0.02134365436 0.007005277125 0.0002356261253" quat="0.4051610618 -0.571105759 -0.3838017969 -0.6019791581" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_019" type="sphere" size="0.001" pos="0.02139900345 0.006355062124 0.002751401782" quat="0.4709601104 -0.4544975778 -0.2884954048 -0.6988554411" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_020" type="sphere" size="0.001" pos="0.02132303392 0.004856518625 0.004941207895" quat="0.5272303073 -0.3203830755 -0.2360508975 -0.7507748409" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_021" type="sphere" size="0.001" pos="0.02075729082 0.002829321986 0.006600721606" quat="0.5450637535 -0.2290347471 -0.1439819741 -0.7935475918" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_022" type="sphere" size="0.001" pos="0.01791369833 0.002299871561 -0.007924415501" quat="-0.1037615384 0.7883230165 0.5832215915 0.1662315856" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_023" type="sphere" size="0.001" pos="0.01835405151 0.004653905022 -0.006560553442" quat="-0.1530077394 0.7308172053 0.6129279337 0.2584844136" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_024" type="sphere" size="0.001" pos="0.01870365287 0.006480761687 -0.004723799303" quat="-0.253690227 0.684111912 0.575907311 0.3687315144" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_025" type="sphere" size="0.001" pos="0.01874598003 0.007620413041 -0.002371685045" quat="-0.3592988503 0.6400637868 0.4869958781 0.4733473351" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_026" type="sphere" size="0.001" pos="0.01862685697 0.007914784931 0.0001942429715" quat="0.4443022526 -0.5435253561 -0.4160317691 -0.5780080127" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_027" type="sphere" size="0.001" pos="0.01859243083 0.007284310346 0.002733617305" quat="0.5047550719 -0.4378267484 -0.3308646636 -0.6663772431" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_028" type="sphere" size="0.001" pos="0.01841803297 0.005862206274 0.004895851584" quat="0.548311287 -0.3173907337 -0.2372958162 -0.7364160171" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_029" type="sphere" size="0.001" pos="0.01803140903 0.003779818871 0.006564775621" quat="0.5754936733 -0.215936674 -0.1615052867 -0.7720715169" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_030" type="sphere" size="0.001" pos="0.01752579426 0.001376631682 0.007709081113" quat="0.5518417626 -0.1340999801 -0.08960961135 -0.81820412" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_031" type="sphere" size="0.001" pos="0.01529508371 0.002944924191 -0.008025390911" quat="0.1291529544 -0.7990086053 -0.5624431817 -0.1690042318" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_032" type="sphere" size="0.001" pos="0.01555090359 0.005337731056 -0.006697493228" quat="0.1993045761 -0.7682595787 -0.5520814471 -0.2554622897" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_033" type="sphere" size="0.001" pos="0.01572764967 0.007225636105 -0.00480577589" quat="-0.2709421244 0.6655186826 0.5935168286 0.3625093414" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_034" type="sphere" size="0.001" pos="0.01570902831 0.008281295953 -0.002445474423" quat="-0.3868224823 0.6024442938 0.5226841033 0.4628504815" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_035" type="sphere" size="0.001" pos="0.0154515888 0.008567625407 0.0001647398439" quat="0.4733856839 -0.5216107369 -0.4459505278 -0.5522285398" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_036" type="sphere" size="0.001" pos="0.01559214915 0.007991268366 0.002699989629" quat="0.5354371083 -0.4176094051 -0.3560493793 -0.6419800054" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_037" type="sphere" size="0.001" pos="0.01547004983 0.006687496372 0.00490966169" quat="0.5704636731 -0.3010940542 -0.2428974224 -0.7245097725" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_038" type="sphere" size="0.001" pos="0.01519578606 0.004548755804 0.006632422879" quat="0.5673649712 -0.2280645252 -0.1693871719 -0.7729110866" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_039" type="sphere" size="0.001" pos="0.01479993077 0.002071737858 0.00780928529" quat="0.5699951803 -0.1445845534 -0.1072287795 -0.8016874641" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_040" type="sphere" size="0.001" pos="0.01245679596 0.003499472888 -0.00819871678" quat="-0.118077659 0.7986435673 0.5656167885 0.1682372359" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_041" type="sphere" size="0.001" pos="0.01261032295 0.005827024052 -0.00693180204" quat="0.2150904421 -0.7570972989 -0.5592871487 -0.2602646095" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_042" type="sphere" size="0.001" pos="0.01278506902 0.007641670808 -0.004984988474" quat="-0.2897180068 0.597003656 0.6532521356 0.3645706496" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_043" type="sphere" size="0.001" pos="0.01269288821 0.008586188282 -0.002573641909" quat="0.4380578961 -0.5728172556 -0.5410946761 -0.4326687218" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_044" type="sphere" size="0.001" pos="0.01264738962 0.008842913513 0.0001211930673" quat="0.528431948 -0.4368147596 -0.534024752 -0.4947424647" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_045" type="sphere" size="0.001" pos="0.01259433378 0.008350222405 0.002756606928" quat="0.5779694345 -0.4077178293 -0.3950532635 -0.5862170446" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_046" type="sphere" size="0.001" pos="0.01252238148 0.00718013535 0.005044705515" quat="0.602003811 -0.2991087134 -0.2774450971 -0.6864033852" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_047" type="sphere" size="0.001" pos="0.01226142835 0.005141128658 0.006805941232" quat="0.57507599 -0.2323700512 -0.1760770854 -0.7643877452" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_048" type="sphere" size="0.001" pos="0.01201568451 0.002709622445 0.007938173355" quat="0.5565854316 -0.1416996407 -0.09615354104 -0.8129504079" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_049" type="sphere" size="0.001" pos="0.009720595433 0.003739506998 -0.00842334202" quat="0.1385699887 -0.7607222496 -0.6163846428 -0.1488959009" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_050" type="sphere" size="0.001" pos="0.009845962625 0.006026887399 -0.007042464571" quat="-0.2013579777 0.6155156542 0.7253024351 0.2335204958" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_051" type="sphere" size="0.001" pos="0.01013941917 0.007387718464 -0.005172595791" quat="-0.4087248754 0.4757647794 0.7027666621 0.3357243952" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_052" type="sphere" size="0.001" pos="0.01016194067 0.008074047687 -0.002650251877" quat="0.5328769908 -0.4315365622 -0.6312240372 -0.3624562359" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_053" type="sphere" size="0.001" pos="0.009931952518 0.008158092647 4.519751609e-05" quat="0.6042414326 -0.4027597059 -0.5677631301 -0.3877137327" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_054" type="sphere" size="0.001" pos="0.01002427764 0.007893168852 0.00273199516" quat="0.6487471202 -0.3537458208 -0.5034528104 -0.4478016703" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_055" type="sphere" size="0.001" pos="0.00986919402 0.006916903798 0.005307236186" quat="0.65744428 -0.3320304029 -0.4282622211 -0.5235592614" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_056" type="sphere" size="0.001" pos="0.009617550311 0.005327947758 0.006955777947" quat="0.6809049381 -0.2093245439 -0.2502050827 -0.6557050535" group="1" class="apex_hand_right_tactile_point"/>
+                  <geom name="right_thumb_tactile2_point_057" type="sphere" size="0.001" pos="0.009229753652 0.00313142193 0.008087690245" quat="0.625797226 -0.1287851785 -0.101338707 -0.7625763412" group="1" class="apex_hand_right_tactile_point"/>
+                  <site name="right_thumb_pad" pos="0.018471 0.0088124 0" quat="1 0 0 0" size="0.003" group="5"/>
+                  <site name="right_thumb_tip" pos="0.029863 -0.00039744 0" quat="1 0 0 0" size="0.003" group="5"/>
+                </body>
+              </body>
+              <body name="right_thumb_tactile1" pos="0 0 0" quat="1 0 0 0">
+                <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+                <geom name="right_thumb_tactile1_visual" type="mesh" mesh="right_thumb_tactile1_visual" group="2" class="apex_hand_right_soft_visual"/>
+                <geom name="right_thumb_tactile1_collision" type="mesh" mesh="right_thumb_tactile1_collision" group="4" class="apex_hand_right_soft_tactile"/>
+                <geom name="right_thumb_tactile1_point_000" type="sphere" size="0.001" pos="0.02104085633 0.006639738575 -0.005937390679" quat="0.3356267418 -0.6686158567 -0.4034031902 -0.526852344" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_001" type="sphere" size="0.001" pos="0.02098618611 0.007176487311 -0.002375352878" quat="-0.3540055028 0.6154090643 0.3832819948 0.5908017434" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_002" type="sphere" size="0.001" pos="0.02101825767 0.007218206246 0.001337448898" quat="0.373809013 -0.5834635715 -0.3629281302 -0.6229929813" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_003" type="sphere" size="0.001" pos="0.02110018372 0.006806162913 0.005036710821" quat="0.4065916574 -0.5598275712 -0.321602228 -0.6464118823" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_004" type="sphere" size="0.001" pos="0.01906171394 0.004493746484 -0.008997836691" quat="-0.1226049872 0.6844291426 0.7060885462 0.1340288433" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_005" type="sphere" size="0.001" pos="0.01893651467 0.007347782774 -0.005787049695" quat="-0.3500792128 0.6428810283 0.5266274264 0.4322176327" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_006" type="sphere" size="0.001" pos="0.01884585611 0.00798170376 -0.002404046889" quat="0.4232315556 -0.5813719216 -0.4404412072 -0.5374879366" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_007" type="sphere" size="0.001" pos="0.01886215892 0.008040220816 0.001471380182" quat="0.4413414891 -0.5582113305 -0.4216637286 -0.5619764234" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_008" type="sphere" size="0.001" pos="0.01894850706 0.007530014113 0.005151580257" quat="0.4911163419 -0.4923551794 -0.3841589922 -0.6072997487" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_009" type="sphere" size="0.001" pos="0.01909236284 0.004669689829 0.008910109781" quat="0.6909306338 -0.1555365739 -0.1563399549 -0.6884628182" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_010" type="sphere" size="0.001" pos="0.01652419798 0.004354862747 -0.009049008348" quat="-0.1629988386 0.6785327488 0.6959367579 0.169401052" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_011" type="sphere" size="0.001" pos="0.01662077921 0.0075370011 -0.005743625657" quat="-0.3829759554 0.586115534 0.5996595026 0.3875648067" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_012" type="sphere" size="0.001" pos="0.01654730647 0.008215260694 -0.002415081379" quat="0.4822102973 -0.5276550304 -0.5024379179 -0.4864252632" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_013" type="sphere" size="0.001" pos="0.01654926593 0.008276992955 0.001418404423" quat="0.5122790595 -0.4954491765 -0.4729741576 -0.518069228" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_014" type="sphere" size="0.001" pos="0.01657793586 0.007794953026 0.005017104396" quat="0.5732108746 -0.4183274461 -0.4030126533 -0.5779379226" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_015" type="sphere" size="0.001" pos="0.01653121735 0.004731089777 0.008857809208" quat="0.6897908726 -0.1626584117 -0.1609613977 -0.6868931661" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_016" type="sphere" size="0.001" pos="0.01401902728 0.004358531433 -0.009042790764" quat="0.1735149571 -0.6902330828 -0.6836479092 -0.1615437629" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_017" type="sphere" size="0.001" pos="0.0140168018 0.007509536073 -0.005735024669" quat="-0.3915703731 0.5797903153 0.6020844345 0.3847208948" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_018" type="sphere" size="0.001" pos="0.01397770264 0.008231271955 -0.002411563584" quat="0.4861849743 -0.5152171183 -0.5148802372 -0.4827772087" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_019" type="sphere" size="0.001" pos="0.01397418544 0.008292179094 0.001415950273" quat="0.5165911423 -0.4851226111 -0.4842299777 -0.5131383562" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_020" type="sphere" size="0.001" pos="0.01398405972 0.00777920874 0.005005073013" quat="0.5799781572 -0.4104423924 -0.4152067335 -0.5681247647" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_021" type="sphere" size="0.001" pos="0.01399046915 0.004712851858 0.008866402184" quat="0.6914312116 -0.1683939537 -0.1735032784 -0.6807811457" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_022" type="sphere" size="0.001" pos="0.01144348827 0.004374659696 -0.009010272622" quat="-0.1474643556 0.6753313101 0.7060884581 0.1536911668" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_023" type="sphere" size="0.001" pos="0.01157696945 0.007366851278 -0.005723892655" quat="-0.4149745822 0.5356326843 0.6394883856 0.3632469247" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_024" type="sphere" size="0.001" pos="0.011538552 0.008089201007 -0.002399510373" quat="0.5204526959 -0.4871303982 -0.5432681666 -0.4435004686" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_025" type="sphere" size="0.001" pos="0.01168483395 0.008181913261 0.001391565212" quat="0.556337692 -0.4067810783 -0.5492225585 -0.4726225851" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_026" type="sphere" size="0.001" pos="0.01156156696 0.007636046782 0.00497116444" quat="0.6157916504 -0.365420592 -0.4552059571 -0.5292031471" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_027" type="sphere" size="0.001" pos="0.01143354408 0.004634535553 0.008877161102" quat="0.6934669526 -0.1689131698 -0.1729982961 -0.678707239" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_028" type="sphere" size="0.001" pos="0.009350511002 0.006836444798 -0.005914298135" quat="-0.5002334175 0.4291878112 0.6585731605 0.3631056912" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_029" type="sphere" size="0.001" pos="0.009368041251 0.007478786556 -0.002377653953" quat="0.5715342972 -0.4165921223 -0.5944243343 -0.3826999629" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_030" type="sphere" size="0.001" pos="0.009356864472 0.007533300367 0.001406690962" quat="0.5930823364 -0.3953019571 -0.5777744844 -0.3977013329" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_thumb_tactile1_point_031" type="sphere" size="0.001" pos="0.009301842983 0.007070933149 0.005019505998" quat="0.6309963213 -0.3332553675 -0.5419685964 -0.4439082597" group="1" class="apex_hand_right_tactile_point"/>
+              </body>
+            </body>
+            <body name="right_thumb_tactile0" pos="0 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+              <geom name="right_thumb_tactile0_visual" type="mesh" mesh="right_thumb_tactile0_visual" group="2" class="apex_hand_right_soft_visual"/>
+              <geom name="right_thumb_tactile0_collision" type="mesh" mesh="right_thumb_tactile0_collision" group="4" class="apex_hand_right_soft_tactile"/>
+              <geom name="right_thumb_tactile0_point_000" type="sphere" size="0.001" pos="-0.001609485224 -0.04168508597 -0.01103321198" quat="0.06317937243 0.7006828515 -0.7081337172 0.059987891" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_001" type="sphere" size="0.001" pos="0.004208430628 -0.04289339209 -0.0107282591" quat="0.05589380356 0.8773226707 -0.4705100996 0.07616469255" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_002" type="sphere" size="0.001" pos="0.008374355402 -0.04374560603 -0.008796117465" quat="-0.06146887178 -0.85693613 0.1940113028 -0.4735416151" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_003" type="sphere" size="0.001" pos="0.009612135177 -0.04318031778 -0.003572337835" quat="0.1503573528 0.7054983313 -0.139034226 0.6784793696" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_004" type="sphere" size="0.001" pos="0.00964632774 -0.04315604111 0.002564082549" quat="0.1545779696 0.6889230871 -0.1365900929 0.6948624165" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_005" type="sphere" size="0.001" pos="0.008816504029 -0.04368043396 0.008192264778" quat="0.1548676649 0.5614846946 -0.1235381823 0.8034234634" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_006" type="sphere" size="0.001" pos="0.00514718351 -0.04322619201 0.01061783756" quat="0.3946333168 0.0929681131 -0.04123648151 0.913192766" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_007" type="sphere" size="0.001" pos="-0.0005928769338 -0.04201929551 0.01105186191" quat="0.717834374 0.06549269261 -0.05900639452 0.6906104286" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_008" type="sphere" size="0.001" pos="-0.0004240912689 -0.03797851166 -0.01169272127" quat="0.06426013797 0.7023887968 -0.7062537275 0.06104330615" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_009" type="sphere" size="0.001" pos="0.005204240084 -0.0391762881 -0.01120167685" quat="-0.03112795892 -0.9200683003 0.3702348922 -0.1242235784" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_010" type="sphere" size="0.001" pos="0.00950203389 -0.03984798451 -0.008621546183" quat="0.01141470451 -0.8606833317 0.2317976904 -0.4531707601" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_011" type="sphere" size="0.001" pos="0.01088152689 -0.03967525314 -0.003522514231" quat="0.08315636381 0.7313580041 -0.0556970793 0.674609757" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_012" type="sphere" size="0.001" pos="0.01096080761 -0.0395329709 0.002567134306" quat="-0.0914159405 -0.6882957579 0.09904932524 -0.7127982229" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_013" type="sphere" size="0.001" pos="0.009928399055 -0.03998029631 0.007972345209" quat="0.07672707035 0.5149707063 -0.04278185917 0.8526944593" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_014" type="sphere" size="0.001" pos="0.006068374772 -0.03942313911 0.01101963954" quat="0.2467253959 0.1612076796 -0.03861717809 0.9548022709" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_015" type="sphere" size="0.001" pos="0.0005756822132 -0.03830271946 0.01171644611" quat="0.7136591598 0.06209314598 -0.0623671984 0.6949427153" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_016" type="sphere" size="0.001" pos="0.0006552422073 -0.03426820865 -0.01236135982" quat="-0.06147740629 -0.7052699591 0.7035049707 -0.06241449735" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_017" type="sphere" size="0.001" pos="0.006108882046 -0.0353435685 -0.01158517217" quat="-0.0390666505 -0.9579515393 0.2350786048 -0.1598145635" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_018" type="sphere" size="0.001" pos="0.01001086609 -0.03596972284 -0.008587355148" quat="0.03208058109 0.877205009 -0.02963745388 0.4781253285" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_019" type="sphere" size="0.001" pos="0.01150357678 -0.03589721988 -0.003394609999" quat="0.03209728295 0.7449943195 -0.03466372337 0.665395863" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_020" type="sphere" size="0.001" pos="0.01159473512 -0.03591736189 0.002476655682" quat="0.03698925252 0.6844977573 -0.02669343633 0.7275864732" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_021" type="sphere" size="0.001" pos="0.0104786163 -0.03607109496 0.00786619861" quat="0.03970948038 0.5195689256 -0.02215143423 0.8532177932" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_022" type="sphere" size="0.001" pos="0.006792337518 -0.03556536972 0.01136813782" quat="0.1584451779 0.2393676451 -0.03451244206 0.9572915687" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_023" type="sphere" size="0.001" pos="0.0015594858 -0.03456303326 0.01239397801" quat="0.6915868893 0.07821362215 -0.04939320825 0.7163452483" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_024" type="sphere" size="0.001" pos="0.001621899912 -0.0305563682 -0.012974118" quat="-0.04573444756 -0.7060714998 0.7041405801 -0.05964428713" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_025" type="sphere" size="0.001" pos="0.006801344802 -0.03151470542 -0.01189677594" quat="-0.02134984409 -0.9614522579 0.1681566714 -0.21651114" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_026" type="sphere" size="0.001" pos="0.01041572909 -0.03198375266 -0.008578959224" quat="0.02870623483 0.8546899481 -0.009079918501 0.51826499" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_027" type="sphere" size="0.001" pos="0.01178287509 -0.03185921785 -0.003362648415" quat="0.02028455183 0.7393040565 -0.01204965502 0.6729582861" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_028" type="sphere" size="0.001" pos="0.01188417897 -0.03187636481 0.002374832708" quat="0.02137015768 0.6732910568 -0.01260081482 0.7389612227" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_029" type="sphere" size="0.001" pos="0.01081711943 -0.03206780093 0.00785847308" quat="0.02808408758 0.5633620495 -0.01210665872 0.825643939" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_030" type="sphere" size="0.001" pos="0.007425651821 -0.03170598499 0.01166221426" quat="0.101379901 0.3082058291 -0.02155718911 0.9456566873" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_031" type="sphere" size="0.001" pos="0.002542964673 -0.03082763139 0.01299144887" quat="0.6221444388 0.06462781504 -0.04558334984 0.7788977475" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_032" type="sphere" size="0.001" pos="0.002549909371 -0.02673158318 -0.01352638474" quat="0.05625890517 0.7885251116 -0.6098216036 0.05639765634" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_033" type="sphere" size="0.001" pos="0.007410837372 -0.02759619365 -0.01206100108" quat="0.03376901677 0.9621233067 -0.07403201112 0.2601877352" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_034" type="sphere" size="0.001" pos="0.0107556182 -0.02796406741 -0.008425378096" quat="-0.01188964631 -0.8502324596 0.03359757222 -0.525199585" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_035" type="sphere" size="0.001" pos="0.01197844613 -0.02782150335 -0.003280407812" quat="-0.01292257688 -0.7402423467 0.02103038304 -0.6718868939" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_036" type="sphere" size="0.001" pos="0.01208320615 -0.02784103276 0.002303179899" quat="-0.01483000108 -0.6731530859 0.01855839617 -0.739121492" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_037" type="sphere" size="0.001" pos="0.01111169928 -0.0280300521 0.007681648361" quat="0.02023496351 0.5665199863 -0.01807997516 0.8236010963" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_038" type="sphere" size="0.001" pos="0.008126462891 -0.02774080874 0.01166716754" quat="0.0734803306 0.3074370066 -0.03062663713 0.9482326387" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_039" type="sphere" size="0.001" pos="0.003387470939 -0.02702407495 0.01353881883" quat="0.4276836922 0.07116095864 -0.04260636237 0.9001152566" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_040" type="sphere" size="0.001" pos="0.003307681355 -0.02301923565 -0.01387343239" quat="0.01983392727 0.9442841985 -0.3235356227 0.05708474866" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_041" type="sphere" size="0.001" pos="0.007881298788 -0.02371597336 -0.0121198544" quat="0.02476492076 0.9487352465 -0.02125353569 0.314382598" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_042" type="sphere" size="0.001" pos="0.01099512635 -0.02401860392 -0.008228918312" quat="0.006410904655 0.8478707383 -0.006701541109 0.5301218735" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_043" type="sphere" size="0.001" pos="0.01208491896 -0.02386095766 -0.003201793128" quat="0.005669332186 0.7405641785 -0.004117178062 0.671949109" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_044" type="sphere" size="0.001" pos="0.01219380323 -0.02387340824 0.002203332828" quat="0.006174194663 0.6721640328 -0.004474097434 0.740363002" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_045" type="sphere" size="0.001" pos="0.01129568126 -0.02406114085 0.007613245858" quat="0.007983816211 0.606172675 -0.00868729782 0.7952455455" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_046" type="sphere" size="0.001" pos="0.008574087495 -0.02384393602 0.01167434434" quat="0.03547712911 0.3600663593 -0.01746144874 0.9320883477" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_thumb_tactile0_point_047" type="sphere" size="0.001" pos="0.004106445295 -0.02325995481 0.01384402021" quat="0.2088618297 0.09727997836 -0.01307059244 0.9730069381" group="1" class="apex_hand_right_tactile_point"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="right_index_link0" pos="0.0071 0.034496 0.1188" quat="0.7071054825 0 -0.7071080799 0">
+        <joint name="right_index_j0" type="hinge" axis="0 0 1" range="-0.4363 0.4363" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+        <inertial pos="0.00402 0.000105005 0.00062297" mass="0.013698" fullinertia="1.13e-06 1.71e-06 8.5e-07 2.99999e-08 -1.00023e-08 -6.5383e-12"/>
+        <geom name="right_index_link0_visual" type="mesh" mesh="right_index_link0_visual" group="1" class="apex_hand_right_visual"/>
+        <geom name="right_index_link0_collision" type="mesh" mesh="right_index_link0_collision" group="3" class="apex_hand_right_hard_link"/>
+        <body name="right_index_link1" pos="0.016 0 0" quat="0.7071054825 -0.7071080799 0 0">
+          <joint name="right_index_j1" type="hinge" axis="0 0 1" range="-0.349 1.5707" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+          <inertial pos="0.016598 -0.00276476 0.00011302" mass="0.043491" fullinertia="2.66999e-06 1.122e-05 1.132e-05 9.29936e-07 -1.80007e-07 -1.00006e-08"/>
+          <geom name="right_index_link1_visual" type="mesh" mesh="right_index_link1_visual" group="1" class="apex_hand_right_visual"/>
+          <geom name="right_index_link1_collision" type="mesh" mesh="right_index_link1_collision" group="3" class="apex_hand_right_hard_link"/>
+          <body name="right_index_link2" pos="0.045 0 0" quat="1 0 0 0">
+            <joint name="right_index_j2" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+            <inertial pos="0.009137 -0.000661487 -0.000326995" mass="0.023044" fullinertia="1.31e-06 2.25e-06 2.45e-06 2.49993e-07 -3.00018e-08 -9.99875e-09"/>
+            <geom name="right_index_link2_visual" type="mesh" mesh="right_index_link2_visual" group="1" class="apex_hand_right_visual"/>
+            <geom name="right_index_link2_collision" type="mesh" mesh="right_index_link2_collision" group="3" class="apex_hand_right_hard_link"/>
+            <body name="right_index_link3" pos="0.025 0 0" quat="1 0 0 0">
+              <joint name="right_index_j3" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+              <inertial pos="0.011123 -0.000543286 3.99645e-09" mass="0.018645" fullinertia="5.99999e-07 1.59e-06 1.39e-06 3.99927e-08 0 -1.46928e-12"/>
+              <geom name="right_index_link3_visual" type="mesh" mesh="right_index_link3_visual" group="1" class="apex_hand_right_visual"/>
+              <geom name="right_index_link3_collision" type="mesh" mesh="right_index_link3_collision" group="3" class="apex_hand_right_hard_link"/>
+              <body name="right_index_tactile2" pos="0 0 0" quat="1 0 0 0">
+                <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+                <geom name="right_index_tactile2_visual" type="mesh" mesh="right_index_tactile2_visual" group="2" class="apex_hand_right_soft_visual"/>
+                <geom name="right_index_tactile2_collision" type="mesh" mesh="right_index_tactile2_collision" group="4" class="apex_hand_right_soft_tactile"/>
+                <geom name="right_index_tactile2_point_000" type="sphere" size="0.001" pos="0.02621240755 0.0009666021742 -0.001217074507" quat="-0.1234861318 0.7373504947 0.14356302 0.6484250785" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_001" type="sphere" size="0.001" pos="0.02621754968 0.001001297795 0.00111392651" quat="0.1382154701 -0.6501839632 -0.1121144925 -0.7386390447" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_002" type="sphere" size="0.001" pos="0.02455854007 0.001515045804 -0.003751625298" quat="-0.1499209206 0.8365934661 0.2847154046 0.4433646674" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_003" type="sphere" size="0.001" pos="0.02472619691 0.003029193935 -0.00116294258" quat="0.2577897066 -0.7317375943 -0.2960850756 -0.557169802" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_004" type="sphere" size="0.001" pos="0.02474427444 0.002986607315 0.001240542127" quat="0.3149766495 -0.5929834949 -0.2559267358 -0.6954579721" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_005" type="sphere" size="0.001" pos="0.02462626542 0.001564158076 0.003627803723" quat="0.2822142144 -0.4200047889 -0.129069298 -0.8528143003" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_006" type="sphere" size="0.001" pos="0.02205997797 0.0008665395079 -0.005690270717" quat="0.08970062705 -0.9052818121 -0.3495824768 -0.224077509" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_007" type="sphere" size="0.001" pos="0.02250109442 0.00316367619 -0.003936412584" quat="-0.1708582383 0.6909385608 0.5657241258 0.416374328" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_008" type="sphere" size="0.001" pos="0.0223015988 0.004575346922 -0.001306524111" quat="0.3382663544 -0.6813973102 -0.3542128963 -0.54388124" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_009" type="sphere" size="0.001" pos="0.02231417016 0.004570918405 0.001292008474" quat="0.3977257269 -0.5647028404 -0.3022270297 -0.6569503563" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_010" type="sphere" size="0.001" pos="0.02254318087 0.003152442163 0.003910339687" quat="0.4394910838 -0.3811058299 -0.2394190064 -0.7773573651" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_011" type="sphere" size="0.001" pos="0.02212546757 0.0008778691943 0.005649930704" quat="0.3519617583 -0.2144458618 -0.08573356605 -0.9070753269" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_012" type="sphere" size="0.001" pos="0.01966483203 0.002048853098 -0.00593654962" quat="0.149991618 -0.8512572635 -0.4544298095 -0.2153070695" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_013" type="sphere" size="0.001" pos="0.01986363156 0.004378010729 -0.003972818082" quat="-0.2394347631 0.7131912438 0.5497030954 0.3631194719" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_014" type="sphere" size="0.001" pos="0.01964335189 0.005578209893 -0.001287122965" quat="-0.3803042827 0.6127344885 0.471487733 0.5075671549" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_015" type="sphere" size="0.001" pos="0.01965160819 0.005574558197 0.001285583365" quat="0.4646403775 -0.5033075884 -0.3859277221 -0.6179405993" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_016" type="sphere" size="0.001" pos="0.01989051775 0.004368857396 0.003964645071" quat="0.5187897467 -0.3525762359 -0.2547013739 -0.7359853305" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_017" type="sphere" size="0.001" pos="0.0196997002 0.002045711356 0.005920817744" quat="0.4905188943 -0.2215419986 -0.1406213371 -0.8309849558" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_018" type="sphere" size="0.001" pos="0.01701005032 0.002956675382 -0.006083336153" quat="-0.1386421771 0.7796703333 0.5757006017 0.2036205669" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_019" type="sphere" size="0.001" pos="0.01699443181 0.005070009475 -0.004100225188" quat="-0.2938211447 0.6716072968 0.572196937 0.3677002029" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_020" type="sphere" size="0.001" pos="0.01665504839 0.006238957963 -0.001282983337" quat="0.4135108326 -0.5913464487 -0.4994972508 -0.4793961467" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_021" type="sphere" size="0.001" pos="0.0166618367 0.006214087903 0.001427026021" quat="0.4840753839 -0.5099516922 -0.4347262932 -0.5627018254" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_022" type="sphere" size="0.001" pos="0.01701208248 0.005065027661 0.004094457973" quat="0.5592821491 -0.3620288924 -0.300781696 -0.682399392" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_023" type="sphere" size="0.001" pos="0.01703461879 0.00283748744 0.006139664915" quat="0.5631818011 -0.2301378351 -0.1768923111 -0.7736743152" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_024" type="sphere" size="0.001" pos="0.01423932797 0.0006210368187 -0.00725199245" quat="0.05123830262 -0.8963436796 -0.4339219986 -0.07519536975" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_025" type="sphere" size="0.001" pos="0.01420976113 0.003372024411 -0.006229621875" quat="-0.1818836006 0.728912489 0.6231601727 0.2174312269" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_026" type="sphere" size="0.001" pos="0.0140172866 0.005480258675 -0.00410201757" quat="0.3231466496 -0.6641311385 -0.5830334761 -0.3384937807" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_027" type="sphere" size="0.001" pos="0.0136257196 0.006497967256 -0.001421431664" quat="0.466110847 -0.5464309779 -0.502218402 -0.4815916749" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_028" type="sphere" size="0.001" pos="0.01362760281 0.006497975199 0.001411229374" quat="0.5144195445 -0.4919863616 -0.4551261274 -0.5349599615" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_029" type="sphere" size="0.001" pos="0.01402667112 0.005481271094 0.004091252926" quat="0.5996459859 -0.3465592407 -0.3144818116 -0.649170682" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_030" type="sphere" size="0.001" pos="0.01422059914 0.003380693749 0.006214852753" quat="0.620150355 -0.2166204626 -0.1827655757 -0.73149563" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_031" type="sphere" size="0.001" pos="0.01423022061 0.0006725232941 0.007242965289" quat="0.4549773031 -0.07226829727 -0.04067976524 -0.8866330151" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_032" type="sphere" size="0.001" pos="0.0114966787 0.000947208516 -0.007425311285" quat="-0.0480898326 0.7976628959 0.5973560514 0.06772754518" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_033" type="sphere" size="0.001" pos="0.01127370282 0.003646457052 -0.006241494157" quat="-0.1901663859 0.6514837152 0.6990346109 0.2252916495" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_034" type="sphere" size="0.001" pos="0.01116393251 0.00546002618 -0.004160415971" quat="0.3798798409 -0.6225435364 -0.6094993508 -0.3108719885" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_035" type="sphere" size="0.001" pos="0.01094013217 0.006284020894 -0.001410676322" quat="-0.5304727253 0.4367322004 0.59712752 0.4138869383" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_036" type="sphere" size="0.001" pos="0.01091846008 0.006286714816 0.00135815301" quat="0.5900074697 -0.4004053327 -0.5312820372 -0.4574998931" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_037" type="sphere" size="0.001" pos="0.01113013058 0.005471175515 0.004126332827" quat="0.6512556364 -0.3429953186 -0.3461560806 -0.5817183815" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_038" type="sphere" size="0.001" pos="0.01123880582 0.003653341956 0.006226108012" quat="0.6615558643 -0.226114027 -0.1962788351 -0.6875252025" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_039" type="sphere" size="0.001" pos="0.01149153163 0.0009883909004 0.007410489492" quat="0.5971031783 -0.06650512989 -0.04630857858 -0.7980603848" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_040" type="sphere" size="0.001" pos="0.008577407457 0.00110025066 -0.007506034811" quat="-0.07589840118 0.7203369287 0.6840329301 0.08633129388" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_041" type="sphere" size="0.001" pos="0.008550032122 0.003212760318 -0.00643254625" quat="-0.06589942694 0.3035063443 -0.8708618549 -0.3809734822" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_042" type="sphere" size="0.001" pos="0.00867827412 0.004697957145 -0.004154194569" quat="-0.496823531 0.4271612944 0.6889848733 0.3098377833" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_043" type="sphere" size="0.001" pos="0.008381359094 0.005254738292 -0.001318346561" quat="0.5830120498 -0.3845379025 -0.6375035731 -0.3252948596" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_044" type="sphere" size="0.001" pos="0.008392305498 0.005266627168 0.001251014473" quat="0.6559761313 -0.3319765891 -0.5693333582 -0.367894532" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_045" type="sphere" size="0.001" pos="0.008680648497 0.004707196803 0.00412532399" quat="0.6882853079 -0.3087694598 -0.4978416776 -0.4278766407" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_046" type="sphere" size="0.001" pos="0.008544192833 0.003287504211 0.006353585731" quat="0.7177692011 -0.2400487768 -0.2760143949 -0.5924525403" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_index_tactile2_point_047" type="sphere" size="0.001" pos="0.008567426576 0.001153094066 0.007485115005" quat="0.6802227026 -0.08392102699 -0.07490775154 -0.7243225558" group="1" class="apex_hand_right_tactile_point"/>
+                <site name="right_index_pad" pos="0.017096 0.0071955 0" quat="1 0 0 0" size="0.003" group="5"/>
+                <site name="right_index_tip" pos="0.027672 0.00055028 0" quat="1 0 0 0" size="0.003" group="5"/>
+              </body>
+            </body>
+            <body name="right_index_tactile1" pos="0 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+              <geom name="right_index_tactile1_visual" type="mesh" mesh="right_index_tactile1_visual" group="2" class="apex_hand_right_soft_visual"/>
+              <geom name="right_index_tactile1_collision" type="mesh" mesh="right_index_tactile1_collision" group="4" class="apex_hand_right_soft_tactile"/>
+              <geom name="right_index_tactile1_point_000" type="sphere" size="0.001" pos="0.01714401958 0.00425914764 -0.006185301136" quat="0.3078424568 -0.7667996869 -0.5179463783 -0.2213206074" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_001" type="sphere" size="0.001" pos="0.01716137998 0.004267230433 0.006121400871" quat="0.6415921884 -0.2694537187 -0.2610805267 -0.6690225077" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_002" type="sphere" size="0.001" pos="0.01504208262 0.004423628124 -0.006117342569" quat="-0.2387438003 0.630942782 0.6817366004 0.2831038879" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_003" type="sphere" size="0.001" pos="0.01531498954 0.006110400635 -0.002499258085" quat="-0.4568839827 0.538749778 0.520032781 0.4801787269" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_004" type="sphere" size="0.001" pos="0.01531384837 0.006298866629 7.514486142e-05" quat="-0.4800251025 0.5192858206 0.4968825933 0.5030167253" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_005" type="sphere" size="0.001" pos="0.01531629271 0.006102187814 0.002446455116" quat="0.5209529635 -0.4743929225 -0.4522798509 -0.5468110289" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_006" type="sphere" size="0.001" pos="0.01506101214 0.004412689825 0.006073131303" quat="0.6429464366 -0.2682832194 -0.255182246 -0.6704670128" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_007" type="sphere" size="0.001" pos="0.0129721696 0.004486865811 -0.006142317144" quat="-0.2378708198 0.6180734799 0.690836463 0.2900821056" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_008" type="sphere" size="0.001" pos="0.01317991188 0.006208812706 -0.002468150938" quat="0.4549078964 -0.5473138227 -0.518204835 -0.4743101666" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_009" type="sphere" size="0.001" pos="0.0131979917 0.006395014867 7.704048566e-05" quat="0.481448034 -0.5206911726 -0.4954097062 -0.5016549773" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_010" type="sphere" size="0.001" pos="0.01319400632 0.006201448224 0.002464872224" quat="0.5212991747 -0.4761043993 -0.4529863634 -0.5444034588" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_011" type="sphere" size="0.001" pos="0.01297924596 0.004475406137 0.006099013855" quat="0.6427961968 -0.2714642904 -0.2588941244 -0.6679027031" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_012" type="sphere" size="0.001" pos="0.01091107541 0.00448782893 -0.006210979868" quat="-0.2631336849 0.6624597503 0.6457012319 0.2738204926" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_index_tactile1_point_013" type="sphere" size="0.001" pos="0.01090857568 0.004403527828 0.006243379505" quat="0.6365775512 -0.2894574795 -0.2818236575 -0.6569313624" group="1" class="apex_hand_right_tactile_point"/>
+            </body>
+          </body>
+          <body name="right_index_tactile0" pos="0 0 0" quat="1 0 0 0">
+            <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+            <geom name="right_index_tactile0_visual" type="mesh" mesh="right_index_tactile0_visual" group="2" class="apex_hand_right_soft_visual"/>
+            <geom name="right_index_tactile0_collision" type="mesh" mesh="right_index_tactile0_collision" group="4" class="apex_hand_right_soft_tactile"/>
+            <geom name="right_index_tactile0_point_000" type="sphere" size="0.001" pos="0.03356984861 0.003890361964 -0.007111989762" quat="-0.1524319822 0.6983961254 0.6777796893 0.172110533" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_001" type="sphere" size="0.001" pos="0.03386568841 0.006853642942 -0.004487855256" quat="-0.3345666545 0.626496257 0.5506166022 0.4386216491" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_002" type="sphere" size="0.001" pos="0.03381315949 0.007343939842 -0.001530062675" quat="0.3912493468 -0.6132888316 -0.4142712027 -0.5469736084" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_003" type="sphere" size="0.001" pos="0.03381411265 0.007343664487 0.001522766428" quat="0.4295534535 -0.5565176383 -0.3773979634 -0.6027791687" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_004" type="sphere" size="0.001" pos="0.0338294165 0.006849560252 0.004518394292" quat="0.5105300548 -0.4405163305 -0.3529434762 -0.6486411399" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_005" type="sphere" size="0.001" pos="0.03357617992 0.00385145981 0.007122777168" quat="0.6644548133 -0.180881877 -0.1660542799 -0.7058381711" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_006" type="sphere" size="0.001" pos="0.03110750423 0.004179516243 -0.007061275173" quat="-0.1521227992 0.6984395495 0.6777288707 0.1724077364" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_007" type="sphere" size="0.001" pos="0.03144374125 0.007290485309 -0.004286845082" quat="0.355608536 -0.6722312725 -0.5421608093 -0.3573644389" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_008" type="sphere" size="0.001" pos="0.03155985013 0.008029489333 -0.001539272009" quat="0.4233148164 -0.5794279536 -0.4631470377 -0.5201563556" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_009" type="sphere" size="0.001" pos="0.03156372602 0.008029056216 0.001534248827" quat="0.4682274538 -0.5219330829 -0.4200322005 -0.5761265998" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_010" type="sphere" size="0.001" pos="0.03146071218 0.007280529889 0.004312408479" quat="0.5834583799 -0.3834940661 -0.3428419146 -0.6284648294" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_011" type="sphere" size="0.001" pos="0.03111224039 0.004178256781 0.007053434541" quat="0.666420235 -0.1700046358 -0.1549549738 -0.7092048014" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_012" type="sphere" size="0.001" pos="0.02864244226 0.004428590592 -0.007032478032" quat="-0.1521821948 0.6986710488 0.6774900672 0.1723558931" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_013" type="sphere" size="0.001" pos="0.02898429371 0.007522141118 -0.004209733038" quat="0.3597359768 -0.7042134413 -0.5120907534 -0.3353155475" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_014" type="sphere" size="0.001" pos="0.02910951996 0.008404254452 -0.001517090724" quat="0.450448555 -0.5613735019 -0.4975632772 -0.484134977" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_015" type="sphere" size="0.001" pos="0.02911424835 0.008398502987 0.001555403825" quat="0.5015492157 -0.5020733916 -0.4512371182 -0.541069087" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_016" type="sphere" size="0.001" pos="0.02901057081 0.007513356259 0.004226181705" quat="0.594547882 -0.3732301702 -0.3296202742 -0.6313180901" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_017" type="sphere" size="0.001" pos="0.0286441764 0.004425327296 0.007025613255" quat="0.6663162516 -0.1699817805 -0.1549798926 -0.7093025307" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_018" type="sphere" size="0.001" pos="0.02616800255 0.004695149757 -0.007007822194" quat="-0.1379587356 0.6973100221 0.6844234144 0.1621441034" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_019" type="sphere" size="0.001" pos="0.02650326367 0.007704143805 -0.004276154139" quat="0.3619483363 -0.6420621034 -0.5641014807 -0.3722085123" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_020" type="sphere" size="0.001" pos="0.02660095249 0.008607787453 -0.001500635844" quat="0.451870485 -0.5684637803 -0.4994645843 -0.472437429" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_021" type="sphere" size="0.001" pos="0.02661044557 0.008599404133 0.001561446856" quat="0.5068683343 -0.5024215667 -0.4538716129 -0.533533148" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_022" type="sphere" size="0.001" pos="0.02650201039 0.007702160325 0.00427419606" quat="0.5852498667 -0.3835904674 -0.3496312417 -0.6229758757" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_023" type="sphere" size="0.001" pos="0.02616501422 0.004702834313 0.00699818325" quat="0.668503457 -0.1567829909 -0.1390844204 -0.7135669175" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_024" type="sphere" size="0.001" pos="0.02369884085 0.004861638151 -0.007009212923" quat="-0.1496184143 0.7024769288 0.6757824732 0.1657061967" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_025" type="sphere" size="0.001" pos="0.02400403061 0.007900253633 -0.004267897531" quat="0.3620380495 -0.6405461809 -0.5664624136 -0.371146029" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_026" type="sphere" size="0.001" pos="0.02410714978 0.008777758843 -0.001524059234" quat="0.4647587837 -0.5470609458 -0.497915172 -0.4866251906" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_027" type="sphere" size="0.001" pos="0.02410538412 0.008777150095 0.001520931724" quat="0.5098709715 -0.4965958074 -0.4540478068 -0.5359708813" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_028" type="sphere" size="0.001" pos="0.02399879409 0.007901017164 0.00426396951" quat="0.5866430762 -0.3832763219 -0.3490622781 -0.6221773768" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_029" type="sphere" size="0.001" pos="0.02368445739 0.004867035543 0.007010206282" quat="0.6668413953 -0.1665190347 -0.1489002072 -0.7109308637" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_030" type="sphere" size="0.001" pos="0.02120645404 0.005108499903 -0.00698767884" quat="-0.1297937584 0.6964430889 0.6885014794 0.1551976706" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_031" type="sphere" size="0.001" pos="0.0215053475 0.008087161259 -0.004263377987" quat="0.363767943 -0.6431853748 -0.5634639748 -0.3694506819" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_032" type="sphere" size="0.001" pos="0.02160062248 0.008953734559 -0.001520259663" quat="0.4665225304 -0.5478359577 -0.4962042285 -0.4858125727" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_033" type="sphere" size="0.001" pos="0.02159932691 0.008953072366 0.001512109639" quat="0.5107439221 -0.4982546658 -0.4531557867 -0.5343526617" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_034" type="sphere" size="0.001" pos="0.02150143019 0.008096786538 0.004244903422" quat="0.5899974247 -0.3794695957 -0.3455929322 -0.6232747308" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_index_tactile0_point_035" type="sphere" size="0.001" pos="0.02120980009 0.005120688569 0.006993740427" quat="0.6714848113 -0.149313165 -0.136167368 -0.7129320969" group="1" class="apex_hand_right_tactile_point"/>
+          </body>
+        </body>
+      </body>
+      <body name="right_middle_link0" pos="0.0071 0.011496 0.1218" quat="0.7071054825 0 -0.7071080799 0">
+        <joint name="right_middle_j0" type="hinge" axis="0 0 1" range="-0.4363 0.4363" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+        <inertial pos="0.00402 0.000105005 0.00062297" mass="0.013698" fullinertia="1.13e-06 1.71e-06 8.5e-07 2.99999e-08 -1.00023e-08 -6.5383e-12"/>
+        <geom name="right_middle_link0_visual" type="mesh" mesh="right_middle_link0_visual" group="1" class="apex_hand_right_visual"/>
+        <geom name="right_middle_link0_collision" type="mesh" mesh="right_middle_link0_collision" group="3" class="apex_hand_right_hard_link"/>
+        <body name="right_middle_link1" pos="0.016 0 0" quat="0.7071054825 -0.7071080799 0 0">
+          <joint name="right_middle_j1" type="hinge" axis="0 0 1" range="-0.349 1.5707" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+          <inertial pos="0.016598 -0.00276476 0.00011302" mass="0.043491" fullinertia="2.66999e-06 1.122e-05 1.132e-05 9.29936e-07 -1.80007e-07 -1.00006e-08"/>
+          <geom name="right_middle_link1_visual" type="mesh" mesh="right_middle_link1_visual" group="1" class="apex_hand_right_visual"/>
+          <geom name="right_middle_link1_collision" type="mesh" mesh="right_middle_link1_collision" group="3" class="apex_hand_right_hard_link"/>
+          <body name="right_middle_link2" pos="0.045 0 0" quat="1 0 0 0">
+            <joint name="right_middle_j2" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+            <inertial pos="0.009137 -0.000661487 -0.000326995" mass="0.023044" fullinertia="1.31e-06 2.25e-06 2.45e-06 2.49993e-07 -3.00018e-08 -9.99875e-09"/>
+            <geom name="right_middle_link2_visual" type="mesh" mesh="right_middle_link2_visual" group="1" class="apex_hand_right_visual"/>
+            <geom name="right_middle_link2_collision" type="mesh" mesh="right_middle_link2_collision" group="3" class="apex_hand_right_hard_link"/>
+            <body name="right_middle_link3" pos="0.025 0 0" quat="1 0 0 0">
+              <joint name="right_middle_j3" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+              <inertial pos="0.011123 -0.000543286 3.99645e-09" mass="0.018645" fullinertia="5.99999e-07 1.59e-06 1.39e-06 3.99927e-08 0 -1.46928e-12"/>
+              <geom name="right_middle_link3_visual" type="mesh" mesh="right_middle_link3_visual" group="1" class="apex_hand_right_visual"/>
+              <geom name="right_middle_link3_collision" type="mesh" mesh="right_middle_link3_collision" group="3" class="apex_hand_right_hard_link"/>
+              <body name="right_middle_tactile2" pos="0 0 0" quat="1 0 0 0">
+                <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+                <geom name="right_middle_tactile2_visual" type="mesh" mesh="right_middle_tactile2_visual" group="2" class="apex_hand_right_soft_visual"/>
+                <geom name="right_middle_tactile2_collision" type="mesh" mesh="right_middle_tactile2_collision" group="4" class="apex_hand_right_soft_tactile"/>
+                <geom name="right_middle_tactile2_point_000" type="sphere" size="0.001" pos="0.02621241285 0.0009665655206 -0.001217100718" quat="-0.1234853307 0.7373407578 0.1435819828 0.6484321045" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_001" type="sphere" size="0.001" pos="0.02621753672 0.001001338406 0.001113950726" quat="0.1382130539 -0.6501927681 -0.1120982659 -0.7386342091" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_002" type="sphere" size="0.001" pos="0.02455853725 0.00151504183 -0.003751622149" quat="-0.1499205775 0.8365929118 0.2847170277 0.4433647871" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_003" type="sphere" size="0.001" pos="0.02472621101 0.003029179432 -0.00116293695" quat="0.2577879669 -0.7317338658 -0.2960971266 -0.5571690994" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_004" type="sphere" size="0.001" pos="0.02474425537 0.002986622436 0.00124051634" quat="0.3149779711 -0.5929815001 -0.2559153197 -0.6954632754" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_005" type="sphere" size="0.001" pos="0.02462627835 0.001564148341 0.003627793734" quat="0.2822164154 -0.4200002534 -0.129072967 -0.8528152504" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_006" type="sphere" size="0.001" pos="0.02205997366 0.0008665504775 -0.005690268516" quat="0.08969384855 -0.9052780244 -0.3495933763 -0.2240785203" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_007" type="sphere" size="0.001" pos="0.02250108752 0.003163672103 -0.003936422571" quat="-0.1708627614 0.6909433778 0.5657153771 0.4163763652" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_008" type="sphere" size="0.001" pos="0.02230160419 0.00457534015 -0.001306522707" quat="0.3382659697 -0.6813953616 -0.354217025 -0.5438812317" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_009" type="sphere" size="0.001" pos="0.0223141629 0.004570924851 0.001292010931" quat="0.3977249552 -0.5647049886 -0.3022241364 -0.656950308" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_010" type="sphere" size="0.001" pos="0.02254318349 0.00315244369 0.003910339815" quat="0.4394913696 -0.3811052147 -0.2394191877 -0.7773574493" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_011" type="sphere" size="0.001" pos="0.02212547576 0.0008778716721 0.005649925961" quat="0.3519626696 -0.2144427445 -0.08573352778 -0.9070757139" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_012" type="sphere" size="0.001" pos="0.01966483514 0.002048845819 -0.005936551772" quat="0.1499959699 -0.8512602844 -0.4544231388 -0.2153061731" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_013" type="sphere" size="0.001" pos="0.01986363578 0.004378015859 -0.003972811958" quat="-0.2394312002 0.7131879253 0.5497094573 0.3631187081" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_014" type="sphere" size="0.001" pos="0.01964334757 0.005578208994 -0.001287129964" quat="-0.3803055678 0.612734689 0.471484978 0.5075685092" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_015" type="sphere" size="0.001" pos="0.01965160739 0.005574555354 0.00128558432" quat="0.4646401994 -0.5033079062 -0.3859279423 -0.617940337" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_016" type="sphere" size="0.001" pos="0.01989051356 0.004368859098 0.003964643275" quat="0.5187893398 -0.3525766443 -0.2547000132 -0.7359858926" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_017" type="sphere" size="0.001" pos="0.01969969847 0.002045711306 0.005920816233" quat="0.4905187835 -0.2215422439 -0.1406209217 -0.8309850261" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_018" type="sphere" size="0.001" pos="0.01701005014 0.002956674484 -0.006083337501" quat="-0.1386426532 0.7796707439 0.5756998464 0.203620806" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_019" type="sphere" size="0.001" pos="0.01699443058 0.005070008359 -0.004100224239" quat="-0.2938211128 0.671607722 0.5721964492 0.3677002106" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_020" type="sphere" size="0.001" pos="0.01665504443 0.006238958936 -0.001282982061" quat="0.413510548 -0.591347966 -0.4994958835 -0.4793959452" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_021" type="sphere" size="0.001" pos="0.01666183829 0.006214088167 0.001427030617" quat="0.4840749504 -0.5099522649 -0.4347273334 -0.5627008757" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_022" type="sphere" size="0.001" pos="0.01701208289 0.005065028345 0.004094456654" quat="0.5592821359 -0.3620284204 -0.3007815784 -0.682399705" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_023" type="sphere" size="0.001" pos="0.01703462228 0.002837495357 0.0061396587" quat="0.5631827598 -0.2301350285 -0.1768904693 -0.7736748733" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_024" type="sphere" size="0.001" pos="0.01423932626 0.0006210401632 -0.007251991721" quat="0.05123689263 -0.896342932 -0.433923692 -0.07519546945" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_025" type="sphere" size="0.001" pos="0.01420976087 0.003372021874 -0.006229623525" quat="-0.1818840782 0.7289117436 0.6231606059 0.2174320843" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_026" type="sphere" size="0.001" pos="0.01401728938 0.005480257679 -0.00410201827" quat="0.3231463046 -0.664128746 -0.583035966 -0.3384945153" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_027" type="sphere" size="0.001" pos="0.01362572103 0.006497967042 -0.001421434693" quat="0.4661115541 -0.5464301911 -0.5022182598 -0.4815920316" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_028" type="sphere" size="0.001" pos="0.01362760438 0.006497975072 0.001411232223" quat="0.5144191793 -0.4919864565 -0.4551270563 -0.5349594351" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_029" type="sphere" size="0.001" pos="0.01402667108 0.005481270601 0.00409125259" quat="0.5996459859 -0.3465592407 -0.3144818116 -0.649170682" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_030" type="sphere" size="0.001" pos="0.01422059715 0.003380691075 0.006214853781" quat="0.6201500628 -0.2166215039 -0.1827658304 -0.7314955057" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_031" type="sphere" size="0.001" pos="0.01423021902 0.0006725240782 0.007242963602" quat="0.4549768237 -0.07226854509 -0.04067928578 -0.886633263" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_032" type="sphere" size="0.001" pos="0.0114966779 0.0009472102408 -0.007425310719" quat="-0.04808916881 0.7976626539 0.5973564421 0.06772742109" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_033" type="sphere" size="0.001" pos="0.01127370153 0.003646456909 -0.006241494487" quat="-0.1901659597 0.6514832063 0.699035037 0.2252921583" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_034" type="sphere" size="0.001" pos="0.01116393174 0.00546002374 -0.004160418545" quat="0.3798806971 -0.6225437708 -0.6094983094 -0.3108725144" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_035" type="sphere" size="0.001" pos="0.01094012533 0.006284019155 -0.001410676158" quat="-0.5304731293 0.4367356517 0.5971250456 0.4138863485" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_036" type="sphere" size="0.001" pos="0.01091845899 0.006286712805 0.001358152672" quat="0.5900074408 -0.4004058039 -0.5312816372 -0.4574999825" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_037" type="sphere" size="0.001" pos="0.01113012885 0.005471177862 0.004126332666" quat="0.6512556616 -0.3429953689 -0.346155451 -0.5817186982" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_038" type="sphere" size="0.001" pos="0.01123880822 0.003653343091 0.006226107177" quat="0.6615564314 -0.2261132581 -0.1962789573 -0.6875248748" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_039" type="sphere" size="0.001" pos="0.01149153224 0.0009883875532 0.007410489773" quat="0.5971031608 -0.06650562912 -0.04630957507 -0.7980602984" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_040" type="sphere" size="0.001" pos="0.008577407041 0.001100249197 -0.007506034955" quat="-0.0758987004 0.7203372307 0.6840325288 0.08633169165" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_041" type="sphere" size="0.001" pos="0.008550033073 0.003212760713 -0.006432544324" quat="-0.06588809658 0.3034815085 -0.8708707196 -0.3809749631" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_042" type="sphere" size="0.001" pos="0.008678278189 0.004697961415 -0.004154185782" quat="-0.4968209994 0.4271584672 0.6889886737 0.3098372894" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_043" type="sphere" size="0.001" pos="0.008381376308 0.005254744674 -0.00131834771" quat="0.5830121287 -0.3845294587 -0.637508282 -0.3252954711" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_044" type="sphere" size="0.001" pos="0.008392322869 0.005266634936 0.001251016528" quat="0.6559758955 -0.3319699311 -0.5693379153 -0.3678939079" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_045" type="sphere" size="0.001" pos="0.00868065338 0.004707202015 0.004125315254" quat="0.6882869385 -0.3087660331 -0.4978409478 -0.4278773396" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_046" type="sphere" size="0.001" pos="0.008544194012 0.003287506103 0.006353585253" quat="0.7177694662 -0.2400481251 -0.2760143294 -0.5924525137" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_middle_tactile2_point_047" type="sphere" size="0.001" pos="0.008567427277 0.001153099919 0.007485113796" quat="0.680223223 -0.08391954178 -0.0749064321 -0.7243223756" group="1" class="apex_hand_right_tactile_point"/>
+                <site name="right_middle_pad" pos="0.01709614476 0.00719554486 0" quat="1 0 0 0" size="0.003" group="5"/>
+                <site name="right_middle_tip" pos="0.02767216672 0.0005502779242 0" quat="1 0 0 0" size="0.003" group="5"/>
+              </body>
+            </body>
+            <body name="right_middle_tactile1" pos="0 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+              <geom name="right_middle_tactile1_visual" type="mesh" mesh="right_middle_tactile1_visual" group="2" class="apex_hand_right_soft_visual"/>
+              <geom name="right_middle_tactile1_collision" type="mesh" mesh="right_middle_tactile1_collision" group="4" class="apex_hand_right_soft_tactile"/>
+              <geom name="right_middle_tactile1_point_000" type="sphere" size="0.001" pos="0.0171440197 0.004259145886 -0.006185302849" quat="0.3078442753 -0.7668027022 -0.5179415271 -0.2213189837" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_001" type="sphere" size="0.001" pos="0.01716138196 0.004267224997 0.006121404917" quat="0.6415919365 -0.2694544033 -0.2610818216 -0.6690219682" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_002" type="sphere" size="0.001" pos="0.01504208199 0.004423626661 -0.006117343681" quat="-0.2387441877 0.6309432433 0.6817359558 0.2831040852" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_003" type="sphere" size="0.001" pos="0.01531498959 0.006110400766 -0.002499255674" quat="-0.4568838262 0.5387501287 0.5200329077 0.480178345" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_004" type="sphere" size="0.001" pos="0.01531384837 0.006298866768 7.514483462e-05" quat="-0.4800250456 0.5192857616 0.4968826502 0.5030167843" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_005" type="sphere" size="0.001" pos="0.01531629271 0.006102187787 0.002446457505" quat="0.5209527381 -0.4743931965 -0.4522801108 -0.5468107911" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_006" type="sphere" size="0.001" pos="0.01506101203 0.00441268715 0.006073131697" quat="0.6429463077 -0.2682835541 -0.255182568 -0.6704668799" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_007" type="sphere" size="0.001" pos="0.01297216988 0.004486862894 -0.0061423192" quat="-0.2378717287 0.6180740928 0.6908354998 0.290082348" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_008" type="sphere" size="0.001" pos="0.0131799142 0.006208812806 -0.002468150952" quat="0.4549080971 -0.547313532 -0.5182051452 -0.4743099708" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_009" type="sphere" size="0.001" pos="0.01319799167 0.006395014456 7.704057071e-05" quat="0.4814479674 -0.5206911238 -0.4954097728 -0.5016550262" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_010" type="sphere" size="0.001" pos="0.01319400394 0.006201448577 0.002464872273" quat="0.5212989708 -0.4761046941 -0.4529860571 -0.5444036511" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_011" type="sphere" size="0.001" pos="0.01297924619 0.004475412332 0.006099007565" quat="0.6427967204 -0.2714629569 -0.2588928364 -0.6679032404" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_012" type="sphere" size="0.001" pos="0.01091107672 0.004487828617 -0.006210979702" quat="-0.263133124 0.6624578253 0.6457031972 0.2738210543" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_middle_tactile1_point_013" type="sphere" size="0.001" pos="0.01090857773 0.004403523283 0.006243384379" quat="0.6365772758 -0.2894581477 -0.2818249397 -0.6569307848" group="1" class="apex_hand_right_tactile_point"/>
+            </body>
+          </body>
+          <body name="right_middle_tactile0" pos="0 0 0" quat="1 0 0 0">
+            <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+            <geom name="right_middle_tactile0_visual" type="mesh" mesh="right_middle_tactile0_visual" group="2" class="apex_hand_right_soft_visual"/>
+            <geom name="right_middle_tactile0_collision" type="mesh" mesh="right_middle_tactile0_collision" group="4" class="apex_hand_right_soft_tactile"/>
+            <geom name="right_middle_tactile0_point_000" type="sphere" size="0.001" pos="0.03356984855 0.003890360374 -0.0071119899" quat="-0.152432323 0.6983960471 0.6777796052 0.1721108804" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_001" type="sphere" size="0.001" pos="0.03386568953 0.006853644286 -0.004487854817" quat="-0.334566379 0.6264959377 0.5506173188 0.4386214157" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_002" type="sphere" size="0.001" pos="0.03381316036 0.007343942123 -0.001530059131" quat="0.3912485382 -0.6132896395 -0.4142719512 -0.546972714" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_003" type="sphere" size="0.001" pos="0.03381411844 0.00734366258 0.001522766093" quat="0.429553434 -0.5565155092 -0.377400901 -0.602779309" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_004" type="sphere" size="0.001" pos="0.03382941314 0.006849562728 0.00451838849" quat="0.5105306563 -0.4405157706 -0.3529408354 -0.6486424836" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_005" type="sphere" size="0.001" pos="0.03357617984 0.003851458514 0.007122777909" quat="0.6644547279 -0.1808822293 -0.1660546127 -0.7058380829" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_006" type="sphere" size="0.001" pos="0.03110750418 0.004179514655 -0.007061275254" quat="-0.15212314 0.6984394713 0.6777287864 0.1724080837" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_007" type="sphere" size="0.001" pos="0.03144373835 0.00729048495 -0.004286845997" quat="0.3556092382 -0.6722331963 -0.5421580479 -0.3573643107" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_008" type="sphere" size="0.001" pos="0.03155984599 0.008029489455 -0.001539268006" quat="0.4233144253 -0.5794309924 -0.46314514 -0.5201549785" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_009" type="sphere" size="0.001" pos="0.03156372747 0.008029057711 0.001534247886" quat="0.4682278838 -0.5219325226 -0.4200322967 -0.5761266878" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_010" type="sphere" size="0.001" pos="0.03146071356 0.007280530211 0.004312408667" quat="0.5834584491 -0.3834936541 -0.3428423514 -0.6284647783" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_011" type="sphere" size="0.001" pos="0.03111224022 0.004178254056 0.007053435639" quat="0.6664200746 -0.1700053438 -0.1549556415 -0.7092046365" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_012" type="sphere" size="0.001" pos="0.02864244082 0.004428590471 -0.007032477717" quat="-0.1521818455 0.6986711249 0.6774899811 0.1723562318" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_013" type="sphere" size="0.001" pos="0.02898429215 0.00752214143 -0.004209733897" quat="0.3597367558 -0.7042150559 -0.5120882868 -0.3353150877" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_014" type="sphere" size="0.001" pos="0.02910951793 0.008404254373 -0.001517091976" quat="0.4504486559 -0.5613739505 -0.4975621611 -0.4841355098" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_015" type="sphere" size="0.001" pos="0.02911424842 0.008398503734 0.001555403892" quat="0.5015492157 -0.5020733916 -0.4512371182 -0.541069087" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_016" type="sphere" size="0.001" pos="0.02901056831 0.007513354386 0.004226184562" quat="0.5945470923 -0.3732318157 -0.3296204349 -0.6313177771" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_017" type="sphere" size="0.001" pos="0.02864417622 0.004425324432 0.007025613956" quat="0.6663160913 -0.1699824886 -0.1549805602 -0.7093023657" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_018" type="sphere" size="0.001" pos="0.02616800173 0.004695149777 -0.007007822318" quat="-0.137958468 0.6973097489 0.6844236819 0.1621443766" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_019" type="sphere" size="0.001" pos="0.02650326412 0.007704142427 -0.00427615693" quat="0.3619490407 -0.6420609815 -0.5641016246 -0.3722095447" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_020" type="sphere" size="0.001" pos="0.02660095333 0.008607787515 -0.001500636355" quat="0.4518703677 -0.5684629727 -0.4994652582 -0.4724378005" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_021" type="sphere" size="0.001" pos="0.02661044561 0.008599404608 0.001561446921" quat="0.5068683498 -0.5024215932 -0.4538715974 -0.5335331215" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_022" type="sphere" size="0.001" pos="0.02650201043 0.007702161276 0.004274194128" quat="0.5852502342 -0.3835898548 -0.3496306456 -0.6229762422" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_023" type="sphere" size="0.001" pos="0.0261650143 0.004702835534 0.00699818255" quat="0.6685035309 -0.156782635 -0.1390840852 -0.7135669918" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_024" type="sphere" size="0.001" pos="0.02369884025 0.004861638111 -0.007009212753" quat="-0.1496183314 0.7024772667 0.6757821219 0.1657062715" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_025" type="sphere" size="0.001" pos="0.0240040305 0.007900253792 -0.004267897553" quat="0.3620379148 -0.6405460786 -0.5664625483 -0.3711461312" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_026" type="sphere" size="0.001" pos="0.02410715072 0.008777759155 -0.001524059225" quat="0.4647589665 -0.5470606637 -0.497915506 -0.4866249913" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_027" type="sphere" size="0.001" pos="0.02410538409 0.008777149796 0.001520931714" quat="0.5098709912 -0.4965958353 -0.4540477871 -0.5359708534" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_028" type="sphere" size="0.001" pos="0.02399879407 0.007901016956 0.004263969401" quat="0.5866430762 -0.3832763219 -0.3490622781 -0.6221773768" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_029" type="sphere" size="0.001" pos="0.02368445736 0.004867035252 0.007010205679" quat="0.6668413953 -0.1665190347 -0.1489002072 -0.7109308637" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_030" type="sphere" size="0.001" pos="0.02120645538 0.00510850096 -0.006987677894" quat="-0.1297937598 0.6964430893 0.6885016344 0.1551969806" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_031" type="sphere" size="0.001" pos="0.02150534738 0.008087161094 -0.004263377833" quat="0.3637678061 -0.6431852749 -0.5634641117 -0.3694507818" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_032" type="sphere" size="0.001" pos="0.02160062249 0.008953734581 -0.001520258755" quat="0.4665222732 -0.5478362191 -0.4962044623 -0.4858122861" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_033" type="sphere" size="0.001" pos="0.02159932691 0.0089530725 0.001512109673" quat="0.5107439401 -0.4982546946 -0.4531557687 -0.5343526329" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_034" type="sphere" size="0.001" pos="0.0215014302 0.008096786613 0.004244903462" quat="0.5899974247 -0.3794695957 -0.3455929322 -0.6232747308" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_middle_tactile0_point_035" type="sphere" size="0.001" pos="0.02120979878 0.005120688886 0.006993740984" quat="0.6714847366 -0.1493135007 -0.1361670115 -0.712932165" group="1" class="apex_hand_right_tactile_point"/>
+          </body>
+        </body>
+      </body>
+      <body name="right_ring_link0" pos="0.0071 -0.011503 0.1188" quat="0.7071054825 0 -0.7071080799 0">
+        <joint name="right_ring_j0" type="hinge" axis="0 0 1" range="-0.4363 0.4363" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+        <inertial pos="0.00402 0.000105005 0.00062297" mass="0.013698" fullinertia="1.13e-06 1.71e-06 8.5e-07 2.99999e-08 -1.00023e-08 -6.5383e-12"/>
+        <geom name="right_ring_link0_visual" type="mesh" mesh="right_ring_link0_visual" group="1" class="apex_hand_right_visual"/>
+        <geom name="right_ring_link0_collision" type="mesh" mesh="right_ring_link0_collision" group="3" class="apex_hand_right_hard_link"/>
+        <body name="right_ring_link1" pos="0.016 0 0" quat="0.7071054825 -0.7071080799 0 0">
+          <joint name="right_ring_j1" type="hinge" axis="0 0 1" range="-0.349 1.5707" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+          <inertial pos="0.016598 -0.00276476 0.00011302" mass="0.043491" fullinertia="2.66999e-06 1.122e-05 1.132e-05 9.29936e-07 -1.80007e-07 -1.00006e-08"/>
+          <geom name="right_ring_link1_visual" type="mesh" mesh="right_ring_link1_visual" group="1" class="apex_hand_right_visual"/>
+          <geom name="right_ring_link1_collision" type="mesh" mesh="right_ring_link1_collision" group="3" class="apex_hand_right_hard_link"/>
+          <body name="right_ring_link2" pos="0.045 0 0" quat="1 0 0 0">
+            <joint name="right_ring_j2" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+            <inertial pos="0.009137 -0.000661487 -0.000326995" mass="0.023044" fullinertia="1.31e-06 2.25e-06 2.45e-06 2.49993e-07 -3.00018e-08 -9.99875e-09"/>
+            <geom name="right_ring_link2_visual" type="mesh" mesh="right_ring_link2_visual" group="1" class="apex_hand_right_visual"/>
+            <geom name="right_ring_link2_collision" type="mesh" mesh="right_ring_link2_collision" group="3" class="apex_hand_right_hard_link"/>
+            <body name="right_ring_link3" pos="0.025 0 0" quat="1 0 0 0">
+              <joint name="right_ring_j3" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+              <inertial pos="0.011123 -0.000543286 3.99645e-09" mass="0.018645" fullinertia="5.99999e-07 1.59e-06 1.39e-06 3.99927e-08 0 -1.46928e-12"/>
+              <geom name="right_ring_link3_visual" type="mesh" mesh="right_ring_link3_visual" group="1" class="apex_hand_right_visual"/>
+              <geom name="right_ring_link3_collision" type="mesh" mesh="right_ring_link3_collision" group="3" class="apex_hand_right_hard_link"/>
+              <body name="right_ring_tactile2" pos="0 0 0" quat="1 0 0 0">
+                <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+                <geom name="right_ring_tactile2_visual" type="mesh" mesh="right_ring_tactile2_visual" group="2" class="apex_hand_right_soft_visual"/>
+                <geom name="right_ring_tactile2_collision" type="mesh" mesh="right_ring_tactile2_collision" group="4" class="apex_hand_right_soft_tactile"/>
+                <geom name="right_ring_tactile2_point_000" type="sphere" size="0.001" pos="0.02621240754 0.0009666021685 -0.001217074505" quat="-0.1234861318 0.7373504947 0.14356302 0.6484250785" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_001" type="sphere" size="0.001" pos="0.02621754912 0.001001299236 0.001113926593" quat="0.1382152777 -0.6501840715 -0.1121139904 -0.7386390616" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_002" type="sphere" size="0.001" pos="0.02455854007 0.001515045804 -0.003751625298" quat="-0.1499209206 0.8365934661 0.2847154046 0.4433646674" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_003" type="sphere" size="0.001" pos="0.02472619722 0.003029194294 -0.001162941024" quat="0.2577894393 -0.7317378575 -0.2960853077 -0.5571694567" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_004" type="sphere" size="0.001" pos="0.02474427341 0.002986608564 0.0012405392" quat="0.3149767833 -0.5929830469 -0.2559259099 -0.6954585974" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_005" type="sphere" size="0.001" pos="0.02462626122 0.001564159047 0.003627807327" quat="0.282213782 -0.420006421 -0.1290686693 -0.8528137347" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_006" type="sphere" size="0.001" pos="0.02205997797 0.0008665395079 -0.005690270717" quat="0.08970062705 -0.9052818121 -0.3495824768 -0.224077509" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_007" type="sphere" size="0.001" pos="0.02250109442 0.00316367619 -0.003936412584" quat="-0.1708582383 0.6909385608 0.5657241258 0.416374328" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_008" type="sphere" size="0.001" pos="0.02230160005 0.004575346116 -0.0013065241" quat="0.3382666263 -0.6813971331 -0.354213237 -0.5438810709" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_009" type="sphere" size="0.001" pos="0.02231417009 0.004570918372 0.001292008625" quat="0.3977258191 -0.5647029359 -0.3022269375 -0.6569502608" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_010" type="sphere" size="0.001" pos="0.02254318207 0.003152441208 0.003910339575" quat="0.4394912744 -0.3811056101 -0.2394193951 -0.7773572454" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_011" type="sphere" size="0.001" pos="0.02212546775 0.0008778714005 0.005649930579" quat="0.3519616916 -0.214445584 -0.08573293709 -0.9070754779" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_012" type="sphere" size="0.001" pos="0.01966483229 0.002048850839 -0.005936550385" quat="0.1499926836 -0.8512578242 -0.4544283845 -0.2153071177" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_013" type="sphere" size="0.001" pos="0.01986363156 0.004378010729 -0.003972818082" quat="-0.2394347631 0.7131912438 0.5497030954 0.3631194719" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_014" type="sphere" size="0.001" pos="0.01964335189 0.005578209789 -0.001287122925" quat="-0.3803043353 0.6127345341 0.4714876804 0.5075671093" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_015" type="sphere" size="0.001" pos="0.01965160803 0.005574557672 0.0012855848" quat="0.4646401994 -0.5033079062 -0.3859279423 -0.617940337" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_016" type="sphere" size="0.001" pos="0.01989051967 0.00436885828 0.003964644326" quat="0.518790045 -0.3525756067 -0.2547014851 -0.7359853832" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_017" type="sphere" size="0.001" pos="0.01969970143 0.002045710427 0.005920817383" quat="0.4905190051 -0.2215417533 -0.1406217526 -0.8309848855" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_018" type="sphere" size="0.001" pos="0.01701005032 0.002956675382 -0.006083336153" quat="-0.1386421771 0.7796703333 0.5757006017 0.2036205669" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_019" type="sphere" size="0.001" pos="0.01699443181 0.005070009475 -0.004100225188" quat="-0.2938211447 0.6716072968 0.572196937 0.3677002029" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_020" type="sphere" size="0.001" pos="0.01665504703 0.006238958541 -0.00128298189" quat="0.4135104116 -0.5913469935 -0.4994970906 -0.4793960046" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_021" type="sphere" size="0.001" pos="0.01666183821 0.006214087779 0.001427026018" quat="0.4840756125 -0.5099514255 -0.4347266009 -0.5627016328" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_022" type="sphere" size="0.001" pos="0.01701208109 0.005065028431 0.004094456458" quat="0.559282115 -0.3620288293 -0.300781077 -0.6823997261" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_023" type="sphere" size="0.001" pos="0.01703461994 0.002837490959 0.006139662289" quat="0.5631820462 -0.2301366702 -0.1768914724 -0.7736746751" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_024" type="sphere" size="0.001" pos="0.01423932797 0.0006210368187 -0.00725199245" quat="0.05123830262 -0.8963436796 -0.4339219986 -0.07519536975" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_025" type="sphere" size="0.001" pos="0.01420976113 0.003372024411 -0.006229621875" quat="-0.1818836006 0.728912489 0.6231601727 0.2174312269" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_026" type="sphere" size="0.001" pos="0.0140172866 0.005480258675 -0.00410201757" quat="0.3231466496 -0.6641311385 -0.5830334761 -0.3384937807" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_027" type="sphere" size="0.001" pos="0.01362571956 0.006497967113 -0.001421433112" quat="0.4661110315 -0.546430683 -0.5022182429 -0.4815919969" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_028" type="sphere" size="0.001" pos="0.01362760433 0.006497975115 0.001411230859" quat="0.5144195386 -0.4919863546 -0.4551266719 -0.5349595104" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_029" type="sphere" size="0.001" pos="0.01402667108 0.00548127066 0.00409125263" quat="0.5996459859 -0.3465592407 -0.3144818116 -0.649170682" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_030" type="sphere" size="0.001" pos="0.0142205974 0.00338069257 0.00621485332" quat="0.6201501547 -0.2166211383 -0.1827655202 -0.7314956136" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_031" type="sphere" size="0.001" pos="0.01423021909 0.0006725241835 0.007242964355" quat="0.4549768237 -0.07226854509 -0.04067928578 -0.886633263" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_032" type="sphere" size="0.001" pos="0.0114966787 0.000947208516 -0.007425311285" quat="-0.0480898326 0.7976628959 0.5973560514 0.06772754518" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_033" type="sphere" size="0.001" pos="0.01127370282 0.003646457052 -0.006241494157" quat="-0.1901663859 0.6514837152 0.6990346109 0.2252916495" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_034" type="sphere" size="0.001" pos="0.01116393251 0.00546002618 -0.004160415971" quat="0.3798798409 -0.6225435364 -0.6094993508 -0.3108719885" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_035" type="sphere" size="0.001" pos="0.01090382015 0.006277646098 -0.001378964829" quat="-0.5250350577 0.456500506 0.5910735645 0.408139091" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_036" type="sphere" size="0.001" pos="0.01091845855 0.006286714434 0.001358152867" quat="0.5900074408 -0.4004058039 -0.5312816372 -0.4574999825" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_037" type="sphere" size="0.001" pos="0.01113012904 0.00547117599 0.004126333269" quat="0.6512554649 -0.3429956443 -0.3461557898 -0.5817185545" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_038" type="sphere" size="0.001" pos="0.01123880818 0.003653341736 0.006226107865" quat="0.6615563211 -0.2261135981 -0.1962792919 -0.6875247736" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_039" type="sphere" size="0.001" pos="0.01149153179 0.0009883860521 0.007410489642" quat="0.5971031354 -0.06650602802 -0.04630987381 -0.7980602668" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_040" type="sphere" size="0.001" pos="0.008577407457 0.00110025066 -0.007506034811" quat="-0.07589840118 0.7203369287 0.6840329301 0.08633129388" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_041" type="sphere" size="0.001" pos="0.008550032122 0.003212760318 -0.00643254625" quat="-0.06589942694 0.3035063443 -0.8708618549 -0.3809734822" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_042" type="sphere" size="0.001" pos="0.00867827412 0.004697957145 -0.004154194569" quat="-0.496823531 0.4271612944 0.6889848733 0.3098377833" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_043" type="sphere" size="0.001" pos="0.008381359004 0.005254738498 -0.001318345004" quat="0.5830117046 -0.3845380704 -0.6375038835 -0.3252946714" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_044" type="sphere" size="0.001" pos="0.008392305404 0.005266627303 0.001251012976" quat="0.6559764189 -0.3319763991 -0.5693330299 -0.3678946988" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_045" type="sphere" size="0.001" pos="0.008680648431 0.004707197109 0.004125324092" quat="0.6882852484 -0.3087693646 -0.4978417371 -0.4278767359" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_046" type="sphere" size="0.001" pos="0.008544189628 0.003287504802 0.006353584818" quat="0.7177691061 -0.2400492018 -0.2760134408 -0.5924529277" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_ring_tactile2_point_047" type="sphere" size="0.001" pos="0.008567425347 0.001153098538 0.007485113952" quat="0.6802227793 -0.08392028129 -0.07490636833 -0.7243227132" group="1" class="apex_hand_right_tactile_point"/>
+                <site name="right_ring_pad" pos="0.01709614476 0.00719554486 0" quat="1 0 0 0" size="0.003" group="5"/>
+                <site name="right_ring_tip" pos="0.02767216672 0.0005502779242 0" quat="1 0 0 0" size="0.003" group="5"/>
+              </body>
+            </body>
+            <body name="right_ring_tactile1" pos="0 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+              <geom name="right_ring_tactile1_visual" type="mesh" mesh="right_ring_tactile1_visual" group="2" class="apex_hand_right_soft_visual"/>
+              <geom name="right_ring_tactile1_collision" type="mesh" mesh="right_ring_tactile1_collision" group="4" class="apex_hand_right_soft_tactile"/>
+              <geom name="right_ring_tactile1_point_000" type="sphere" size="0.001" pos="0.01714401958 0.00425914764 -0.006185301136" quat="0.3078424568 -0.7667996869 -0.5179463783 -0.2213206074" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_001" type="sphere" size="0.001" pos="0.01716137983 0.004267227099 0.006121403802" quat="0.6415919307 -0.269454389 -0.2610811669 -0.6690222351" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_002" type="sphere" size="0.001" pos="0.01504208262 0.004423628124 -0.006117342569" quat="-0.2387438003 0.630942782 0.6817366004 0.2831038879" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_003" type="sphere" size="0.001" pos="0.01531498955 0.006110400565 -0.00249925806" quat="-0.456884012 0.5387498096 0.5200327517 0.4801786953" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_004" type="sphere" size="0.001" pos="0.01531384837 0.006298866625 7.514486154e-05" quat="-0.4800251025 0.5192858206 0.4968825933 0.5030167253" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_005" type="sphere" size="0.001" pos="0.0153162927 0.006102187621 0.002446457481" quat="0.5209527381 -0.4743931965 -0.4522801108 -0.5468107911" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_006" type="sphere" size="0.001" pos="0.01506101205 0.004412687545 0.006073132114" quat="0.6429463077 -0.2682835541 -0.255182568 -0.6704668799" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_007" type="sphere" size="0.001" pos="0.0129721696 0.004486865811 -0.006142317144" quat="-0.2378708198 0.6180734799 0.690836463 0.2900821056" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_008" type="sphere" size="0.001" pos="0.01317991194 0.006208813017 -0.002468148628" quat="0.4549076852 -0.5473141034 -0.5182050129 -0.474309851" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_009" type="sphere" size="0.001" pos="0.0131979917 0.006395014863 7.704048579e-05" quat="0.481448034 -0.5206911726 -0.4954097062 -0.5016549773" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_010" type="sphere" size="0.001" pos="0.01319400632 0.006201448302 0.002464872235" quat="0.5212991747 -0.4761043993 -0.4529863634 -0.5444034588" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_011" type="sphere" size="0.001" pos="0.01297924614 0.004475410926 0.006099009285" quat="0.6427965895 -0.2714632902 -0.2588931584 -0.6679031061" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_012" type="sphere" size="0.001" pos="0.01091107541 0.00448782893 -0.006210979868" quat="-0.2631336849 0.6624597503 0.6457012319 0.2738204926" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_ring_tactile1_point_013" type="sphere" size="0.001" pos="0.01090857559 0.004403525133 0.006243383016" quat="0.6365772711 -0.2894581372 -0.2818242933 -0.6569310713" group="1" class="apex_hand_right_tactile_point"/>
+            </body>
+          </body>
+          <body name="right_ring_tactile0" pos="0 0 0" quat="1 0 0 0">
+            <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+            <geom name="right_ring_tactile0_visual" type="mesh" mesh="right_ring_tactile0_visual" group="2" class="apex_hand_right_soft_visual"/>
+            <geom name="right_ring_tactile0_collision" type="mesh" mesh="right_ring_tactile0_collision" group="4" class="apex_hand_right_soft_tactile"/>
+            <geom name="right_ring_tactile0_point_000" type="sphere" size="0.001" pos="0.03356984854 0.003890359299 -0.007111991071" quat="-0.1524326637 0.6983959688 0.677779521 0.1721112277" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_001" type="sphere" size="0.001" pos="0.03386568841 0.006853642942 -0.004487855256" quat="-0.3345666545 0.626496257 0.5506166022 0.4386216491" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_002" type="sphere" size="0.001" pos="0.03381315945 0.007343939774 -0.001530062605" quat="0.3912492804 -0.6132888086 -0.414271269 -0.5469736314" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_003" type="sphere" size="0.001" pos="0.03381411268 0.007343664561 0.001522766436" quat="0.4295534535 -0.5565176383 -0.3773979634 -0.6027791687" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_004" type="sphere" size="0.001" pos="0.03382941664 0.006849560471 0.004518393125" quat="0.5105301199 -0.4405159235 -0.3529433299 -0.6486414446" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_005" type="sphere" size="0.001" pos="0.03357617976 0.003851457159 0.00712277854" quat="0.6644546425 -0.1808825817 -0.1660549455 -0.7058379947" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_006" type="sphere" size="0.001" pos="0.03110750412 0.00417951213 -0.007061276721" quat="-0.1521238216 0.698439315 0.6777286177 0.1724087784" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_007" type="sphere" size="0.001" pos="0.03144374125 0.007290485309 -0.004286845082" quat="0.355608536 -0.6722312725 -0.5421608093 -0.3573644389" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_008" type="sphere" size="0.001" pos="0.03155985119 0.00802948899 -0.001539272017" quat="0.4233151358 -0.5794277619 -0.4631472682 -0.5201561041" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_009" type="sphere" size="0.001" pos="0.03156372716 0.008029056226 0.001534247724" quat="0.4682278567 -0.5219324985 -0.4200323238 -0.5761267119" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_010" type="sphere" size="0.001" pos="0.03146071476 0.007280530717 0.004312406254" quat="0.5834590056 -0.3834927463 -0.342842069 -0.6284649696" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_011" type="sphere" size="0.001" pos="0.03111224021 0.004178253996 0.00705343552" quat="0.6664200746 -0.1700053438 -0.1549556415 -0.7092046365" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_012" type="sphere" size="0.001" pos="0.02864244218 0.004428587732 -0.007032478706" quat="-0.1521828762 0.6986708924 0.6774898988 0.172356588" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_013" type="sphere" size="0.001" pos="0.02898429371 0.007522141118 -0.004209733038" quat="0.3597359768 -0.7042134413 -0.5120907534 -0.3353155475" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_014" type="sphere" size="0.001" pos="0.02910951891 0.008404254619 -0.001517090656" quat="0.450448197 -0.56137368 -0.4975631124 -0.4841352729" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_015" type="sphere" size="0.001" pos="0.02911424836 0.008398503064 0.001555403832" quat="0.5015492157 -0.5020733916 -0.4512371182 -0.541069087" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_016" type="sphere" size="0.001" pos="0.02901056949 0.007513355561 0.00422618263" quat="0.5945476426 -0.3732309061 -0.3296201365 -0.6313179524" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_017" type="sphere" size="0.001" pos="0.02864417623 0.004425324605 0.007025614303" quat="0.6663160913 -0.1699824886 -0.1549805602 -0.7093023657" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_018" type="sphere" size="0.001" pos="0.02616800172 0.004695149646 -0.00700782203" quat="-0.137958468 0.6973097489 0.6844236819 0.1621443766" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_019" type="sphere" size="0.001" pos="0.02650326348 0.007704142772 -0.004276156002" quat="0.3619488617 -0.6420616783 -0.5641011827 -0.3722091864" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_020" type="sphere" size="0.001" pos="0.0266009516 0.008607787613 -0.001500635031" quat="0.4518702182 -0.5684643975 -0.4994642945 -0.4724372479" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_021" type="sphere" size="0.001" pos="0.02661044556 0.008599404038 0.001561446873" quat="0.5068683498 -0.5024215932 -0.4538715974 -0.5335331215" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_022" type="sphere" size="0.001" pos="0.02650201041 0.007702160816 0.004274195102" quat="0.5852500505 -0.3835901611 -0.3496309436 -0.6229760589" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_023" type="sphere" size="0.001" pos="0.02616501397 0.004702830328 0.006998184624" quat="0.6685032353 -0.1567840586 -0.1390854259 -0.7135666946" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_024" type="sphere" size="0.001" pos="0.02369884085 0.004861638151 -0.007009212923" quat="-0.1496184143 0.7024769288 0.6757824732 0.1657061967" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_025" type="sphere" size="0.001" pos="0.02400403061 0.007900253633 -0.004267897531" quat="0.3620380495 -0.6405461809 -0.5664624136 -0.371146029" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_026" type="sphere" size="0.001" pos="0.02410715071 0.008777758803 -0.001524059236" quat="0.464759027 -0.5470606968 -0.4979154455 -0.4866249582" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_027" type="sphere" size="0.001" pos="0.02410538412 0.008777150142 0.001520931729" quat="0.5098709715 -0.4965958074 -0.4540478068 -0.5359708813" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_028" type="sphere" size="0.001" pos="0.02399879407 0.007901017242 0.004263968393" quat="0.5866432609 -0.3832760168 -0.3490619785 -0.6221775586" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_029" type="sphere" size="0.001" pos="0.02368445737 0.004867035414 0.007010206015" quat="0.6668413953 -0.1665190347 -0.1489002072 -0.7109308637" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_030" type="sphere" size="0.001" pos="0.02120645404 0.005108499903 -0.00698767884" quat="-0.1297937584 0.6964430889 0.6885014794 0.1551976706" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_031" type="sphere" size="0.001" pos="0.0215053475 0.008087161259 -0.004263377987" quat="0.363767943 -0.6431853748 -0.5634639748 -0.3694506819" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_032" type="sphere" size="0.001" pos="0.02160062247 0.008953734522 -0.00152025966" quat="0.4665225304 -0.5478359577 -0.4962042285 -0.4858125727" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_033" type="sphere" size="0.001" pos="0.02159932692 0.008953072442 0.001512109624" quat="0.510743904 -0.498254637 -0.4531558048 -0.5343526905" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_034" type="sphere" size="0.001" pos="0.02150143019 0.008096786511 0.004244903407" quat="0.5899974247 -0.3794695957 -0.3455929322 -0.6232747308" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_ring_tactile0_point_035" type="sphere" size="0.001" pos="0.02120980019 0.00512069007 0.006993740536" quat="0.6714848819 -0.149312809 -0.1361670317 -0.7129321693" group="1" class="apex_hand_right_tactile_point"/>
+          </body>
+        </body>
+      </body>
+      <body name="right_pinky_link0" pos="0.0071 -0.034504 0.1158" quat="0.7071054825 0 -0.7071080799 0">
+        <joint name="right_pinky_j0" type="hinge" axis="0 0 1" range="-0.4363 0.4363" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+        <inertial pos="0.00402 0.000105005 0.00062297" mass="0.013698" fullinertia="1.13e-06 1.71e-06 8.5e-07 2.99999e-08 -1.00023e-08 -6.5383e-12"/>
+        <geom name="right_pinky_link0_visual" type="mesh" mesh="right_pinky_link0_visual" group="1" class="apex_hand_right_visual"/>
+        <geom name="right_pinky_link0_collision" type="mesh" mesh="right_pinky_link0_collision" group="3" class="apex_hand_right_hard_link"/>
+        <body name="right_pinky_link1" pos="0.016 0 0" quat="0.7071054825 -0.7071080799 0 0">
+          <joint name="right_pinky_j1" type="hinge" axis="0 0 1" range="-0.349 1.5707" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+          <inertial pos="0.016598 -0.00276476 0.00011302" mass="0.043491" fullinertia="2.66999e-06 1.122e-05 1.132e-05 9.29936e-07 -1.80007e-07 -1.00006e-08"/>
+          <geom name="right_pinky_link1_visual" type="mesh" mesh="right_pinky_link1_visual" group="1" class="apex_hand_right_visual"/>
+          <geom name="right_pinky_link1_collision" type="mesh" mesh="right_pinky_link1_collision" group="3" class="apex_hand_right_hard_link"/>
+          <body name="right_pinky_link2" pos="0.045 0 0" quat="1 0 0 0">
+            <joint name="right_pinky_j2" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+            <inertial pos="0.009137 -0.000661487 -0.000326995" mass="0.023044" fullinertia="1.31e-06 2.25e-06 2.45e-06 2.49993e-07 -3.00018e-08 -9.99875e-09"/>
+            <geom name="right_pinky_link2_visual" type="mesh" mesh="right_pinky_link2_visual" group="1" class="apex_hand_right_visual"/>
+            <geom name="right_pinky_link2_collision" type="mesh" mesh="right_pinky_link2_collision" group="3" class="apex_hand_right_hard_link"/>
+            <body name="right_pinky_link3" pos="0.025 0 0" quat="1 0 0 0">
+              <joint name="right_pinky_j3" type="hinge" axis="0 0 1" range="-0.0872 1.7453" armature="0.0001" damping="0.05" frictionloss="0.001"/>
+              <inertial pos="0.011123 -0.000543286 3.99645e-09" mass="0.018645" fullinertia="5.99999e-07 1.59e-06 1.39e-06 3.99927e-08 0 -1.46928e-12"/>
+              <geom name="right_pinky_link3_visual" type="mesh" mesh="right_pinky_link3_visual" group="1" class="apex_hand_right_visual"/>
+              <geom name="right_pinky_link3_collision" type="mesh" mesh="right_pinky_link3_collision" group="3" class="apex_hand_right_hard_link"/>
+              <body name="right_pinky_tactile2" pos="0 0 0" quat="1 0 0 0">
+                <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+                <geom name="right_pinky_tactile2_visual" type="mesh" mesh="right_pinky_tactile2_visual" group="2" class="apex_hand_right_soft_visual"/>
+                <geom name="right_pinky_tactile2_collision" type="mesh" mesh="right_pinky_tactile2_collision" group="4" class="apex_hand_right_soft_tactile"/>
+                <geom name="right_pinky_tactile2_point_000" type="sphere" size="0.001" pos="0.02621241443 0.0009665661573 -0.001217099418" quat="-0.1234852486 0.7373410796 0.1435820562 0.648431738" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_001" type="sphere" size="0.001" pos="0.02621754735 0.001001300089 0.001113951052" quat="0.1382143049 -0.6501901786 -0.1121143997 -0.7386338057" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_002" type="sphere" size="0.001" pos="0.024558535 0.0015150443 -0.003751625526" quat="-0.1499219179 0.8365939224 0.2847126211 0.4433652567" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_003" type="sphere" size="0.001" pos="0.02472619444 0.003029191094 -0.001162938575" quat="0.257789521 -0.7317381973 -0.2960851906 -0.5571690348" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_004" type="sphere" size="0.001" pos="0.02474427007 0.00298660493 0.001240538399" quat="0.3149768346 -0.5929830764 -0.2559258586 -0.6954585679" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_005" type="sphere" size="0.001" pos="0.02462627914 0.001564148901 0.003627794486" quat="0.2822164154 -0.4200002534 -0.129072967 -0.8528152504" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_006" type="sphere" size="0.001" pos="0.0220599784 0.0008665478504 -0.005690265728" quat="0.08969645827 -0.9052802494 -0.3495882436 -0.2240764944" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_007" type="sphere" size="0.001" pos="0.02250108929 0.003163673596 -0.003936420246" quat="-0.1708613413 0.690941901 0.5657179254 0.4163759364" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_008" type="sphere" size="0.001" pos="0.02230160544 0.004575339414 -0.001306522471" quat="0.3382661041 -0.6813951685 -0.3542175032 -0.5438810785" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_009" type="sphere" size="0.001" pos="0.02231416326 0.004570925495 0.001292011147" quat="0.3977250014 -0.5647050364 -0.3022240903 -0.6569502602" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_010" type="sphere" size="0.001" pos="0.02254318905 0.003152446309 0.003910326771" quat="0.4394926074 -0.3811012166 -0.2394180984 -0.777359045" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_011" type="sphere" size="0.001" pos="0.02212546401 0.0008778829427 0.005649927189" quat="0.3519598499 -0.2144449535 -0.08572919248 -0.9070766955" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_012" type="sphere" size="0.001" pos="0.01966483648 0.002048846513 -0.005936551622" quat="0.149996279 -0.8512609391 -0.4544221227 -0.2153055138" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_013" type="sphere" size="0.001" pos="0.01986363743 0.004378017072 -0.003972809912" quat="-0.2394304573 0.713187221 0.5497109999 0.363118246" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_014" type="sphere" size="0.001" pos="0.01964334761 0.005578209252 -0.001287130036" quat="-0.3803055152 0.6127346434 0.4714850306 0.5075685548" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_015" type="sphere" size="0.001" pos="0.01965160897 0.005574555401 0.001285584429" quat="0.464640451 -0.5033076739 -0.3859282513 -0.617940144" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_016" type="sphere" size="0.001" pos="0.01989051784 0.004368857606 0.003964643325" quat="0.5187898687 -0.3525758661 -0.2547011171 -0.7359855105" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_017" type="sphere" size="0.001" pos="0.01969970169 0.00204571083 0.005920815202" quat="0.4905190675 -0.2215413366 -0.1406215095 -0.8309850009" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_018" type="sphere" size="0.001" pos="0.01701005141 0.002956672805 -0.006083338019" quat="-0.1386438916 0.7796720979 0.5756978373 0.2036204589" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_019" type="sphere" size="0.001" pos="0.01699443191 0.0050700089 -0.004100222946" quat="-0.2938210022 0.6716076062 0.5721969475 0.3676997352" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_020" type="sphere" size="0.001" pos="0.01665504692 0.006238957477 -0.001282981705" quat="0.4135105236 -0.5913470795 -0.4994969786 -0.4793959186" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_021" type="sphere" size="0.001" pos="0.01666183657 0.006214087069 0.001427025934" quat="0.4840753839 -0.5099516922 -0.4347262932 -0.5627018254" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_022" type="sphere" size="0.001" pos="0.01701208095 0.00506502769 0.004094455952" quat="0.559282115 -0.3620288293 -0.300781077 -0.6823997261" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_023" type="sphere" size="0.001" pos="0.01703462259 0.002837491467 0.006139661485" quat="0.5631826298 -0.2301359118 -0.1768916948 -0.773674425" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_024" type="sphere" size="0.001" pos="0.01423932699 0.0006210355568 -0.007251992058" quat="0.05123851848 -0.8963436361 -0.4339219851 -0.07519581845" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_025" type="sphere" size="0.001" pos="0.01420976097 0.003372019735 -0.006229625757" quat="-0.1818852527 0.7289128156 0.6231589229 0.2174323319" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_026" type="sphere" size="0.001" pos="0.01401728877 0.005480257473 -0.00410201976" quat="0.3231462596 -0.6641282994 -0.5830361507 -0.3384951165" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_027" type="sphere" size="0.001" pos="0.01362571958 0.0064979672 -0.001421433199" quat="0.4661110964 -0.5464307191 -0.5022181781 -0.4815919608" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_028" type="sphere" size="0.001" pos="0.01362760438 0.006497975109 0.001411232256" quat="0.5144192008 -0.4919864861 -0.4551270348 -0.5349594054" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_029" type="sphere" size="0.001" pos="0.01402667109 0.005481270769 0.004091252704" quat="0.5996459859 -0.3465592407 -0.3144818116 -0.649170682" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_030" type="sphere" size="0.001" pos="0.01422059717 0.00338069121 0.006214853993" quat="0.6201500628 -0.2166215039 -0.1827658304 -0.7314955057" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_031" type="sphere" size="0.001" pos="0.01423021904 0.0006725241133 0.007242963853" quat="0.4549768237 -0.07226854509 -0.04067928578 -0.886633263" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_032" type="sphere" size="0.001" pos="0.01149667805 0.0009472071823 -0.007425311645" quat="-0.04809009756 0.797663162 0.5973556268 0.06772796795" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_033" type="sphere" size="0.001" pos="0.01127369933 0.003646467584 -0.006241488591" quat="-0.1901617011 0.6514807827 0.6990389223 0.2252907064" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_034" type="sphere" size="0.001" pos="0.01116392679 0.005460025756 -0.004160415292" quat="0.3798803903 -0.6225476917 -0.6094952527 -0.3108710304" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_035" type="sphere" size="0.001" pos="0.01094013809 0.006284021648 -0.001410688034" quat="-0.5304748879 0.4367281834 0.5971272273 0.4138888275" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_036" type="sphere" size="0.001" pos="0.01091845821 0.006286715798 0.001358153093" quat="0.5900073552 -0.4004057158 -0.5312817228 -0.4575000706" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_037" type="sphere" size="0.001" pos="0.01113012726 0.005471176737 0.004126333979" quat="0.6512554127 -0.3429961225 -0.3461553796 -0.5817185751" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_038" type="sphere" size="0.001" pos="0.01123880813 0.003653340411 0.006226108598" quat="0.6615562108 -0.2261139382 -0.1962796265 -0.6875246724" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_039" type="sphere" size="0.001" pos="0.01149153224 0.000988387575 0.007410489913" quat="0.5971031608 -0.06650562912 -0.04630957507 -0.7980602984" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_040" type="sphere" size="0.001" pos="0.008577405793 0.001100240548 -0.007506037103" quat="-0.07590048091 0.7203363441 0.6840329588 0.08633411664" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_041" type="sphere" size="0.001" pos="0.008550031009 0.003212759795 -0.006432546553" quat="-0.06591023453 0.3035300145 -0.8708535438 -0.380971753" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_042" type="sphere" size="0.001" pos="0.008678289792 0.00469796903 -0.004154191307" quat="-0.496821256 0.427149553 0.6889931259 0.3098392671" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_043" type="sphere" size="0.001" pos="0.008381368699 0.005254737264 -0.001318380923" quat="0.5830195632 -0.3845303518 -0.6374990241 -0.3252992343" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_044" type="sphere" size="0.001" pos="0.008392323819 0.005266633547 0.001251016078" quat="0.6559757339 -0.3319695412 -0.569338077 -0.3678942978" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_045" type="sphere" size="0.001" pos="0.00868065393 0.004707201076 0.004125314897" quat="0.6882868789 -0.3087659379 -0.4978410074 -0.4278774348" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_046" type="sphere" size="0.001" pos="0.008544188326 0.003287503641 0.006353586095" quat="0.7177688411 -0.2400498535 -0.2760135062 -0.5924529543" group="1" class="apex_hand_right_tactile_point"/>
+                <geom name="right_pinky_tactile2_point_047" type="sphere" size="0.001" pos="0.008567427183 0.001153098413 0.007485113944" quat="0.6802231834 -0.08391990372 -0.07490677245 -0.7243223356" group="1" class="apex_hand_right_tactile_point"/>
+                <site name="right_pinky_pad" pos="0.017096 0.0071955 0" quat="1 0 0 0" size="0.003" group="5"/>
+                <site name="right_pinky_tip" pos="0.027672 0.00055028 0" quat="1 0 0 0" size="0.003" group="5"/>
+              </body>
+            </body>
+            <body name="right_pinky_tactile1" pos="0 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+              <geom name="right_pinky_tactile1_visual" type="mesh" mesh="right_pinky_tactile1_visual" group="2" class="apex_hand_right_soft_visual"/>
+              <geom name="right_pinky_tactile1_collision" type="mesh" mesh="right_pinky_tactile1_collision" group="4" class="apex_hand_right_soft_tactile"/>
+              <geom name="right_pinky_tactile1_point_000" type="sphere" size="0.001" pos="0.01714401788 0.004259148628 -0.006185300533" quat="0.3078392386 -0.7667932796 -0.5179560364 -0.2213246798" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_001" type="sphere" size="0.001" pos="0.01716138213 0.004267228871 0.006121402545" quat="0.6415921943 -0.269453733 -0.2610811813 -0.6690222409" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_002" type="sphere" size="0.001" pos="0.01504208289 0.004423622149 -0.006117346255" quat="-0.2387458391 0.6309447293 0.6817339898 0.283104115" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_003" type="sphere" size="0.001" pos="0.01531498729 0.006110400941 -0.002499255667" quat="-0.4568836154 0.5387504203 0.5200326091 0.4801785419" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_004" type="sphere" size="0.001" pos="0.01531384836 0.006298866377 7.514486976e-05" quat="-0.4800251025 0.5192858206 0.4968825933 0.5030167253" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_005" type="sphere" size="0.001" pos="0.01531629271 0.006102187419 0.002446459846" quat="0.5209524764 -0.4743934361 -0.4522804069 -0.5468105876" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_006" type="sphere" size="0.001" pos="0.01506101203 0.004412687187 0.006073131736" quat="0.6429463077 -0.2682835541 -0.255182568 -0.6704668799" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_007" type="sphere" size="0.001" pos="0.01297216776 0.004486867528 -0.006142315019" quat="-0.2378685071 0.618069885 0.6908399922 0.2900832566" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_008" type="sphere" size="0.001" pos="0.01317991189 0.00620881323 -0.002468150995" quat="0.4549078599 -0.5473137911 -0.5182048715 -0.4743101983" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_009" type="sphere" size="0.001" pos="0.01319799169 0.006395014556 7.704045515e-05" quat="0.4814480721 -0.5206912006 -0.4954096681 -0.5016549494" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_010" type="sphere" size="0.001" pos="0.01319400629 0.006201448112 0.002464872216" quat="0.5212992089 -0.4761044335 -0.4529863293 -0.5444034246" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_011" type="sphere" size="0.001" pos="0.01297924612 0.00447541056 0.006099008907" quat="0.6427965895 -0.2714632902 -0.2588931584 -0.6679031061" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_012" type="sphere" size="0.001" pos="0.01091107657 0.004487827013 -0.006210980803" quat="-0.2631353468 0.6624623057 0.6456983555 0.2738194961" group="1" class="apex_hand_right_tactile_point"/>
+              <geom name="right_pinky_tactile1_point_013" type="sphere" size="0.001" pos="0.01090857554 0.004403523607 0.006243384608" quat="0.6365771311 -0.289458466 -0.2818246113 -0.6569309257" group="1" class="apex_hand_right_tactile_point"/>
+            </body>
+          </body>
+          <body name="right_pinky_tactile0" pos="0 0 0" quat="1 0 0 0">
+            <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+            <geom name="right_pinky_tactile0_visual" type="mesh" mesh="right_pinky_tactile0_visual" group="2" class="apex_hand_right_soft_visual"/>
+            <geom name="right_pinky_tactile0_collision" type="mesh" mesh="right_pinky_tactile0_collision" group="4" class="apex_hand_right_soft_tactile"/>
+            <geom name="right_pinky_tactile0_point_000" type="sphere" size="0.001" pos="0.03356984777 0.003890361727 -0.007111989315" quat="-0.1524317191 0.6983958627 0.6777799525 0.1721107957" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_001" type="sphere" size="0.001" pos="0.03386568012 0.006853641771 -0.004487861918" quat="-0.3345693599 0.6265004414 0.5506093032 0.4386227714" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_002" type="sphere" size="0.001" pos="0.03381315898 0.00734393849 -0.001530062536" quat="0.3912493468 -0.6132888316 -0.4142712027 -0.5469736084" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_003" type="sphere" size="0.001" pos="0.03381411891 0.007343663859 0.001522766224" quat="0.429553434 -0.5565155092 -0.377400901 -0.602779309" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_004" type="sphere" size="0.001" pos="0.03382941104 0.006849559725 0.004518398605" quat="0.5105290172 -0.4405190582 -0.3529426598 -0.6486405483" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_005" type="sphere" size="0.001" pos="0.03357617984 0.003851458418 0.007122777731" quat="0.6644547279 -0.1808822293 -0.1660546127 -0.7058380829" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_006" type="sphere" size="0.001" pos="0.03110750423 0.004179516204 -0.007061275095" quat="-0.1521227992 0.6984395495 0.6777288707 0.1724077364" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_007" type="sphere" size="0.001" pos="0.03144373922 0.007290484649 -0.004286845737" quat="0.3556092595 -0.672232832 -0.5421585415 -0.3573642261" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_008" type="sphere" size="0.001" pos="0.03155984615 0.008029490255 -0.001539268069" quat="0.4233143661 -0.5794309526 -0.4631451993 -0.5201550183" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_009" type="sphere" size="0.001" pos="0.03156372847 0.008029056765 0.001534253302" quat="0.4682268389 -0.5219335095 -0.4200340047 -0.5761253977" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_010" type="sphere" size="0.001" pos="0.03146071494 0.00728053137 0.004312405226" quat="0.5834590655 -0.383492318 -0.3428418932 -0.6284652712" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_011" type="sphere" size="0.001" pos="0.03111224021 0.004178253902 0.007053435331" quat="0.6664200746 -0.1700053438 -0.1549556415 -0.7092046365" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_012" type="sphere" size="0.001" pos="0.02864244084 0.004428590682 -0.00703247814" quat="-0.1521818455 0.6986711249 0.6774899811 0.1723562318" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_013" type="sphere" size="0.001" pos="0.02898429262 0.007522141892 -0.004209733189" quat="0.3597361856 -0.7042144952 -0.5120893767 -0.3353152125" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_014" type="sphere" size="0.001" pos="0.02910951793 0.008404254529 -0.001517091971" quat="0.4504486173 -0.561373927 -0.4975621997 -0.4841355334" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_015" type="sphere" size="0.001" pos="0.02911424727 0.008398502686 0.001555408198" quat="0.5015482029 -0.5020749573 -0.4512376953 -0.5410680916" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_016" type="sphere" size="0.001" pos="0.02901056815 0.007513354413 0.004226184611" quat="0.5945472214 -0.3732319482 -0.3296203059 -0.6313176446" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_017" type="sphere" size="0.001" pos="0.02864417621 0.004425324356 0.007025613803" quat="0.6663160913 -0.1699824886 -0.1549805602 -0.7093023657" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_018" type="sphere" size="0.001" pos="0.02616800179 0.004695152598 -0.007007821786" quat="-0.1379577786 0.6973098887 0.6844238425 0.1621436841" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_019" type="sphere" size="0.001" pos="0.0265032642 0.007704142768 -0.004276155907" quat="0.361948778 -0.6420611941 -0.5641017736 -0.3722092076" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_020" type="sphere" size="0.001" pos="0.02660095336 0.00860778762 -0.001500636496" quat="0.4518705117 -0.5684630441 -0.4994651141 -0.4724377291" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_021" type="sphere" size="0.001" pos="0.02661044463 0.008599404784 0.001561447028" quat="0.5068681453 -0.5024219261 -0.4538712839 -0.533533269" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_022" type="sphere" size="0.001" pos="0.02650201048 0.007702161854 0.004274194429" quat="0.5852502342 -0.3835898548 -0.3496306456 -0.6229762422" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_023" type="sphere" size="0.001" pos="0.02616501421 0.004702834139 0.006998182859" quat="0.668503457 -0.1567829909 -0.1390844204 -0.7135669175" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_024" type="sphere" size="0.001" pos="0.02369883961 0.004861641921 -0.007009211127" quat="-0.1496170457 0.7024772366 0.6757826308 0.1657054844" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_025" type="sphere" size="0.001" pos="0.02400403049 0.007900252755 -0.00426789822" quat="0.3620383142 -0.6405459697 -0.5664622633 -0.3711463648" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_026" type="sphere" size="0.001" pos="0.02410714976 0.008777758586 -0.001524059187" quat="0.4647587535 -0.5470609292 -0.4979152022 -0.4866252071" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_027" type="sphere" size="0.001" pos="0.02410538317 0.008777149909 0.001520931719" quat="0.5098707232 -0.4965960623 -0.4540475388 -0.5359711083" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_028" type="sphere" size="0.001" pos="0.02399879404 0.007901016822 0.004263968173" quat="0.5866432609 -0.3832760168 -0.3490619785 -0.6221775586" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_029" type="sphere" size="0.001" pos="0.02368445723 0.004867033075 0.007010207492" quat="0.6668412382 -0.1665197438 -0.1489008759 -0.7109307048" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_030" type="sphere" size="0.001" pos="0.02120645566 0.005108499813 -0.006987678421" quat="-0.1297942997 0.6964436476 0.6885009382 0.1551971118" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_031" type="sphere" size="0.001" pos="0.02150534737 0.008087160303 -0.004263378576" quat="0.3637682025 -0.6431851599 -0.5634638297 -0.3694510217" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_032" type="sphere" size="0.001" pos="0.02160062247 0.008953734294 -0.001520258753" quat="0.4665223042 -0.5478362339 -0.4962044313 -0.4858122712" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_033" type="sphere" size="0.001" pos="0.02159932692 0.008953072534 0.001512109654" quat="0.5107439221 -0.4982546658 -0.4531557867 -0.5343526617" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_034" type="sphere" size="0.001" pos="0.02150143018 0.008096786354 0.004244903322" quat="0.5899974247 -0.3794695957 -0.3455929322 -0.6232747308" group="1" class="apex_hand_right_tactile_point"/>
+            <geom name="right_pinky_tactile0_point_035" type="sphere" size="0.001" pos="0.02120980013 0.005120688985 0.006993741397" quat="0.6714848113 -0.149313165 -0.136167368 -0.7129320969" group="1" class="apex_hand_right_tactile_point"/>
+          </body>
+        </body>
+      </body>
+      <body name="right_palm_tactile" pos="0 0 0" quat="1 0 0 0">
+        <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-12 1e-12 1e-12"/>
+        <geom name="right_palm_tactile_visual" type="mesh" mesh="right_palm_tactile_visual" group="2" class="apex_hand_right_soft_visual"/>
+        <geom name="right_palm_tactile_collision" type="mesh" mesh="right_palm_tactile_collision" group="4" class="apex_hand_right_soft_tactile"/>
+        <geom name="right_palm_tactile_point_000" type="sphere" size="0.001" pos="0.02601817665 -0.0149915657 0.1050054403" quat="0.000112051709 -0.706804554 0.000886578281 -0.7074083148" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_001" type="sphere" size="0.001" pos="0.02601841958 -0.009988481946 0.1050039529" quat="-7.342795687e-05 0.7071308944 0.003361221967 0.7070746742" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_002" type="sphere" size="0.001" pos="0.02601155502 -0.004992116046 0.1050014387" quat="3.473735163e-05 -0.7081849913 0.0001954953503 -0.7060268966" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_003" type="sphere" size="0.001" pos="0.02601089476 8.189289772e-06 0.1050004429" quat="3.316731977e-07 0.7081813599 0.0002622058224 0.7060305183" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_004" type="sphere" size="0.001" pos="0.02600974884 0.005006565023 0.1050001419" quat="-3.457390453e-05 -0.7076989498 0.001957587644 -0.7065114034" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_005" type="sphere" size="0.001" pos="0.0260085497 0.01000740682 0.1049996128" quat="7.310836338e-05 0.7073756474 0.0006390386095 0.70683752" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_006" type="sphere" size="0.001" pos="0.02601124102 0.01500757075 0.1049986053" quat="0.0001131936252 0.7073802092 0.000906104969 0.7068326576" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_007" type="sphere" size="0.001" pos="0.02601006395 0.02000463548 0.1049987195" quat="-0.0001629389747 -0.7065969354 0.003138776381 -0.7076092795" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_008" type="sphere" size="0.001" pos="0.02600775574 0.02491209739 0.1050058437" quat="0.0001947224653 0.7050981032 0.001735745156 0.7091076182" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_009" type="sphere" size="0.001" pos="0.02601198735 0.03002428401 0.1050008412" quat="0.0002541783682 0.7029808423 0.003443407427 0.7112004033" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_010" type="sphere" size="0.001" pos="0.02644396806 -0.03499201563 0.1000183786" quat="0.002172714171 -0.6997222387 0.004646255448 -0.7143965848" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_011" type="sphere" size="0.001" pos="0.02640306603 -0.03005717566 0.1000213211" quat="0.002088956153 -0.7026810842 0.003907120511 -0.7114911557" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_012" type="sphere" size="0.001" pos="0.02634870747 -0.02497964828 0.1000103882" quat="-0.00171974567 0.7055723656 0.007397776608 0.7085971721" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_013" type="sphere" size="0.001" pos="0.02632817713 -0.01998062986 0.1000093942" quat="-0.001332508156 0.7055682946 0.007782871454 0.7085979347" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_014" type="sphere" size="0.001" pos="0.0263080652 -0.01499287495 0.1000056817" quat="0.0009577775978 -0.7068029914 0.001730888752 -0.7074076746" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_015" type="sphere" size="0.001" pos="0.02628394078 -0.009989182494 0.1000039286" quat="-0.0006198238239 0.707133279 0.002814831245 0.7070744079" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_016" type="sphere" size="0.001" pos="0.02627700626 -0.004993177964 0.100000604" quat="0.000299869259 -0.7081849094 0.0004613343423 -0.7060267922" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_017" type="sphere" size="0.001" pos="0.02626917003 6.288900194e-06 0.0999996293" quat="6.884490661e-07 0.7081816286 0.000263269704 0.7060302484" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_018" type="sphere" size="0.001" pos="0.02626743096 0.005003817399 0.09999969462" quat="-0.0002979094382 -0.7076996823 0.001693545876 -0.70651129" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_019" type="sphere" size="0.001" pos="0.02626581328 0.01000383825 0.09999870742" quat="-0.0006214824694 -0.7077003936 0.001369973534 -0.7065110684" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_020" type="sphere" size="0.001" pos="0.02626416964 0.01500702072 0.0999983691" quat="0.0009594066723 0.7073994947 0.001916364962 0.7068106974" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_021" type="sphere" size="0.001" pos="0.02626032763 0.02000256845 0.09999904398" quat="-0.001321398627 -0.7066011872 0.001982445 -0.7076080031" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_022" type="sphere" size="0.001" pos="0.0262565249 0.02490229362 0.1000085313" quat="-0.001707850093 -0.7043318625 0.004953247828 -0.7098515169" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_023" type="sphere" size="0.001" pos="0.02625388336 0.03002308729 0.1000038954" quat="0.002093052179 0.7029696726 0.005261036407 0.7111972863" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_024" type="sphere" size="0.001" pos="0.02685225194 -0.03498307061 0.09502746107" quat="0.005121056763 -0.6996970949 0.007533722191 -0.714381546" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_025" type="sphere" size="0.001" pos="0.02676467518 -0.03005192545 0.09502587682" quat="0.004560585985 -0.7026632206 0.006348308467 -0.7114796542" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_026" type="sphere" size="0.001" pos="0.02665199844 -0.02497730142 0.09501148413" quat="-0.003742284898 0.7055905684 0.005383083078 0.7085894209" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_027" type="sphere" size="0.001" pos="0.02659972486 -0.01997936971 0.09501046156" quat="-0.002936079216 0.705584086 0.006185735228 0.7085931228" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_028" type="sphere" size="0.001" pos="0.0265429197 -0.01498897366 0.09500490602" quat="0.002152222852 -0.7071377245 -0.001281945806 -0.7070713989" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_029" type="sphere" size="0.001" pos="0.02649523692 -0.009990084229 0.09500390812" quat="-0.00140624904 0.7071359661 0.002027702729 0.7070732892" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_030" type="sphere" size="0.001" pos="0.02648504145 -0.004990059974 0.09500290765" quat="-0.0006792477149 0.7071335161 0.00275540779 0.7070743503" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_031" type="sphere" size="0.001" pos="0.02647095255 1.16264541e-06 0.09500030322" quat="6.752614095e-06 -0.7076988746 0.001998914001 -0.7065113638" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_032" type="sphere" size="0.001" pos="0.02646891068 0.005001181818 0.09499931569" quat="-0.0006857893358 -0.7077002745 0.001305666756 -0.70651125" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_033" type="sphere" size="0.001" pos="0.02646615462 0.01000223276 0.09499834545" quat="0.001410491904 0.7077012858 -0.000579059923 0.7065101311" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_034" type="sphere" size="0.001" pos="0.02723464561 -0.03492888858 0.09003015202" quat="0.008532821227 -0.7009358993 -0.007213990608 -0.7131367431" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_035" type="sphere" size="0.001" pos="0.02709365915 -0.03000428936 0.09001627151" quat="-0.007523224102 0.7024944418 0.01397652745 0.7115122044" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_036" type="sphere" size="0.001" pos="0.0269565746 -0.02497683615 0.09000287092" quat="0.006065793643 -0.7081980141 -0.003064028964 -0.7059811547" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_037" type="sphere" size="0.001" pos="0.02684196916 -0.01997832129 0.0900019874" quat="0.004822345025 -0.7081916223 -0.004311740261 -0.7059906373" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_038" type="sphere" size="0.001" pos="0.02676250425 -0.01498982822 0.0900011586" quat="0.003594606494 -0.7081749146 0.0001654029873 -0.7060278619" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_039" type="sphere" size="0.001" pos="0.02670802537 -0.009990882983 0.09000019327" quat="0.00237880271 -0.7081741593 -0.001054654057 -0.7060329944" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_040" type="sphere" size="0.001" pos="0.02666759176 -0.004989958577 0.09000023929" quat="-0.00116839915 0.7081714931 0.002268376415 0.7060358529" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_041" type="sphere" size="0.001" pos="0.02664996038 -4.400242989e-06 0.0899884738" quat="1.58832166e-05 -0.7112494308 0.003128748178 -0.7029327549" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_042" type="sphere" size="0.001" pos="0.0275657484 -0.03489091704 0.08503709457" quat="-0.01150293759 0.7004054495 0.01290789223 0.713535756" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_043" type="sphere" size="0.001" pos="0.02737855071 -0.02998464804 0.08501902089" quat="-0.01014085783 0.7025411588 0.01139234631 0.7114796537" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_044" type="sphere" size="0.001" pos="0.02720793598 -0.0249571525 0.08502668734" quat="-0.008439697232 0.7025360406 0.009295372585 0.7115374054" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_045" type="sphere" size="0.001" pos="0.02706229475 -0.01997750163 0.08500130881" quat="0.0067150436 -0.7082006366 -0.002412635972 -0.7059751736" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_046" type="sphere" size="0.001" pos="0.02694130874 -0.01499085233 0.08500055126" quat="0.005064436308 -0.7081730843 0.001639501813 -0.7060188002" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_047" type="sphere" size="0.001" pos="0.02686797643 -0.009984374547 0.08499040683" quat="-0.003363798238 0.7106266083 0.003730730263 0.7035514125" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_048" type="sphere" size="0.001" pos="0.02681912057 -0.004983502234 0.084990536" quat="-0.001668642148 0.7106154322 0.005443538915 0.7035575961" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_049" type="sphere" size="0.001" pos="0.02785902898 -0.03486982267 0.08002590262" quat="0.01348296595 -0.7004383734 -0.0109641206 -0.7135012844" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_050" type="sphere" size="0.001" pos="0.02761694476 -0.02994948739 0.08002830712" quat="-0.01217664615 0.7012356387 0.01602295425 0.7126454751" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_051" type="sphere" size="0.001" pos="0.02740146535 -0.02495514871 0.08002528843" quat="0.01025267564 -0.7032734558 -0.007492587069 -0.7108060145" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_052" type="sphere" size="0.001" pos="0.0272420589 -0.01995686335 0.0800239847" quat="-0.008324102514 0.7032504762 0.00939975721 0.7108312891" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_053" type="sphere" size="0.001" pos="0.02710739108 -0.01497769489 0.08002384542" quat="0.006322546038 -0.7032618255 -0.003261098897 -0.7108953477" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_054" type="sphere" size="0.001" pos="0.02702220946 -0.009984582782 0.08001328487" quat="0.004258376895 -0.7055262665 -0.002835022574 -0.7086653061" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_055" type="sphere" size="0.001" pos="0.02808216268 -0.03485208498 0.07502944549" quat="0.01424730576 -0.7004497997 -0.01021315669 -0.7134863586" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_056" type="sphere" size="0.001" pos="0.02782346565 -0.02992523342 0.07502941623" quat="-0.01312269071 0.7012563512 0.01509183848 0.7126286279" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_057" type="sphere" size="0.001" pos="0.02760134437 -0.02494379938 0.07503695448" quat="0.01122584386 -0.7012858024 -0.009536661385 -0.7127280378" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_058" type="sphere" size="0.001" pos="0.02741639451 -0.01995471812 0.07502532562" quat="0.009143871916 -0.7032609925 -0.008589401687 -0.7108210663" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_059" type="sphere" size="0.001" pos="0.02726296959 -0.01497711883 0.07502610849" quat="0.006965847202 -0.7032642922 -0.002624139019 -0.7108895317" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_060" type="sphere" size="0.001" pos="0.02823987983 -0.0348280628 0.07002449049" quat="-0.01396032132 0.7012738369 0.01426767187 0.7126124814" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_061" type="sphere" size="0.001" pos="0.02798009838 -0.02992373525 0.07004015408" quat="0.01301921991 -0.6995199196 -0.01205183555 -0.7143928438" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_062" type="sphere" size="0.001" pos="0.02775141181 -0.02494235504 0.07005549388" quat="0.01124636921 -0.6979445275 -0.009522899432 -0.7160001886" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_063" type="sphere" size="0.001" pos="0.02755729965 -0.01994585662 0.07005418616" quat="-0.009237255192 0.6979150707 0.01148087267 0.7160289218" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_064" type="sphere" size="0.001" pos="0.02740213581 -0.01497580668 0.07005521992" quat="0.007003556842 -0.697983067 -0.002925163378 -0.7160740407" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_065" type="sphere" size="0.001" pos="0.02832490791 -0.03482433156 0.0650304615" quat="-0.01317929387 0.7003537045 0.01442485202 0.7135284987" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_066" type="sphere" size="0.001" pos="0.02807586815 -0.02993456322 0.06504001932" quat="0.01225096552 -0.6995716274 -0.006180646963 -0.7144307185" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_067" type="sphere" size="0.001" pos="0.02785534351 -0.02494711004 0.06504776038" quat="0.01059327806 -0.699555577 -0.007803819268 -0.7144570508" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_068" type="sphere" size="0.001" pos="0.02766815063 -0.01994430118 0.06505679796" quat="-0.008730493444 0.6979068891 0.01197487778 0.7160351632" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_069" type="sphere" size="0.001" pos="0.02830334011 -0.03483525728 0.06002061865" quat="0.01246346219 -0.7011146979 -0.01193861766 -0.7128396116" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_070" type="sphere" size="0.001" pos="0.02807167534 -0.02993553494 0.06003123055" quat="0.01141688259 -0.7004634204 -0.006872214459 -0.7135638894" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_071" type="sphere" size="0.001" pos="0.02786806898 -0.02494791866 0.06004223304" quat="0.009803693079 -0.700445998 -0.008455790418 -0.7135879701" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_072" type="sphere" size="0.001" pos="0.02769589751 -0.01995082864 0.06005227459" quat="-0.008017124813 0.6990054037 0.009925723021 0.7150025534" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_073" type="sphere" size="0.001" pos="0.02815630291 -0.03484945811 0.05500207052" quat="0.01216698197 -0.7023514971 -0.01163305669 -0.7116312325" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_074" type="sphere" size="0.001" pos="0.02794677226 -0.0299402148 0.05501911256" quat="-0.01060109572 0.7017666041 0.01101326078 0.7122429067" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_075" type="sphere" size="0.001" pos="0.02776423104 -0.02495797723 0.05503208215" quat="0.008838337587 -0.7019101849 -0.005493807862 -0.7121894371" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_076" type="sphere" size="0.001" pos="0.02761646818 -0.01995069429 0.05504994864" quat="-0.007197712641 0.6989935367 0.01072671064 0.715011305" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_077" type="sphere" size="0.001" pos="0.02787591247 -0.03488001991 0.04998784929" quat="0.01247775796 -0.7017929655 -0.009163629775 -0.712212726" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_078" type="sphere" size="0.001" pos="0.02769700673 -0.02996644156 0.0500120268" quat="-0.009830311096 0.7040265626 0.01249637144 0.7099956372" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_079" type="sphere" size="0.001" pos="0.02757898874 -0.02495726356 0.05002144413" quat="0.007784759358 -0.7042763326 -0.00652930401 -0.7098532335" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_080" type="sphere" size="0.001" pos="0.0274589995 -0.01995558746 0.05002840084" quat="-0.006131327783 0.7047689752 0.008236988026 0.7093625663" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_081" type="sphere" size="0.001" pos="0.02748060707 -0.03491574521 0.04496747127" quat="0.01248249317 -0.7068601995 -0.009762589201 -0.7071757473" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_082" type="sphere" size="0.001" pos="0.02735040523 -0.0300109934 0.04501231341" quat="0.00881000097 -0.7080674888 -0.007609796177 -0.7060487988" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_083" type="sphere" size="0.001" pos="0.02727515716 -0.02495189732 0.04501013743" quat="-0.0064484205 0.7080848183 0.008791765105 0.7060432089" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_084" type="sphere" size="0.001" pos="0.02720646777 -0.01996069768 0.04503465743" quat="0.004923027621 -0.7032884373 -0.002444629196 -0.710883367" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_085" type="sphere" size="0.001" pos="0.02699481283 -0.03497743762 0.03996964802" quat="0.01076319029 -0.7122708246 0.003012042003 -0.7018157548" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_086" type="sphere" size="0.001" pos="0.02691430074 -0.03003435625 0.0400054565" quat="-0.00690884365 0.7080444276 0.009517078531 0.7060699552" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_087" type="sphere" size="0.001" pos="0.02687957907 -0.0249448783 0.04002033315" quat="0.004570607513 -0.7032871186 -0.002792812175 -0.7108857422" group="1" class="apex_hand_right_tactile_point"/>
+        <geom name="right_palm_tactile_point_088" type="sphere" size="0.001" pos="0.02684100099 -0.01994270729 0.04003250983" quat="-0.003337990931 0.7032812271 0.004012488615 0.7108925892" group="1" class="apex_hand_right_tactile_point"/>
+      </body>
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="right_index_link0" body2="right_palm_link"/>
+    <exclude body1="right_index_link1" body2="right_palm_link"/>
+    <exclude body1="right_middle_link0" body2="right_palm_link"/>
+    <exclude body1="right_middle_link1" body2="right_palm_link"/>
+    <exclude body1="right_palm_link" body2="right_pinky_link0"/>
+    <exclude body1="right_palm_link" body2="right_pinky_link1"/>
+    <exclude body1="right_palm_link" body2="right_ring_link0"/>
+    <exclude body1="right_palm_link" body2="right_ring_link1"/>
+    <exclude body1="right_palm_link" body2="right_thumb_link0"/>
+    <exclude body1="right_palm_link" body2="right_thumb_link1"/>
+    <exclude body1="right_palm_link" body2="right_thumb_link2"/>
+    <exclude body1="right_palm_tactile" body2="right_pinky_link0"/>
+    <exclude body1="right_palm_tactile" body2="right_ring_link0"/>
+  </contact>
+  <equality>
+    <joint joint1="right_thumb_j4" joint2="right_thumb_j3" polycoef="0 1 0 0 0" solref="0.002 1" solimp="0.999 0.9999 1e-05"/>
+    <joint joint1="right_index_j3" joint2="right_index_j2" polycoef="0 1 0 0 0" solref="0.002 1" solimp="0.999 0.9999 1e-05"/>
+    <joint joint1="right_middle_j3" joint2="right_middle_j2" polycoef="0 1 0 0 0" solref="0.002 1" solimp="0.999 0.9999 1e-05"/>
+    <joint joint1="right_ring_j3" joint2="right_ring_j2" polycoef="0 1 0 0 0" solref="0.002 1" solimp="0.999 0.9999 1e-05"/>
+    <joint joint1="right_pinky_j3" joint2="right_pinky_j2" polycoef="0 1 0 0 0" solref="0.002 1" solimp="0.999 0.9999 1e-05"/>
+  </equality>
+  <actuator>
+    <position name="act_right_thumb_j0" joint="right_thumb_j0" kp="20" kv="0.17" ctrllimited="true" ctrlrange="0 1.5707" forcelimited="true" forcerange="-1.2 1.2"/>
+    <position name="act_right_thumb_j1" joint="right_thumb_j1" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.1745 1.0471" forcelimited="true" forcerange="-0.6 0.6"/>
+    <position name="act_right_thumb_j2" joint="right_thumb_j2" kp="20" kv="0.17" ctrllimited="true" ctrlrange="0 1.396" forcelimited="true" forcerange="-2.3 2.3"/>
+    <position name="act_right_thumb_j3" joint="right_thumb_j3" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.349 1.396" forcelimited="true" forcerange="-0.025 1"/>
+    <position name="act_right_index_j0" joint="right_index_j0" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.4363 0.4363" forcelimited="true" forcerange="-2 2"/>
+    <position name="act_right_index_j1" joint="right_index_j1" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.349 1.5707" forcelimited="true" forcerange="-3.2 3.2"/>
+    <position name="act_right_index_j2" joint="right_index_j2" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.0872 1.7453" forcelimited="true" forcerange="-0.025 1"/>
+    <position name="act_right_middle_j0" joint="right_middle_j0" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.4363 0.4363" forcelimited="true" forcerange="-2 2"/>
+    <position name="act_right_middle_j1" joint="right_middle_j1" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.349 1.5707" forcelimited="true" forcerange="-3.2 3.2"/>
+    <position name="act_right_middle_j2" joint="right_middle_j2" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.0872 1.7453" forcelimited="true" forcerange="-0.025 1"/>
+    <position name="act_right_ring_j0" joint="right_ring_j0" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.4363 0.4363" forcelimited="true" forcerange="-2 2"/>
+    <position name="act_right_ring_j1" joint="right_ring_j1" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.349 1.5707" forcelimited="true" forcerange="-3.2 3.2"/>
+    <position name="act_right_ring_j2" joint="right_ring_j2" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.0872 1.7453" forcelimited="true" forcerange="-0.025 1"/>
+    <position name="act_right_pinky_j0" joint="right_pinky_j0" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.4363 0.4363" forcelimited="true" forcerange="-2 2"/>
+    <position name="act_right_pinky_j1" joint="right_pinky_j1" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.349 1.5707" forcelimited="true" forcerange="-3.2 3.2"/>
+    <position name="act_right_pinky_j2" joint="right_pinky_j2" kp="20" kv="0.17" ctrllimited="true" ctrlrange="-0.0872 1.7453" forcelimited="true" forcerange="-0.025 1"/>
+  </actuator>
+</mujoco>

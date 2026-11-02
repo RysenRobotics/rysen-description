@@ -1,0 +1,109 @@
+# Tunable parameters for the MJCF generator.
+#
+# These are the values that have no URDF source: timestep, actuator gains,
+# contact softness, tactile geometry and the convex-decomposition budget.
+# Values here override the defaults in tools/lib/mjcf_config.py, so a key may
+# be omitted and the built-in default applies. Structure (variant names, geom
+# groups, class names, which links count as "complex") stays in Python on
+# purpose -- editing those from here would break the writer rather than tune it.
+#
+# After changing anything that affects the collision geometry, re-run the
+# generator; the hull cache is keyed by the mesh only, so delete
+# <hand>/meshes/convex/ to force a rebuild.
+
+simulation:
+  # Integration step. 2 ms is the coarsest step that keeps the mimicked
+  # joints' equality constraint stable with the solref below.
+  timestep: 0.002
+
+joint:
+  armature: 0.0001
+  damping: 0.05
+  frictionloss: 0.001
+
+actuator:
+  # Position actuators. The joints carry 2e-4..1e-3 kg m^2 of effective
+  # inertia, so critical damping is kv = 2*sqrt(kp*I) ~= 0.17, not of order 10.
+  # An over-damped actuator lags badly and makes dragging feel stuck.
+  kp: 20.0
+  kv: 0.17
+  # The thumb's distal joint and the fingers' middle joint are pulled by a
+  # return spring on the real hand, which barely opposes being pushed open.
+  # They keep the URDF's effort on the closing side and only this much on the
+  # opening side.
+  spring_return_force: 0.025
+
+coupling:
+  # Mimicked joints are coupled by equality, which MuJoCo models as a soft
+  # constraint. These values make it effectively rigid: residual ~1e-7 rad,
+  # against ~7e-4 rad with the defaults.
+  solref: "0.002 1"
+  solimp: "0.999 0.9999 1e-05"
+
+contact:
+  # solref is [timeconst, dampratio] in units of the timestep; solimp is
+  # [dmin, dmax, width, midpoint, power], the allowed penetration band.
+  #
+  # hard_link  -- rigid plastic/metal shell: stiff, ~1 mm band, low friction
+  #               losses. MuJoCo's own defaults, which already suit a rigid body.
+  # soft_tactile -- rubber pad: compliant, so the timeconst is doubled and the
+  #               band widened to ~5 mm with dmin dropped to 0.7. The force
+  #               ramps up over that band instead of spiking, which is what
+  #               makes a rubber pad feel soft. Friction is raised because
+  #               rubber grips more than bare plastic.
+  hard_link:
+    contype: "1"
+    conaffinity: "1"
+    friction: "1.0 0.005 0.0001"
+    solref: "0.02 1"
+    solimp: "0.9 0.95 0.001 0.5 2"
+  soft_tactile:
+    contype: "1"
+    conaffinity: "1"
+    friction: "1.6 0.01 0.001"
+    solref: "0.04 1"
+    solimp: "0.7 0.9 0.005 0.5 2"
+
+visual:
+  # The tactile pads' shells are drawn translucent so the red contact spheres
+  # buried underneath stay visible without turning on the collision layer.
+  # Alpha only affects rendering; the collision geom keeps its own class.
+  soft_visual_rgba: "0.6 0.75 0.85 0.35"
+  # The red tint is purely for viewing -- the spheres are buried in the pad.
+  tactile_point_rgba: "1 0 0 1"
+
+tactile:
+  # Every contact sphere is 1 mm. The URDF's declared size was tuned for the
+  # offline tactile rendering, not for MuJoCo contact against a soft pad.
+  radius: 0.001
+  # Each point is pushed this far in from the outermost skin it sees along its
+  # own +z, measured per point so the clearance to the surface is constant.
+  # Slightly larger than the radius, so a visible pad shell hides the spheres.
+  surface_inset: 0.0015
+  # How far to back off along -z before re-casting when a point sits outside
+  # the mesh and the forward ray misses.
+  inside_step: 0.001
+
+convex:
+  # V-HACD saturates whatever cap it is given, so the cap alone sets the geom
+  # count. A flat cap wastes most of it: index_link0 (1236 faces) reaches the
+  # same 1.11 over-coverage at 12 hulls as at 32.
+  #
+  # The budget is therefore derived from the source mesh: one hull per
+  # faces_per_hull faces, clamped to [min_hulls, max_hulls]. Measured
+  # over-coverage across the finger links stays at 1.09-1.28.
+  faces_per_hull: 160
+  # The small links are where a low floor starts to hurt: at 8 hulls a 1.3k-face
+  # knuckle reaches 1.23 over-coverage, at 12 it stays at 1.17-1.21.
+  min_hulls: 12
+  max_hulls: 128
+  # The palm's over-coverage is driven by its U shape rather than its face
+  # count, so it keeps an explicit cap instead of the derived one.
+  palm_max_hulls: 128
+  # Most STLs are open shells and the palm is also non-manifold, so V-HACD has
+  # to see a closed volume or it only hugs the visible surface. Voxel size of
+  # the closing pass: 0.8 mm preserves the palm's features without producing a
+  # mesh large enough to make decomposition slow.
+  solid_pitch: 0.0008
+  volume_error_percent: 0.25
+  resolution: 100000
