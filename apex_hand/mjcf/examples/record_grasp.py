@@ -52,7 +52,7 @@ CAM_ELEVATION = -14.0
 RENDER_GROUPS = (0, 1, 2)
 
 
-def _tactile_figure(side, maps, height_px):
+def _tactile_figure(side, maps):
     """Draw the pressure maps the way TactilePanel lays them out, to an array.
 
     Reuses TactilePanel's placement so the still frames and the interactive
@@ -75,7 +75,7 @@ def _tactile_figure(side, maps, height_px):
     panel._place(maps)
     fig.colorbar(
         plt.cm.ScalarMappable(cmap=tactile_viewer.CMAP,
-                              norm=plt.Normalize(0.0, tactile_viewer.KPA_MAX)),
+                              norm=plt.Normalize(tactile_viewer.KPA_MIN, tactile_viewer.KPA_MAX)),
         ax=panel.ax, fraction=0.04, pad=0.02).set_label("kPa")
     fig.canvas.draw()
     image = np.asarray(fig.canvas.buffer_rgba())[:, :, :3]
@@ -153,8 +153,7 @@ def main():
             renderer.update_scene(data, camera=cam, scene_option=option)
             tactiles.draw_tactile_force(renderer.scene)
             frame = renderer.render()
-            panel = _tactile_figure(args.side, tactiles.tactile_maps_kpa,
-                                    args.height)
+            panel = _tactile_figure(args.side, tactiles.tactile_maps_kpa)
             frames.append(_compose(frame, panel))
             if len(frames) % 20 == 0:
                 print(f"frame {len(frames)} (t={data.time:.2f}s)")

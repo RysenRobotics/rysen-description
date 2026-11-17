@@ -58,6 +58,11 @@ def joint_tags(joint, indent):
 
     Returns ``(body, joint, actuator)``; ``joint`` and ``actuator`` are empty
     for a fixed joint, and ``actuator`` is also empty for a mimicked joint.
+
+    A spring-returned joint carries a torsional spring and a motor that can only
+    pull towards closing, so the way back is the spring's alone. Its mimic shares
+    the lower damping for the same reason: the global value stands for the
+    motor's rotor loss, which the mimic never had.
     """
     pad = "  " * indent
     joint_tag = ""
@@ -66,22 +71,43 @@ def joint_tags(joint, indent):
         limit = joint["limit"]
         lower, upper = float(limit.get("lower", 0.0)), float(limit.get("upper", 0.0))
         effort = float(limit.get("effort", 1.0))
-        low_effort = cfg.spring_return_limit(joint["name"], effort)
+        spring = cfg.is_spring_returned(joint["name"])
+        mimic = joint["mimic"]
+        passive = spring or (mimic is not None
+                             and cfg.is_spring_returned(mimic["joint"]))
+        damping = cfg.SPRING_RETURN_DAMPING if passive else cfg.JOINT_DAMPING
+        # The spring is preloaded, so its reference angle sits below the open
+        # limit: the joint rests against the stop under spring pressure rather
+        # than on a torque that has faded to nothing.
+        if spring:
+            stiffness = cfg.spring_stiffness(lower, upper)
+            spring_attrs = (
+                f' stiffness="{fmt(stiffness)}" '
+                f'springref="{fmt(cfg.spring_reference(lower, stiffness))}"')
+        else:
+            spring_attrs = ""
         joint_tag = (
             f'{pad}  <joint name="{joint["name"]}" type="hinge" axis="{vec(joint["axis"])}" '
             f'range="{fmt(lower)} {fmt(upper)}" armature="{fmt(cfg.JOINT_ARMATURE)}" '
-            f'damping="{fmt(cfg.JOINT_DAMPING)}" frictionloss="{fmt(cfg.JOINT_FRICTIONLOSS)}"/>\n'
+            f'damping="{fmt(damping)}" frictionloss="{fmt(cfg.JOINT_FRICTIONLOSS)}"'
+            f'{spring_attrs}/>\n'
         )
         # A mimicked joint is driven through its equality, not by its own
         # actuator: giving both ends an actuator makes the two position servos
         # fight each other across the coupling, so the joint pair lags and the
         # equality settles at neither target.
         if joint["mimic"] is None:
+            # A spring-returned joint's motor drives closing only. Clamping the
+            # opening side to zero torque leaves the return entirely to the
+            # spring -- a small negative limit would be handed to a P servo,
+            # whose force fades out as it nears the target, and its kv term would
+            # brake the joint the whole way back.
+            lower_force = 0.0 if spring else -effort
             actuator_tag = (
                 f'    <position name="act_{joint["name"]}" joint="{joint["name"]}" '
                 f'kp="{fmt(cfg.DEFAULT_KP)}" kv="{fmt(cfg.DEFAULT_KV)}" '
                 f'ctrllimited="true" ctrlrange="{fmt(lower)} {fmt(upper)}" '
-                f'forcelimited="true" forcerange="-{fmt(low_effort)} {fmt(effort)}"/>\n'
+                f'forcelimited="true" forcerange="{fmt(lower_force)} {fmt(effort)}"/>\n'
             )
     body_tag = (
         f'{pad}<body name="{joint["child"]}" pos="{vec(joint["xyz"])}" '

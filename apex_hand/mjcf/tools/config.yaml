@@ -8,8 +8,8 @@
 # purpose -- editing those from here would break the writer rather than tune it.
 #
 # After changing anything that affects the collision geometry, re-run the
-# generator; the hull cache is keyed by the mesh only, so delete
-# <hand>/meshes/convex/ to force a rebuild.
+# generator; the hull cache is keyed by the mesh and the convex.* values below,
+# so a parameter change rebuilds on its own.
 
 simulation:
   # Integration step. 2 ms is the coarsest step that keeps the mimicked
@@ -27,11 +27,28 @@ actuator:
   # An over-damped actuator lags badly and makes dragging feel stuck.
   kp: 20.0
   kv: 0.17
-  # The thumb's distal joint and the fingers' middle joint are pulled by a
-  # return spring on the real hand, which barely opposes being pushed open.
-  # They keep the URDF's effort on the closing side and only this much on the
-  # opening side.
-  spring_return_force: 0.025
+
+spring_return:
+  # The thumb's distal joint and the fingers' middle joint have no motor on the
+  # way back: a torsion spring returns them, its torque rising with flexion
+  # (0.02-0.05 N.m on the hardware). It is a joint stiffness, not an actuator --
+  # a position servo capped on one side is not a spring, and its kv term would
+  # keep braking the joint for the whole return. Those actuators' forcerange
+  # starts at 0 instead, so the motor pulls only towards closing.
+  #
+  # The spring is preloaded: it pushes even at the open limit, so the joint rests
+  # against its stop and the last part of the return is not left to a torque that
+  # has faded to nothing. Both anchors are per joint -- stiffness and springref
+  # are derived so every digit runs 0.02 N.m at open to 0.05 at full flexion.
+  torque_at_open: 0.02
+  torque_at_limit: 0.05
+  # Damping for the spring-returned joint and for the mimic that follows it.
+  # joint.damping above stands for the motor's rotor loss, which is absent while
+  # the motor is off. At 0.05 the pair never finishes returning (12 s and still
+  # 5% short). This value returns the fingers in 0.36 s and the thumb in 0.21 s
+  # (95% of travel); below it the thumb's mimic trails more through the coupling
+  # (28 mrad at 0.0015, 36 at 0.001, against 21 at 0.002).
+  damping: 0.0015
 
 coupling:
   # Mimicked joints are coupled by equality, which MuJoCo models as a soft

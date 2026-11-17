@@ -53,10 +53,20 @@ Both choices are independent — all four combinations exist.
 | Integrator | `implicitfast` | Resists the stability limit of stiff contacts |
 | Cone | `elliptic` | Correct for rubber pads, unlike the default pyramid |
 
-Two joints have no active drive back to rest on the real hand — the thumb's
-distal joint and the fingers' middle joint are pulled by a return spring. Their
-actuators keep the URDF's effort on the closing side and only 0.025 N·m on the
-opening side.
+Two joints have no motor on the way back on the real hand — the thumb's distal
+joint and the fingers' middle joint are returned by a preloaded torsion spring.
+It is a joint `stiffness` whose `springref` sits below the open limit, derived per
+joint so the torque runs 0.02 N·m at the stop up to 0.05 at full flexion. Those
+actuators' `forcerange` starts at 0: the motor pulls only towards closing, so
+nothing but the spring opens the joint.
+
+A torque cap on the servo is not equivalent: its force fades as the joint nears
+its target and its `kv` term keeps braking. The preload matters too — without it
+the return ends on a torque that has fallen to nothing, and the last few degrees
+crawl against friction. With the spring, and those joints plus their mimics on
+their own lower `damping` (0.0015, against 0.05 elsewhere — the global value
+stands for the motor's rotor loss, which is gone with the motor off), the return
+takes 0.19 s on the thumb and 0.24 s on the fingers.
 
 Contact parameters live in `tools/config.yaml` alongside everything else that
 can be tuned; see that file for the reasoning behind each value.
@@ -123,7 +133,12 @@ without one set `MUJOCO_GL=osmesa`.
 
 `mj_tactiles.py` turns contacts into per-point forces and pressure maps
 (`RobotTactiles`); `tactile_viewer.py` draws them as a hand-shaped panel. Both
-are imported by the scripts above rather than run on their own.
+are imported by the scripts above rather than run on their own. The readings are
+relative signals — which points are loaded and how the load moves — not
+calibrated pressures, and they do not match the USD model in absolute terms.
+Readings are clipped to the array's reporting range (0.1–20 N, 10–200 kPa), the
+same limits the USD side uses; see
+[`../README.md`](../README.md#reporting-range).
 
 ## Regenerating
 
@@ -135,10 +150,11 @@ Writes all eight variants for both sides. Takes a few minutes the first time,
 because each mesh is voxel-closed and hulled; later runs reuse the cache in
 `<side>/meshes/convex/`.
 
-**The cache is keyed by mesh content only.** If you change anything under
-`convex` in `config.yaml` — hull budget, voxel pitch, resolution — delete
-`<side>/meshes/convex/` or the old hulls are reused and the change appears to
-do nothing.
+**The cache is keyed by the mesh's bytes plus the `convex` values** — hull
+budget, voxel pitch, resolution. Change one and the affected hulls rebuild on
+the next run; nothing has to be deleted by hand. Only a change to the
+decomposition code itself needs the `CACHE_STAMP` name in
+`tools/lib/convex_decomp.py` bumped.
 
 ## Notes
 

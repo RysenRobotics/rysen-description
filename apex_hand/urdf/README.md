@@ -45,8 +45,11 @@ and right files; `{side}` is `left` or `right`.
 
 A point's frame follows the URDF convention: its **+z is the outward surface
 normal**, so a reading can be projected along +z without inverting anything.
-Points sit 1.5 mm inside the pad skin — visible in RViz once the pad is drawn,
-but not protruding.
+The stored position is only a reference near the skin: it lands 0.02–2.8 mm
+below the surface, and the palm's 89 points sit about 4.4 mm down, outside the
+solid shell. The MJCF generator re-projects each point onto the outermost skin
+along +z and insets it 1.5 mm, which is why the spheres vanish under a drawn pad
+(see [`../NOTES.md`](../NOTES.md)).
 
 ### `sensors/` — Raw Point Data
 

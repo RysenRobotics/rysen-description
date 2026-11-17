@@ -13,8 +13,13 @@ TACTILE_REMAP = json.loads(
     (EXAMPLES_DIR.parent.parent / "urdf" / "tactile" / "remap.json")
     .read_text(encoding="utf-8"))
 
-# 单个触点的力超过这个值后, 箭头长度不再增加(牛顿)
-TACTILE_FORCE_MAX = 2.0
+# 触觉阵列的报数量程, 与实物传感器一致: 低于下限的点读数为 0, 高于上限的直接
+# 截断。压强是力除以等效面积得到的, 也有自己的下限与上限。截断放在这里而不是
+# 只放在色标里, 控制台读数、箭头和压强图才会是同一组数。
+TACTILE_FORCE_MIN = 0.1        # N
+TACTILE_FORCE_MAX = 20.0       # N
+TACTILE_KPA_MIN = 10.0
+TACTILE_KPA_MAX = 200.0
 
 
 def _remap_key(body_name):
@@ -129,6 +134,11 @@ class RobotTactiles:
                 body_name, k = entry
                 self.tactile_forces[body_name][k] += abs(float(np.dot(force, normal)))
 
+        # 量程截断: 低于噪声底的点读 0, 高于满量程的饱和
+        for forces in self.tactile_forces.values():
+            forces[forces < TACTILE_FORCE_MIN] = 0.0
+            np.minimum(forces, TACTILE_FORCE_MAX, out=forces)
+
         # 缓存各触点的球面位置与法向, 供可视化使用
         self.tactile_points = {}
         self.tactile_normals = {}
@@ -146,10 +156,12 @@ class RobotTactiles:
             if table is None:
                 continue
             # 压强[Pa] = 法向力[N] / 等效面积[m^2]
-            pressures = self.tactile_forces[body_name] / info["areas"]
+            pressures = self.tactile_forces[body_name] / info["areas"] / 1000.0
+            pressures[pressures < TACTILE_KPA_MIN] = 0.0
+            np.minimum(pressures, TACTILE_KPA_MAX, out=pressures)
             image = np.full(table.shape, np.nan)
             valid = table >= 0
-            image[valid] = pressures[table[valid]] / 1000.0
+            image[valid] = pressures[table[valid]]
             self.tactile_maps_kpa[body_name] = image
 
     @staticmethod
@@ -174,24 +186,27 @@ class RobotTactiles:
         把每个触点的法向力画成红色箭头, 追加到 scene(可以是 viewer.user_scn,
         也可以是 Renderer.scene)。需先调用 get_tactile_force。
 
-        箭头沿触点法向, 长度正比于力大小, 力为 0 的触点不画; 长度在
-        TACTILE_FORCE_MAX 处饱和, 再大的力也不再变长。
+        箭头沿触点法向, 力为 0 的触点不画; 满量程 TACTILE_FORCE_MAX 对应
+        FULL_LENGTH, 再大的力也不再变长。
+
+        长度取力的平方根而不是线性: 量程 0.1-20 N 是 200:1, 线性映射下 1 N 的
+        点只有几十毫米、13 N 的点接近一米, 弱接触会看不见。开方后满量程仍是
+        FULL_LENGTH, 四分之一量程拿到一半长度, 强弱都能看清; 只有长度被压缩,
+        方向不受影响。与 USD 侧的 arrow_length 保持同一套映射。
 
         追加而非覆盖: 调用方决定 scene.ngeom 从哪开始, 这样离屏渲染时场景里
         已经放好的灯光和地面不会被清掉。
         """
-        scale = 0.2  # 力到长度的缩放(1N -> 2mm)
+        full_length = 0.4  # 满量程 -> 400 mm
         width = 0.001  # 箭头粗细(米)
 
         num = scene.ngeom
         for body_name, forces in self.tactile_forces.items():
             for k in np.nonzero(forces)[0]:
                 start = self.tactile_points[body_name][k]
-                # Clamped: the grasp routinely loads a single point past 2 N, and
-                # letting the arrow keep growing would swamp the scene and hide
-                # the distribution that matters.
-                magnitude = min(forces[k], TACTILE_FORCE_MAX)
-                end = start - magnitude * scale * self.tactile_normals[body_name][k]
+                clamped = min(float(forces[k]), TACTILE_FORCE_MAX)
+                length = full_length * float(np.sqrt(clamped / TACTILE_FORCE_MAX))
+                end = start - length * self.tactile_normals[body_name][k]
                 geom = scene.geoms[num]
                 mujoco.mjv_initGeom(
                     geom, mujoco.mjtGeom.mjGEOM_ARROW,

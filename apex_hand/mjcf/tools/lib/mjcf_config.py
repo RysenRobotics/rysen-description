@@ -38,24 +38,58 @@ JOINT_DAMPING = 0.05
 JOINT_FRICTIONLOSS = 1e-3
 DEFAULT_KP = 20.0
 DEFAULT_KV = 0.17
-# Structural: which joints are on a return spring. The force is tunable.
+# Geometry and decomposition values, mirrored by tools/config.yaml. They have to
+# exist here too: the geometry helpers read them off this module, and the
+# generator is supposed to run with no config file present.
+DEFAULT_RADIUS = 0.001
+SURFACE_INSET = 0.0015
+INSIDE_STEP = 0.001
+FACES_PER_HULL = 160
+MIN_HULLS = 12
+MAX_HULLS = 128
+COMPLEX_MAX_HULLS = 128
+SOLID_PITCH = 0.0008
+VOLUME_ERROR_PERCENT = 0.25
+RESOLUTION = 100000
+# Structural: which joints are on a return spring. The torque and damping are
+# tunable.
 SPRING_RETURN_JOINTS = ("thumb_j3", "index_j2", "middle_j2", "ring_j2", "pinky_j2")
-SPRING_RETURN_FORCE = 0.025
+SPRING_RETURN_TORQUE = 0.05
+SPRING_RETURN_TORQUE_OPEN = 0.02
+SPRING_RETURN_DAMPING = 0.0015
 
 
-def spring_return_limit(joint_name, effort):
-    """Closing-side effort limit for ``joint_name``.
+def is_spring_returned(joint_name):
+    """True for a joint whose opening direction is driven by a spring only.
 
-    Returns ``effort`` for a normally driven joint, and ``SPRING_RETURN_FORCE``
-    for the spring-returned ones. The name is matched without the hand prefix, so
-    ``right_thumb_j3`` and ``left_index_j2`` both hit the rule.
+    The name is matched without the hand prefix, so ``right_thumb_j3`` and
+    ``left_index_j2`` both hit the rule.
     """
-    # Strip the left/right hand prefix: "right_index_j2" -> "index_j2", whose
-    # trailing "j2" / "j3" is what the rule keys on.
-    short = joint_name.split("_", 1)[-1]
-    if short in SPRING_RETURN_JOINTS:
-        return min(effort, SPRING_RETURN_FORCE)
-    return effort
+    return joint_name.split("_", 1)[-1] in SPRING_RETURN_JOINTS
+
+
+def spring_stiffness(lower, upper):
+    """Torsional stiffness spanning ``SPRING_RETURN_TORQUE_OPEN`` to
+    ``SPRING_RETURN_TORQUE`` over the joint's travel.
+
+    Derived per joint rather than fixed, so every digit develops the same torque
+    at its own limits even though the thumb's travel differs from the fingers'.
+    """
+    travel = float(upper) - float(lower)
+    if travel <= 0:
+        return 0.0
+    return (SPRING_RETURN_TORQUE - SPRING_RETURN_TORQUE_OPEN) / travel
+
+
+def spring_reference(lower, stiffness):
+    """Angle at which the spring is unstretched, given its preload.
+
+    Below the open limit, so the spring still pushes at the stop: the joint
+    rests against it instead of on a torque that has faded to zero.
+    """
+    if stiffness <= 0:
+        return float(lower)
+    return float(lower) - SPRING_RETURN_TORQUE_OPEN / stiffness
 
 
 COUPLING_SOLREF = "0.002 1"
@@ -135,7 +169,9 @@ _TUNABLE = {
     ("joint", "frictionloss"): "JOINT_FRICTIONLOSS",
     ("actuator", "kp"): "DEFAULT_KP",
     ("actuator", "kv"): "DEFAULT_KV",
-    ("actuator", "spring_return_force"): "SPRING_RETURN_FORCE",
+    ("spring_return", "torque_at_limit"): "SPRING_RETURN_TORQUE",
+    ("spring_return", "torque_at_open"): "SPRING_RETURN_TORQUE_OPEN",
+    ("spring_return", "damping"): "SPRING_RETURN_DAMPING",
     ("coupling", "solref"): "COUPLING_SOLREF",
     ("coupling", "solimp"): "COUPLING_SOLIMP",
     ("visual", "soft_visual_rgba"): "SOFT_VISUAL_RGBA",

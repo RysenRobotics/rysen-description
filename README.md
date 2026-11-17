@@ -1,9 +1,8 @@
 # Rysen Robotics Descriptions
 
-Simulation assets for Rysen Robotics hardware: URDF and MJCF models, the tooling
-that generates and inspects them, and runnable example scenes. Every model is
-available with or without the 619-point tactile array. USD assets are coming
-soon.
+Simulation assets for Rysen Robotics hardware: URDF, MJCF and USD models, the
+tooling that generates and inspects them, and runnable example scenes. Every
+model is available with or without the 619-point tactile array.
 
 <p align="center">
   <img src="apex_hand/urdf/images/frames_and_tactiles.png" alt="Coordinate frames and tactile array layout" width="720">
@@ -11,7 +10,7 @@ soon.
 
 | Robot | DoF | Tactile | Formats | Docs |
 |---|---|---|---|---|
-| Apex Hand | 21 | 619 points | URDF, MJCF, USD (soon) | [apex_hand/](apex_hand/README.md) |
+| Apex Hand | 21 | 619 points | URDF, MJCF, USD | [apex_hand/](apex_hand/README.md) |
 
 ## Repository Structure
 
@@ -20,7 +19,7 @@ description/
 ├── apex_hand/          Apex Hand assets
 │   ├── urdf/
 │   ├── mjcf/
-│   └── usd/            coming soon
+│   └── usd/
 └── (future robots)
 ```
 
@@ -32,14 +31,15 @@ rather than beside it:
 <robot>/
 ├── urdf/               source model + meshes + tactile data + tooling
 ├── mjcf/               generated + meshes + tooling + examples
-└── usd/                coming soon, same shape as the others
+└── usd/                generated + tooling + examples
 ```
 
-A `usd/` directory is coming soon: USD assets will be generated from `urdf/` the
-way `mjcf/` is today, and will carry their own `tools/` and `examples/`.
+`urdf/` is the source. `mjcf/` and `usd/` are both generated from it, each with
+its own converter and examples; edit the source or the generator, then re-run
+it, because hand edits to generated files are lost on the next run.
 
-Per-robot details — which variant to load, mesh caveats, how the model is
-generated — are in that robot's `urdf/` and `mjcf/` READMEs.
+Per-robot details — which variant to load, mesh caveats, how each format is
+generated — are in that robot's `urdf/`, `mjcf/` and `usd/` READMEs.
 
 ## Quick Start
 
@@ -78,6 +78,43 @@ A recorded grasp — 3D view on the left, 619-point pressure map on the right:
 
 The left hand is the mirror image; `apex_hand/mjcf/examples/record_grasp.py --side left`
 records it.
+
+### Isaac Sim
+
+Needs Isaac Sim 6.2 with Isaac Lab 3.0; run the examples with that installation's
+interpreter. Each hand loads as an articulation with the same 21 joints (27 in
+the `_mount` variants, which add a six-joint base) and, in the tactile variants,
+619 sensing spheres.
+
+```bash
+cd apex_hand/usd
+
+python3 examples/view_hand.py --side right              # joint sliders
+python3 examples/view_hand.py --side both --tactiles    # pair, with the array
+python3 examples/grasp_cylinder.py --side right --tactiles   # grasp + pressure map
+```
+
+Each side ships four USD variants, from two independent choices: whether the 619
+tactile bodies are emitted, and whether the root carries a six-joint mount.
+
+| File | Mount | Tactile |
+|---|---|---|
+| `apex_hand_<side>.usd` | — | — |
+| `apex_hand_<side>_tactile.usd` | — | 619 spheres |
+| `apex_hand_<side>_mount.usd` | 6-DOF | — |
+| `apex_hand_<side>_mount_tactile.usd` | 6-DOF | 619 spheres |
+
+The bare files are the ones to attach to an arm: the hand is a floating
+articulation and the caller supplies its own root joint. The `_mount` files add
+three prismatic and three revolute joints, chained from the world to the palm
+with position drives, so a standalone scene can hold and move the hand instead
+of writing its root pose — a teleported root loses velocity and drags the
+colliders through whatever they are touching. The examples load the `_mount`
+ones.
+
+`tools/urdf_to_usd.py` regenerates every variant from `urdf/`; the tactile
+readout, collision cooking and GUI caveats are in
+[`apex_hand/usd/README.md`](apex_hand/usd/README.md).
 
 ### URDF
 

@@ -2,9 +2,10 @@
 """Show the tactile readings as a colour-coded pressure map in its own window.
 
 Each pad is drawn with the same element layout as the physical sensor (see
-urdf/tactile/remap.json), so a cell on screen is one sensing element. Colour runs from
-blue (no load) through green and yellow to red at ``KPA_MAX``; anything above is
-clamped to red.
+urdf/tactile/remap.json), so a cell on screen is one sensing element. The scale
+spans the array's range: blue at ``KPA_MIN``, through green and yellow, to red at
+``KPA_MAX``. Below ``KPA_MIN`` the element reads nothing and stays blue; above
+``KPA_MAX`` it is clamped to red.
 
 The pads are tiled in the shape of the hand rather than in a table: the palm sits
 at the bottom, the four fingers rise from it as columns (proximal pad at the
@@ -20,7 +21,9 @@ Dependencies: numpy, matplotlib.
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 
-# Pressure that maps to full red; above it everything saturates.
+# The array's pressure range: below KPA_MIN nothing is drawn, above KPA_MAX
+# everything saturates. Matches the limits the tactile model clips to.
+KPA_MIN = 10.0
 KPA_MAX = 200.0
 CMAP = LinearSegmentedColormap.from_list(
     "tactile",
@@ -63,7 +66,7 @@ class TactilePanel:
         self._artists = {}
         self._placed = False
         bar = self.fig.colorbar(
-            plt.cm.ScalarMappable(cmap=CMAP, norm=plt.Normalize(0.0, KPA_MAX)),
+            plt.cm.ScalarMappable(cmap=CMAP, norm=plt.Normalize(KPA_MIN, KPA_MAX)),
             ax=self.ax, fraction=0.03, pad=0.02)
         bar.set_label("kPa")
         plt.ion()
@@ -170,7 +173,7 @@ class TactilePanel:
         what lines the three pads of a finger up on one axis.
         """
         artist = self.ax.imshow(
-            image, cmap=CMAP, vmin=0.0, vmax=KPA_MAX, origin="upper",
+            image, cmap=CMAP, vmin=KPA_MIN, vmax=KPA_MAX, origin="upper",
             interpolation="nearest",
             extent=(x, x + size, y, y + size))
         self._artists[body_name] = artist

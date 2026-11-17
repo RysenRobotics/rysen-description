@@ -5,9 +5,10 @@ pieces, which MuJoCo can collide efficiently and exactly (a concave mesh has to
 be approximated anyway).
 
 Results are cached under ``meshes/convex/<mesh>/`` and only recomputed when the
-source STL is newer than the cache, so repeat runs stay fast.
+mesh or the parameters behind it change, so repeat runs stay fast.
 """
 
+import hashlib
 from pathlib import Path
 
 import trimesh
@@ -19,8 +20,9 @@ import mjcf_config as cfg
 # an explicit hull cap instead of the face-derived one. Structural, not a knob.
 COMPLEX_LINK_SUFFIXES = ("_palm_link",)
 # Written into a cache directory once its hulls are complete. Bump the name when
-# the decomposition changes, so caches built by older code are rebuilt.
-CACHE_STAMP = "v4.stamp"
+# the decomposition code itself changes, so caches built by older code are
+# rebuilt.
+CACHE_STAMP = "v5.stamp"
 
 # Tunables (resolution, hull budget, solid pitch) come from config.yaml; see
 # that file for what each one does and the measurements behind the defaults.
@@ -91,6 +93,20 @@ def decompose(mesh, max_hulls, resolution=RESOLUTION,
     return hulls
 
 
+def cache_signature(mesh_path):
+    """Hash of the mesh's bytes plus every parameter that shapes its hulls.
+
+    Timestamps carry neither: a fresh checkout stamps every file with nearly the
+    same mtime, so an old cache looks current, while changing the pitch or the
+    hull budget leaves the STL untouched and invalidates nothing at all.
+    """
+    params = (SOLID_PITCH, VOLUME_ERROR_PERCENT, FACES_PER_HULL,
+              MIN_HULLS, MAX_HULLS, COMPLEX_MAX_HULLS, RESOLUTION)
+    digest = hashlib.sha256(Path(mesh_path).read_bytes())
+    digest.update(repr(params).encode())
+    return digest.hexdigest()
+
+
 def ensure_hulls(mesh_path, output_dir=None):
     """Return the cached hull files for ``mesh_path``, decomposing if needed.
 
@@ -98,21 +114,16 @@ def ensure_hulls(mesh_path, output_dir=None):
     under ``<output_dir>/meshes/convex/<mesh>/`` so the MJCF can reference them
     as ``meshes/convex/...`` and keep working from any working directory. It
     defaults to the mesh's own directory for standalone use.
-
-    The cache directory carries a version tag. Comparing source timestamps alone
-    is not enough: changing the pitch or the hull budget leaves the source STL
-    untouched, so a stale result would be reused after a code change.
     """
     mesh_path = Path(mesh_path)
     root = Path(output_dir) / "meshes" if output_dir else mesh_path.parent
     cache = root / "convex" / mesh_path.stem
-    source_mtime = mesh_path.stat().st_mtime
+    stamp = cache / CACHE_STAMP
+    signature = cache_signature(mesh_path)
 
-    if cache.is_dir():
-        cached = sorted(cache.glob("hull_*.stl"))
-        if cached and all(p.stat().st_mtime >= source_mtime for p in cached):
-            if (cache / CACHE_STAMP).exists():
-                return cached
+    cached = sorted(cache.glob("hull_*.stl"))
+    if cached and stamp.is_file() and stamp.read_text().strip() == signature:
+        return cached
 
     mesh = trimesh.load(str(mesh_path), force="mesh")
     hulls = decompose(mesh, hull_budget(mesh_path.stem, len(mesh.faces)))
@@ -122,7 +133,6 @@ def ensure_hulls(mesh_path, output_dir=None):
     cache.mkdir(parents=True, exist_ok=True)
     for stale in cache.glob("hull_*.stl"):
         stale.unlink()
-    stamp = cache / CACHE_STAMP
     if stamp.exists():
         stamp.unlink()
     paths = []
@@ -132,5 +142,5 @@ def ensure_hulls(mesh_path, output_dir=None):
         paths.append(path)
     # Written last, so an interrupted run leaves the cache unstamped and the
     # next run rebuilds it instead of trusting a partial set.
-    stamp.touch()
+    stamp.write_text(signature)
     return paths

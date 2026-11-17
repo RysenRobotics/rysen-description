@@ -1,0 +1,163 @@
+# Tunable parameters for the USD generator.
+#
+# Everything here is a value the generator has no URDF source for: collision
+# approximation, contact offsets, friction, actuator gains, tactile geometry.
+# Values override the defaults in tools/lib/usd_config.py, so a key may be
+# omitted and the built-in default applies. Structure (variant names, prim
+# layout, which links are frames) stays in Python on purpose -- editing those
+# from here would break the writer rather than tune it.
+
+simulation:
+  # Only written into the manifest: the USD carries no timestep. The examples
+  # read it for SimulationCfg; regenerate the assets to change it.
+  #
+  # 1/120 s, not the MJCF model's 2 ms. MuJoCo needs 500 Hz because its contact
+  # solver is soft and explicit-ish; PhysX's TGS solver resolves rigid contacts
+  # at 120 Hz, and the grasp on this asset gets *better* as the step is relaxed.
+  #
+  # 1/60 is not merely coarse, it loses the grasp: at 16.7 ms the closing ramp
+  # steps far enough that the pads drive into the cylinder instead of settling on
+  # it. Isaac Sim's own default (60 Hz) needs the close phase retuned or more
+  # solver iterations.
+  dt: 0.008333
+
+joint:
+  # Armature is the motor-side inertia reflected at the joint; it keeps the
+  # low-inertia finger joints from being numerically stiff.
+  armature: 0.0001
+  friction: 0.001
+
+actuator:
+  # Written into the USD joint drives so the asset is usable in the Isaac Sim
+  # GUI. Isaac Lab overwrites both at spawn time from its actuator config, so
+  # these are not what the examples run with (they use the same numbers).
+  #
+  # The joints carry 2e-4..1e-3 kg m^2, so critical damping is 2*sqrt(kp*I) ~=
+  # 0.17, not of order 10.
+  kp: 20.0
+  kv: 0.17
+
+collision:
+  # How PhysX cooks each rigid link's collision mesh. "convexDecomposition"
+  # splits the non-convex palm and finger shells into closed convex pieces: the
+  # U-shaped palm keeps its concavity, but every piece has an unambiguous
+  # inside, so a contact resolves to one outward normal. Triangle meshes cannot
+  # be used here at all -- these are dynamic bodies, so PhysX rejects
+  # meshSimplification and falls back to a single convex hull per link.
+  #
+  # The SDF used before bakes a signed distance field from the same triangles.
+  # These CAD meshes are thin, open shells rather than closed volumes, so the
+  # field has no reliable inside: a cylinder pressed into a finger resolved
+  # against the wrong side and passed through the mesh instead of being pushed
+  # out.
+  #
+  #   convexDecomposition -- rigid links (this setting)
+  #   convexHull          -- the *_tactile* shells, see approximation_for();
+  #                         *_pad links are frames and carry no geometry
+  #   sdf                 -- still understood by the writer, no longer used
+  approximation: convexDecomposition
+  # Cooking parameters, chosen by measuring PhysX's actual cooked hulls against
+  # every link: fit is the surface distance and the volume the hull union takes
+  # relative to the link's convex hull, cost is the hull and triangle count.
+  # shrinkWrap projects hull vertices back onto the source surface and is the
+  # single biggest gain. The phalanges (1-4k faces) are fitted well by 32 hulls;
+  # the palm (14k faces, U-shaped cavity) is not -- at 32 its worst
+  # over-coverage grows from 8.1 mm to 12.7 mm, so it gets its own budget of 64,
+  # which beats the old palm on every measure with 400 fewer triangles. 96 hulls
+  # buy only another 0.4 mm for 2008 triangles. PhysX defaults are 32 hulls,
+  # 10% error, no shrinkWrap, 500000 voxels.
+  convex_max_hulls: 32
+  palm_max_hulls: 64
+  convex_error_percentage: 5.0
+  convex_shrink_wrap: true
+  # Shapes start generating contacts within contact_offset and are allowed to
+  # penetrate rest_offset. A millimetre of margin keeps a step from dropping a
+  # contact it should have kept.
+  contact_offset: 0.001
+  rest_offset: 0.0
+  # Articulation self-collision. Off by default: several neighbouring links
+  # interpenetrate at the zero pose (the same pairs the MJCF model excludes), and
+  # the 619 overlapping tactile spheres would push each other. Turn on only for
+  # a model where you have checked the rest pose.
+  self_collision: false
+  solver_position_iterations: 8
+  solver_velocity_iterations: 1
+
+material:
+  # Both materials are compliant (spring-damper) contacts. PhysX uses the
+  # compliant side's parameters when it meets a rigid material, so these govern
+  # every hand contact even though the cylinder and ground are spawned by the
+  # example without their own compliance.
+  #
+  # Stiffness k = E*A/L, with A the contact patch and L the deforming layer;
+  # damping c = 2*zeta*sqrt(k*m_eff) with m_eff ~= 0.02 kg (0.3 kg cylinder
+  # against a ~0.02 kg phalanx) and zeta ~= 0.7-0.9. A very high k would make
+  # the implicit spring effectively rigid again and add solver noise, so the
+  # hard plastic value is set from an allowed overlap of 0.05 mm at 10 N rather
+  # than from the full 2.5 GPa modulus. The silicone value gives ~1 mm of give
+  # at 10 N, enough to reach the tactile spheres buried 0.5 mm under the skin.
+  #
+  # PhysX combines friction from both materials (average by default). Values are
+  # unitless; MJCF's sliding friction is the closest single number, so static is
+  # set slightly above it and dynamic slightly below -- rubber grips more than
+  # bare plastic, as in the MJCF model.
+  hard_link:
+    static_friction: 1.2
+    dynamic_friction: 1.0
+    restitution: 0.0
+    # Rigid plastic: k = 2e5 N/m, c = 90 N s/m.
+    compliant_contact_stiffness: 200000.0
+    compliant_contact_damping: 90.0
+  soft_tactile:
+    static_friction: 1.8
+    dynamic_friction: 1.6
+    restitution: 0.0
+    # Soft silicone: k = 1e4 N/m, c = 25 N s/m.
+    compliant_contact_stiffness: 10000.0
+    compliant_contact_damping: 25.0
+  # The tactile spheres are separate rigid bodies buried 0.5 mm under the skin,
+  # and have their own material so the array can compress differently from the
+  # pad surface it measures. A semi-rigid sensing element: E ~ 30 MPa,
+  # k = E*pi*r^2/(2r) ~ 5e4 N/m (5x the shell, 1/4 of the hard plastic), and
+  # c = 2*zeta*sqrt(k*m_eff) ~ 12 N s/m with m_eff ~ 1e-3 kg for a sphere
+  # hanging off its fixed joint. At the measured 0.7 N per point the overlap is
+  # ~0.014 mm, only 1.4% of the 1 mm radius.
+  tactile_point:
+    static_friction: 1.8
+    dynamic_friction: 1.6
+    restitution: 0.0
+    compliant_contact_stiffness: 50000.0
+    compliant_contact_damping: 12.0
+
+visual:
+  # Flat grey for the shells, matching the URDF material.
+  shell_rgb: [0.612, 0.659, 0.671]
+  # The tactile variant draws the ``*_tactile*`` shells with this instead:
+  # translucent, so the array buried inside shows through. Same tint as the
+  # MJCF soft_visual.
+  tactile_rgba: [0.6, 0.75, 0.85, 0.35]
+  # Opaque red for the array itself, so it reads as a grid of points through the
+  # pad. Render-only: the spheres keep the soft contact material for physics.
+  point_rgb: [1.0, 0.0, 0.0]
+
+tactile:
+  # Contact sphere radius. Spheres are the only collision geometry that can
+  # report a per-point force, and 1 mm matches the MJCF model.
+  radius: 0.001
+  # How far each sphere centre is pushed in from the outermost skin it sees
+  # along its own +z. 1.5 mm puts the sphere top 0.5 mm under the skin, so the
+  # pad's hull is what an object touches first; it then sinks through the
+  # compliant pad to reach the array. PhysX gets that penetration from the
+  # material's stiffness alone, where MuJoCo uses a solimp band.
+  surface_inset: 0.0015
+  # How far to back off along -z before re-casting when a point sits outside the
+  # mesh and the forward ray misses.
+  inside_step: 0.001
+  # Keep every Nth point. The array is 619 extra rigid bodies and most of the
+  # per-step cost; `4` gives 155 points at roughly 4x the speed. 1 keeps all.
+  stride: 1
+  # Mass of one tactile body. Kept small so the array does not change the hand's
+  # mass (0.8 kg) or inertia; at 1 g each they add 0.62 kg, so 1e-4 is the
+  # practical upper bound. Anything below that and the solver starts fighting
+  # the fixed joints instead of the contact.
+  mass: 0.0001
