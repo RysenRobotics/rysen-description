@@ -19,7 +19,8 @@ description/
 ├── apex_hand/          Apex Hand assets
 │   ├── urdf/
 │   ├── mjcf/
-│   └── usd/
+│   ├── usd/
+│   └── virtual_device/ SDK-facing MuJoCo virtual prototype
 └── (future robots)
 ```
 
@@ -31,7 +32,8 @@ rather than beside it:
 <robot>/
 ├── urdf/               source model + meshes + tactile data + tooling
 ├── mjcf/               generated + meshes + tooling + examples
-└── usd/                generated + tooling + examples
+├── usd/                generated + tooling + examples
+└── virtual_device/     SDK-facing MuJoCo virtual prototype
 ```
 
 `urdf/` is the source. `mjcf/` and `usd/` are both generated from it, each with
@@ -39,7 +41,8 @@ its own converter and examples; edit the source or the generator, then re-run
 it, because hand edits to generated files are lost on the next run.
 
 Per-robot details — which variant to load, mesh caveats, how each format is
-generated — are in that robot's `urdf/`, `mjcf/` and `usd/` READMEs.
+generated — are in that robot's `urdf/`, `mjcf/`, `usd/` and `virtual_device/`
+READMEs.
 
 ## Quick Start
 
@@ -78,6 +81,23 @@ A recorded grasp — 3D view on the left, 619-point pressure map on the right:
 
 The left hand is the mirror image; `apex_hand/mjcf/examples/record_grasp.py --side left`
 records it.
+
+### SDK virtual device
+
+`apex_hand/virtual_device/` turns the MuJoCo model into a virtual hand that the
+existing SDK can connect to without modification.
+
+```bash
+cd apex_hand/virtual_device
+python3 -m pip install 'mujoco==3.10.0' 'numpy>=1.23,<2'
+./start_simulation.sh right              # SDK connects to 127.0.0.2
+./start_simulation.sh left               # SDK connects to 127.0.0.1
+./start_simulation.sh dual               # both addresses
+```
+
+The control and feedback ports are the same as the physical hand: TCP `5856`
+and `5857`. See [apex_hand/virtual_device/README.md](apex_hand/virtual_device/README.md)
+for scene options and limitations.
 
 ### Isaac Sim
 

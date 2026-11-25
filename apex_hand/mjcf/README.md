@@ -75,6 +75,9 @@ can be tuned; see that file for the reasoning behind each value.
 
 All three run from any working directory and need only MuJoCo.
 
+For the SDK-facing virtual device that loads these models over TCP, see
+[`../virtual_device/README.md`](../virtual_device/README.md).
+
 ### view_hand.py
 
 Loads the hand on a ground plane and lets you drag the joints. The hand is fixed

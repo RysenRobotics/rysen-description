@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "joint_defaults": {
+    "active": {
+      "armature": 0.001,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "passive_coupled": {
+      "armature": 0.0,
+      "damping": 0.01,
+      "frictionloss": 0.0
+    }
+  },
+  "actuator_defaults": {
+    "kp": 10.0,
+    "kv": 0.3,
+    "force_range": [
+      -10.0,
+      10.0
+    ]
+  },
+  "joint_overrides": {
+    "thumb_j0": {
+      "armature": 5.077730884952472e-05,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "thumb_j1": {
+      "armature": 1.7682217639677986e-05,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "thumb_j2": {
+      "armature": 0.018671820785245135,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "thumb_j3": {
+      "armature": 0.005996754715050881,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "index_j0": {
+      "armature": 0.001,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "index_j1": {
+      "armature": 1.0000001399657597e-05,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "index_j2": {
+      "armature": 0.009491214225240316,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "middle_j0": {
+      "armature": 0.001,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "middle_j1": {
+      "armature": 1.0000000000005481e-05,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "middle_j2": {
+      "armature": 0.0036128382761141786,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "ring_j0": {
+      "armature": 0.001,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "ring_j1": {
+      "armature": 5.491704064794021e-05,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "ring_j2": {
+      "armature": 0.0031147771223244665,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "pinky_j0": {
+      "armature": 0.001,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "pinky_j1": {
+      "armature": 3.480010079321789e-05,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "pinky_j2": {
+      "armature": 0.0004672278313760588,
+      "damping": 0.05,
+      "frictionloss": 0.0
+    },
+    "thumb_j4": {
+      "armature": 0.0,
+      "damping": 0.01,
+      "frictionloss": 0.0
+    },
+    "index_j3": {
+      "armature": 0.0,
+      "damping": 0.01,
+      "frictionloss": 0.0
+    },
+    "middle_j3": {
+      "armature": 0.0,
+      "damping": 0.01,
+      "frictionloss": 0.0
+    },
+    "ring_j3": {
+      "armature": 0.0,
+      "damping": 0.01,
+      "frictionloss": 0.0
+    },
+    "pinky_j3": {
+      "armature": 0.0,
+      "damping": 0.01,
+      "frictionloss": 0.0
+    }
+  },
+  "actuator_overrides": {
+    "thumb_j0": {
+      "kp": 10.548062635797978,
+      "kv": 0.9972973747312512,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "thumb_j1": {
+      "kp": 4.820967947680699,
+      "kv": 0.4062516928083142,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "thumb_j2": {
+      "kp": 12.974496990994677,
+      "kv": 0.9256405235216306,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "thumb_j3": {
+      "kp": 7.483918906488521,
+      "kv": 0.43827103934899236,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "index_j0": {
+      "kp": 10.0,
+      "kv": 0.3,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "index_j1": {
+      "kp": 21.21319948836042,
+      "kv": 1.6700505712157283,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "index_j2": {
+      "kp": 12.447966025783625,
+      "kv": 0.7244728232859646,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "middle_j0": {
+      "kp": 10.0,
+      "kv": 0.3,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "middle_j1": {
+      "kp": 29.901310210887374,
+      "kv": 1.9455128661806598,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "middle_j2": {
+      "kp": 13.302986387231359,
+      "kv": 0.6676957381094409,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "ring_j0": {
+      "kp": 10.0,
+      "kv": 0.3,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "ring_j1": {
+      "kp": 35.667604932445784,
+      "kv": 1.8677141959224746,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "ring_j2": {
+      "kp": 12.958850434819775,
+      "kv": 0.6544312743440609,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "pinky_j0": {
+      "kp": 10.0,
+      "kv": 0.3,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "pinky_j1": {
+      "kp": 12.292269597741353,
+      "kv": 0.9198189963779635,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    },
+    "pinky_j2": {
+      "kp": 17.286489425934768,
+      "kv": 0.8058955094871252,
+      "force_range": [
+        -10.0,
+        10.0
+      ]
+    }
+  },
+  "server": {
+    "command_deadband_rad": 0.0,
+    "firmware_target_max_delta_deg": 6.0,
+    "firmware_target_interpolation_steps": 10,
+    "feedback_velocity_filter_alpha": 0.2,
+    "apply_four_finger_firmware_filter": true,
+    "apply_thumb_firmware_filter": true,
+    "thumb_command_transport_delay_ms": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "thumb_feedback_transport_delay_ms": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "render_hz": 60.0,
+    "max_catch_up_steps": 20
+  },
+  "metadata": {
+    "variant": "description_mjcf_virtual_device",
+    "calibration": "Runtime equivalent_model_v2 joint/actuator parameters applied to the description MJCF; coupling constraints keep the generator defaults."
+  }
+}
